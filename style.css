@@ -1,0 +1,93 @@
+body {
+  background: url("https://picsum.photos/1000/1000") no-repeat center center fixed;
+  background-size: cover;
+  /*background-color: skyblue;*/
+  font-family: system-ui;
+  font-color: black;
+  /*text-align: center;*/
+  padding: 120px;
+}
+
+h1 {
+  font-family: cursive;
+  text-align: center;
+  font-size: 2.5em;
+}
+
+
+#song_list {
+  background: white;
+  border-radius: 10px;
+  
+}
+
+/*
+#play-btn2 {
+  border-color: orange;
+  font-family: cursive;
+  font-size: 20px
+}
+*/
+
+#play-btn {
+  width: 100%;
+  letter-spacng: 3px;
+  position: relative;
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  color: white;
+  font-size: 2.5em;
+  z-index: 2;
+}
+
+#play-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
+  background-image: linear-gradient(
+    145deg,
+    #f60000,
+    #cd00cd,
+    #ff8c00,
+    #ffee00,
+    #4de94c,
+    #f60000,
+    #cd00cd,
+    #ff8c00,
+    #ffee00,
+    #4de94c,
+    #f60000,
+    #cd00cd
+  );
+  border-radius: 10px;
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+#play-btn::after {
+  content: "";
+  z-index: -1;
+  background: black;
+  position: absolute;
+  width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
+  border-radius: 10px;
+}
+
+button {
+  cursor: pointer;
+}
