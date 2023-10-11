@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="https://gatsbyjs.andyp4245.repl.co/icons/3.ico"/>
-    <title>Audio Library</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <h1>Welcome to Audio Library!!!</h1>
-    <button id="play-btn" onclick="playSound(sounds_key[Math.ceil(Math.random() * (sounds_key.length - 0) + 0)]);">Random Song</button>
-    <br>
-    <button id='play-btn' onclick='alertSound(idolSong)'>Choice Song</button>
-    <br>
-    <button id='play-btn' onclick="playSound(idolSong)"> Submit</button>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="https://gatsbyjs.andyp4245.repl.co/icons/3.ico" />
+  <title>Audio Library</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <h1>Welcome to Audio Library!!!</h1><br><br>
+  <button id="play-btn" onclick="randomSound(currentSong);">Random Song</button>
+  <br>
+  <button id='play-btn' onclick='alertSound(idolSong)'>Choice Song</button>
 
   </br></br>
-    <div id="song_list">
-      <br>
-      <!--<input type='radio' name='sound' value=''> -->
-      <!--
+  <div id="song_list">
+    <br>
+    <h2 id='currentSong'></h2>
+    <button id='playPauseBTN' onclick="playPause()">Play &#9658;</button>
+    <br><br>
+    <button id='stopBtn' onclick="stop()">Stop &#9611;</button><br></br>
+    <!--<input type='radio' name='sound' value=''> -->
+    <!--
        <input type='radio' name='sound' value=''><br>
        <input type='radio' name='sound' value=''><br>
        <input type='radio' name='sound' value=''><br>
@@ -107,427 +111,445 @@
        <input type='radio' name='sound' value=''><br>
        <input type='radio' name='sound' value=''><br>
        <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-       <input type='radio' name='sound' value=''><br>
-      -->
-       <input type='radio' name='sound' value='雨爱_张_live'>雨爱_张_live<br>
-       <input type='radio' name='sound' value='默_live'>默_live<br>
-       <input type='radio' name='sound' value='迷途的孤鸟'>迷途的孤鸟<br>
-       <input type='radio' name='sound' value='被动'>被动<br>
-       <input type='radio' name='sound' value='北国之春'>北国之春<br>
-       <input type='radio' name='sound' value='雪山飞狐'>雪山飞狐<br>
-       <input type='radio' name='sound' value='月光水岸'>月光水岸<br>
-       <input type='radio' name='sound' value='春天的故事'>春天的故事<br>
-       <input type='radio' name='sound' value='爱尔兰风笛'>爱尔兰风笛<br>
-       <input type='radio' name='sound' value='美丽的神话'>美丽的神话<br>
-       <input type='radio' name='sound' value='太多'>太多<br>
-       <input type='radio' name='sound' value='小曲好唱口难开'>小曲好唱口难开<br>
-       <input type='radio' name='sound' value='小城故事'>小城故事<br>
-       <input type='radio' name='sound' value='十送红军'>十送红军<br>
-       <input type='radio' name='sound' value='你是风儿我是沙'>你是风儿我是沙<br>
-       <input type='radio' name='sound' value='静静的雪'>静静的雪<br>
-       <input type='radio' name='sound' value='大自然情诗'>大自然情诗<br>
-       <input type='radio' name='sound' value='萍聚'>萍聚<br>
-       <input type='radio' name='sound' value='breakout'>breakout<br>
-       <input type='radio' name='sound' value='迟来的爱'>迟来的爱<br>
-       <input type='radio' name='sound' value='边疆的清水清又纯'>边疆的清水清又纯<br>
-       <input type='radio' name='sound' value='心雨'>心雨<br>
-       <input type='radio' name='sound' value='舞女'>舞女<br>
-       <input type='radio' name='sound' value='渴望'>渴望<br>
-       <input type='radio' name='sound' value='青藏高原'>青藏高原<br>
-       <input type='radio' name='sound' value='北京的金山上'>北京的金山上<br>
-       <input type='radio' name='sound' value='爱情才会赢'>爱情才会赢<br>
-       <input type='radio' name='sound' value='妈妈的吻'>妈妈的吻<br>
-       <input type='radio' name='sound' value='牧羊曲'>牧羊曲<br>
-       <input type='radio' name='sound' value='美酒加咖啡'>美酒加咖啡<br>
-       <input type='radio' name='sound' value='九九女儿红'>九九女儿红<br>
-       <input type='radio' name='sound' value='兰花草'>兰花草<br>
-       <input type='radio' name='sound' value='风含情水含笑'>风含情水含笑<br>
-       <input type='radio' name='sound' value='走着走着就散了'>走着走着就散了<br>
-       <input type='radio' name='sound' value='暖暖_梁'>暖暖_梁<br>
-       <input type='radio' name='sound' value='再见只是陌生人123'>再见只是陌生人123<br>
-       <input type='radio' name='sound' value='不再联系123'>不再联系123<br>
-       <input type='radio' name='sound' value='爱就爱了'>爱就爱了<br>
-       <input type='radio' name='sound' value='旅行的意义'>旅行的意义<br>
-       <input type='radio' name='sound' value='你爱我像谁'>你爱我像谁<br>
-       <input type='radio' name='sound' value='小手拉大手'>小手拉大手<br>
-       <input type='radio' name='sound' value='启程'>启程<br>
-       <input type='radio' name='sound' value='星空剪影'>星空剪影<br>
-       <input type='radio' name='sound' value='算你狠'>算你狠<br>
-       <input type='radio' name='sound' value='他不懂'>他不懂<br>
-       <input type='radio' name='sound' value='不甘'>不甘<br>
-       <input type='radio' name='sound' value='玫瑰少年1'>玫瑰少年<br>
-       <input type='radio' name='sound' value='输了你赢了世界又如何'>输了你赢了世界又如何<br>
-       <input type='radio' name='sound' value='萱草花'>萱草花<br>
-       <input type='radio' name='sound' value='说说话'>说说话<br>
-       <input type='radio' name='sound' value=' 问风'> 问风<br>
-       <input type='radio' name='sound' value='大碗宽面'>大碗宽面<br>
-       <input type='radio' name='sound' value='少年中国说'>少年中国说<br>
-       <input type='radio' name='sound' value='出现又离开'>出现又离开<br>
-       <input type='radio' name='sound' value='天下有情人'>天下有情人<br>
-       <input type='radio' name='sound' value=' 漠河舞厅'> 漠河舞厅<br>
-       <input type='radio' name='sound' value='永不失联的爱'>永不失联的爱<br>
-       <input type='radio' name='sound' value='一滴泪的时间'>一滴泪的时间<br>
-       <input type='radio' name='sound' value='黎明前的黑暗'>黎明前的黑暗<br>
-       <input type='radio' name='sound' value='我想要1'>我想要<br>
-       <input type='radio' name='sound' value='你是人间四月天'>你是人间四月天<br>
-       <input type='radio' name='sound' value='阿刁'>阿刁<br>
-       <input type='radio' name='sound' value='路过人间'>路过人间<br>
-       <input type='radio' name='sound' value='天后'>天后<br>
+       <input type='radio' name='sound' value=''><br>-->
+       <input type='radio' name='sound' value='强123'>强123<br>
+       <input type='radio' name='sound' value='my_heart_will_go_on'>my_heart_will_go_on<br>
+       <input type='radio' name='sound' value='还是要幸福'>还是要幸福<br>
+       <input type='radio' name='sound' value='小宇'>小宇<br>
+       <input type='radio' name='sound' value='其实都没有'>其实都没有<br>
+       <input type='radio' name='sound' value='假如'>假如<br>
+       <input type='radio' name='sound' value='恋人心'>恋人心<br>
+       <input type='radio' name='sound' value='搁浅123'>搁浅123<br>
+       <input type='radio' name='sound' value='舞底线'>舞底线<br>
        <input type='radio' name='sound' value='千年之恋'>千年之恋<br>
-       <input type='radio' name='sound' value='左手指月'>左手指月<br>      
-       <input type='radio' name='sound' value='山茶花读不懂白玫瑰'>山茶花读不懂白玫瑰<br>
-       <input type='radio' name='sound' value='雪distance'>雪distance<br>
-       <input type='radio' name='sound' value='普通人生'>普通人生<br>
-       <input type='radio' name='sound' value='星空叙爱曲'>星空叙爱曲<br>
-       <input type='radio' name='sound' value='该死的泪'>该死的泪<br>
-       <input type='radio' name='sound' value='故犯'>故犯<br>
-       <input type='radio' name='sound' value='小河淌水'>小河淌水<br>
-       <input type='radio' name='sound' value='半山腰'>半山腰<br>
-       <input type='radio' name='sound' value='想你123'>想你123<br>
-       <input type='radio' name='sound' value='遐想'>遐想<br>
-       <input type='radio' name='sound' value='谁家'>谁家<br>
-       <input type='radio' name='sound' value='姑娘在远方'>姑娘在远方<br>
-       <input type='radio' name='sound' value='超123'>超123<br>
-       <input type='radio' name='sound' value='忏悔录123'>忏悔录123<br>
-       <input type='radio' name='sound' value='nuna'>nuna<br>
-       <input type='radio' name='sound' value='隆里电丝'>隆里电丝<br>
-       <input type='radio' name='sound' value='朋友圈'>朋友圈<br>
-       <input type='radio' name='sound' value='五百二十赫兹'>五百二十赫兹<br>
-       <input type='radio' name='sound' value='瞬'>瞬<br>
-       <input type='radio' name='sound' value='循迹'>循迹<br>
-       <input type='radio' name='sound' value='不再需要你'>不再需要你<br>
-       <input type='radio' name='sound' value='橘子'>橘子<br>
-       <input type='radio' name='sound' value='true123'>true123<br>
-       <input type='radio' name='sound' value='升到天空_坠入海底'>升到天空_坠入海底<br>
-       <input type='radio' name='sound' value='真的没喝多'>真的没喝多<br>
-       <input type='radio' name='sound' value='声音123'>声音123<br>
-       <input type='radio' name='sound' value='暧昧33天'>暧昧33天<br>
-       <input type='radio' name='sound' value='如果突然想起我'>如果突然想起我<br>
-       <input type='radio' name='sound' value='时间胶囊'>时间胶囊<br>
-       <input type='radio' name='sound' value='破茧'>破茧<br>
-       <input type='radio' name='sound' value='躲避的爱'>躲避的爱<br>
-       <input type='radio' name='sound' value='无公益_不长安'>无公益_不长安<br>
-       <input type='radio' name='sound' value='曼陀山庄'>曼陀山庄<br>
-       <input type='radio' name='sound' value='义勇军进行曲'>义勇军进行曲<br>
-       <input type='radio' name='sound' value='假装一分钟'>假装一分钟<br>
-       <input type='radio' name='sound' value='circle_of_life'>circle_of_life<br>
-       <input type='radio' name='sound' value='寂寞才说爱'>寂寞才说爱<br>
-       <input type='radio' name='sound' value='风吹麦浪'>风吹麦浪<br>
-       <input type='radio' name='sound' value='windy_hil'>windy_hil<br>
-       <input type='radio' name='sound' value='西楼别'>西楼别<br>
-       <input type='radio' name='sound' value='带你去旅行'>带你去旅行<br>
-       <input type='radio' name='sound' value='最熟悉的陌生人'>最熟悉的陌生人<br>
-       <input type='radio' name='sound' value='我叫长安_你叫故里'>我叫长安_你叫故里<br>
-       <input type='radio' name='sound' value='落在生命里的光'>落在生命里的光<br>
-       <input type='radio' name='sound' value='守在阳台的猫'>守在阳台的猫<br>
-       <input type='radio' name='sound' value='记忆停留'>记忆停留<br>
-       <input type='radio' name='sound' value='目光所及皆是你'>目光所及皆是你<br>
-       <input type='radio' name='sound' value='wuli'>雾里<br>
-       <input type='radio' name='sound' value='xiaqian'>下潜<br>
-       <input type='radio' name='sound' value='一眼光年'>一眼光年<br>
-       <input type='radio' name='sound' value='那就这样吧123'>那就这样吧123<br>
-       <input type='radio' name='sound' value='热情的沙漠'>热情的沙漠<br>
-    
-       <input type='radio' name='sound' value='be_mine'>be_mine<br>
-       <input type='radio' name='sound' value='heejae'>heejae<br>
-       <input type='radio' name='sound' value='move_t5'>move_t5<br>
-       <input type='radio' name='sound' value='once_again'>once_again<br>
-       <input type='radio' name='sound' value='summer_comes'>summer_comes<br>
-       <input type='radio' name='sound' value='girls_h'>girls_h<br>
-       <input type='radio' name='sound' value='set_me_free'>set_me_free<br>
-       <input type='radio' name='sound' value='seesaw'>seesaw<br>
-       <input type='radio' name='sound' value='sneakers'>sneakers<br>
-       <input type='radio' name='sound' value='fearless_h'>fearless_h<br>
-       <input type='radio' name='sound' value='cigars_chu'>cigars_chu<br>
-       <input type='radio' name='sound' value='unthinkable'>unthinkable<br>
-       <input type='radio' name='sound' value='in_da_club'>in_da_club<br>
-       <input type='radio' name='sound' value='laugh_now_cry_late'>laugh_now_cry_late<br>
-       <input type='radio' name='sound' value='turn_down_for_what'>turn_down_for_what<br>
-       <input type='radio' name='sound' value='see_you_again_chun'>see_you_again_chun<br>
-       <input type='radio' name='sound' value='toccat'>toccat<br>
-       <input type='radio' name='sound' value='give_me_your_love'>give_me_your_love<br>
-       <input type='radio' name='sound' value='empire_state_of_mind'>empire_state_of_mind<br>
-       <input type='radio' name='sound' value='spring'>spring<br>
-       <input type='radio' name='sound' value='introduction'>introduction<br>
-       <input type='radio' name='sound' value='breezin'>breezin<br>
-       <input type='radio' name='sound' value='classic'>classic<br>
-       <input type='radio' name='sound' value='rain'>rain<br>
-       <input type='radio' name='sound' value='lean_back'>lean_back<br>
-       <input type='radio' name='sound' value='lost_without_you'>lost_without_you<br>
-       <input type='radio' name='sound' value='fur_elise'>fur_elise<br>
-       <input type='radio' name='sound' value='street_violin'>street_violin<br>
-       <input type='radio' name='sound' value='black_and_yellow'>black_and_yellow<br>
-       <input type='radio' name='sound' value='without_words'>without_words<br>
-       <input type='radio' name='sound' value='because_of_you_chun'>because_of_you_chun<br>
-       <input type='radio' name='sound' value='a_thousand_miles'>a_thousand_miles<br>
-       <input type='radio' name='sound' value='秋水悠悠'>秋水悠悠<br>
-       <input type='radio' name='sound' value='collapsing_world'>collapsing_world<br>
-       <input type='radio' name='sound' value='秋的思念'>秋的思念<br>
-       <input type='radio' name='sound' value='the_sounds_of_silence'>the_sounds_of_silence<br>
-       <input type='radio' name='sound' value='sakura_tear'>sakura_tear<br>
-       <input type='radio' name='sound' value='青空'>青空<br>
-       <input type='radio' name='sound' value='瞬间的永恒'>瞬间的永恒<br>
-       <input type='radio' name='sound' value='城南花已开'>城南花已开<br>
-       <input type='radio' name='sound' value='we_like_two_party'>we_like_two_par<br>
-       <input type='radio' name='sound' value='pop123'>pop123<br>
-       <input type='radio' name='sound' value='love_dive'>love_dive:<br>
-       <input type='radio' name='sound' value='talk_that_talk'>talk_that_talk<br>
-       <input type='radio' name='sound' value='cold_winte'>cold_winte<br>
-       <input type='radio' name='sound' value='i_am_h'>i_am_h<br>
-       <input type='radio' name='sound' value='cupid'>cupid<br>
-       <input type='radio' name='sound' value='knock_h'>knock_h<br>
-       <input type='radio' name='sound' value='i_want_h'>i_want_h<br>
-       <input type='radio' name='sound' value='zoom_h'>zoom_h<br>
-       <input type='radio' name='sound' value='kitsch'>kitsch<br>
-       <input type='radio' name='sound' value='friend_the_end'>friend_the_end<br>
-       <input type='radio' name='sound' value='in_the_novel'>in_the_novel<br>
-       <input type='radio' name='sound' value='let_me_love_you_h'>let_me_love_you_h:<br>
-       <input type='radio' name='sound' value='only_one_person'>only_one_person<br>
-       <input type='radio' name='sound' value='口己'>口己<br>
-       <input type='radio' name='sound' value='teddy_bea'>teddy_bea<br>
-       <input type='radio' name='sound' value='ride_or_die'>ride_or_di<br>
-       <input type='radio' name='sound' value='love_me_like_this'>love_me_like_this<br>
-       <input type='radio' name='sound' value='underwater_h'>underwater_h<br>
-       <input type='radio' name='sound' value='邱正'>邱正<br>
-       <input type='radio' name='sound' value='generation_h'>generation_h<br>
-       <input type='radio' name='sound' value='nanana_h'>nanana_h<br>
-       <input type='radio' name='sound' value='roller_coaster'>roller_coaster<br>
-       <input type='radio' name='sound' value='good_boy_gone_bad'>good_boy_gone_bad<br>
-       <input type='radio' name='sound' value='maniac'>maniac<br>
-       <input type='radio' name='sound' value='life_goes_on'>life_goes_on<br>
-       <input type='radio' name='sound' value='love_countdown'>love_countdown<br>
-       <input type='radio' name='sound' value='poppy'>poppy<br>
-       <input type='radio' name='sound' value='young_dumb_stupid'>young_dumb_stupid<br>
-       <input type='radio' name='sound' value='for_couple'>for_couple<br>
-       <input type='radio' name='sound' value='slience'>slience<br>
-       <input type='radio' name='sound' value='the_flash'>the_flash<br>
-      <input type='radio' name='sound' value='不远不近'>不远不近<br>
-      <input type='radio' name='sound' value='晚'>晚<br>
-      <input type='radio' name='sound' value='想不通'>想不通<br>
-      <input type='radio' name='sound' value='归还人海'>归还人海<br> 
-      <input type='radio' name='sound' value='妥协'>妥协<br>
-      <input type='radio' name='sound' value='三千雪'>三千雪<br>
-      <input type='radio' name='sound' value='恋爱味道'恋爱味道><br>
-      <input type='radio' name='sound' value='独一无二'>独一无二<br>
-      <input type='radio' name='sound' value='出逃'>出逃<br>
-      <input type='radio' name='sound' value='送你'>送你<br>
-      <input type='radio' name='sound' value='患者'>患者<br>
-      <input type='radio' name='sound' value='白日造梦'>白日造梦<br>
-      <input type='radio' name='sound' value='此去123'>此去123<br>
-      <input type='radio' name='sound' value='狐狸的童话'>狐狸的童话<br>
-      <input type='radio' name='sound' value='予爱'>予爱<br>
-      <input type='radio' name='sound' value='孤单治愈'>孤单治愈<br>
-      <input type='radio' name='sound' value='郎中'>郎中<br>
-      <input type='radio' name='sound' value='九九二'>九九二<br>
-      <input type='radio' name='sound' value='young_love'>young_love<br>
-      <input type='radio' name='sound' value='新时代'>新时代<br>
-      <input type='radio' name='sound' value='嘘头'>嘘头<br>
-      <input type='radio' name='sound' value='花塔'>花塔<br>
-      <input type='radio' name='sound' value='分上'>分上<br>
-      <input type='radio' name='sound' value='moon_halo'>moon_halo<br>
-      <input type='radio' name='sound' value='我多想拥抱'>我多想拥抱<br>
-      <input type='radio' name='sound' value='一首跨越时间的歌'>一首跨越时间的歌<br>
-      <input type='radio' name='sound' value='逆光'>逆光<br>
-      <input type='radio' name='sound' value='恋爱脑'>恋爱脑<br>  
-      <input type='radio' name='sound' value='一吻天荒123'>一吻天荒(片段版)<br>
-      <input type='radio' name='sound' value='记忆时空'>记忆时空<br>
-      <input type='radio' name='sound' value='不让我的眼泪陪我过夜'>不让我的眼泪陪我过夜<br> 
-      <input type='radio' name='sound' value='照亮'>照亮<br>
-      <input type='radio' name='sound' value='无拘'>无拘<br> 
-      <input type='radio' name='sound' value='流沙'>流沙<br>
-      <input type='radio' name='sound' value='心之火'>心之火<br> 
-      <input type='radio' name='sound' value='三菜一汤'>三菜一汤<br>
-      <input type='radio' name='sound' value='你不知道的事'>你不知道的事<br> 
-      <input type='radio' name='sound' value='别怕我伤心'>别怕我伤心<br>
-      <input type='radio' name='sound' value='海芋恋'>海芋恋<br> 
-      <input type='radio' name='sound' value='你要的爱'>你要的爱<br>
-      <input type='radio' name='sound' value='爱相随123'>爱相随123<br> 
-      <input type='radio' name='sound' value='唯一'>唯一<br>
-      <input type='radio' name='sound' value='挚友'>挚友<br> 
-      <input type='radio' name='sound' value='亲爱的对象'>亲爱的对象<br>
-      <input type='radio' name='sound' value='别叫我达芬奇'>别叫我达芬奇<br> 
-      <input type='radio' name='sound' value='我们都拥有海洋'>我们都拥有海洋<br>
-      <input type='radio' name='sound' value='达尔文'>达尔文<br> 
-      <input type='radio' name='sound' value='恋爱的循环'>恋爱的循环<br>
-      <input type='radio' name='sound' value='心安的屋檐'>心安的屋檐<br> 
-      <input type='radio' name='sound' value='流浪记'>流浪记<br>
-      <input type='radio' name='sound' value='念奴娇_中秋'>念奴娇_中秋<br> 
-      <input type='radio' name='sound' value='whitespace'>空白格<br>
-      <input type='radio' name='sound' value='可惜不是你'>可惜不是你<br> 
-      <input type='radio' name='sound' value='yicijiuhao'>一次就好<br>
-      <input type='radio' name='sound' value='liangliang'>凉凉<br> 
-      <input type='radio' name='sound' value='yangcong'>洋葱<br>
-      <input type='radio' name='sound' value='我想要'>我想要<br> 
-      <input type='radio' name='sound' value='我的心太乱了'>我的心太乱了<br>
-      <input type='radio' name='sound' value='篇章'>篇章<br> 
-      <input type='radio' name='sound' value='诀爱'>诀爱<br>
-      <input type='radio' name='sound' value='晚风作酒123'>晚风作酒<br> 
-      <input type='radio' name='sound' value='buy_dirt'>Buy Dirt<br>
-      <input type='radio' name='sound' value='mercury'>mercury<br> 
-      <input type='radio' name='sound' value='命运的思量'>命运的思量<br>
-      <input type='radio' name='sound' value='微微_铃声版'>微微(铃声版)<br> 
-      <input type='radio' name='sound' value='游山恋'>游山恋<br>
-      <input type='radio' name='sound' value='勇往直前'>勇往直前<br> 
-      <input type='radio' name='sound' value='起风了_林'>起风了(林俊杰)<br>
-      <input type='radio' name='sound' value='butterfly123'>butterfly123<br> 
-      <input type='radio' name='sound' value='ferrari'>ferrari<br>
-      <input type='radio' name='sound' value='生而平凡'>生而平凡<br>
-      <input type='radio' name='sound' value='听'>听<br>
-      <input type='radio' name='sound' value='难却'>难却<br>
-      <input type='radio' name='sound' value='就忘了吧'>就忘了吧<br>
-      <input type='radio' name='sound' value='风雨飘散'>风雨飘散<br>
-      <input type='radio' name='sound' value='中意你'>中意你<br>
-      <input type='radio' name='sound' value='等不来花开'>等不来花开<br>
-      <input type='radio' name='sound' value='把回忆拼好给你123'>把回忆拼好给你123<br>
-      <input type='radio' name='sound' value='everytime_we_touch'>everytime_we_touch<br>
-      <input type='radio' name='sound' value='莫问'>莫问<br>
-      <input type='radio' name='sound' value='剑魂'>剑魂<br>
-      <input type='radio' name='sound' value='很任性'>很任性<br>
-      <input type='radio' name='sound' value='逃之夭夭'>逃之夭夭<br>
-      <input type='radio' name='sound' value='我们的歌'>我们的歌<br>
-      <input type='radio' name='sound' value='你的眼神'>你的眼神<br>
-      <input type='radio' name='sound' value='大花轿'>大花轿<br>
-      <input type='radio' name='sound' value='赐我'>赐我<br>
-      <input type='radio' name='sound' value='不问ciaga'>不问ciaga<br>
-      <input type='radio' name='sound' value='baby_i_love_you'>Baby I Love You<br>
-      <input type='radio' name='sound' value='偷了黄昏的酒'>偷了黄昏的酒<br>
-      <input type='radio' name='sound' value='爱情指南'>爱情指南<br>
-      <input type='radio' name='sound' value='当我娶过她'>当我娶过她<br>
-      <input type='radio' name='sound' value='三生三幸'>三生三幸<br>
-      <input type='radio' name='sound' value='在他乡'>在他乡<br>
-      <input type='radio'。name='sound' value='须尽欢'>须尽欢<br>
-      <input type='radio' name='sound' value='花轿里的人'>花轿里的人<br>
-      <input type='radio' name='sound' value='折风渡夜'>折风渡夜<br>
-      <input type='radio' name='sound' value='五十二度的酒37度的手'>52度的酒37度的手<br>
-      <input type='radio' name='sound' value='月老掉线'>月老掉线<br>
-      <input type='radio' name='sound' value='moves_like_jagger'>Moves Like Jagger<br>
-      <input type='radio' name='sound' value='在你身边'>在你身边<br>
-      <input type='radio' name='sound' value='i_am_you'>I am you<br>
-      <input type='radio' name='sound' value='pontoon'>Pontoon<br>
-      <input type='radio' name='sound' value='mr_jones'>M Jones<br>
-      <input type='radio' name='sound' value='heat_waves'>Heat Waves<br>
-      <input type='radio' name='sound' value='bless_the_broken_road'>Bless The Broken Road<br>
-      <input type='radio' name='sound' value='christmas_is_canceled'>Christmas is cancelled<br>
-      <input type='radio' name='sound' value='rosanna'>Rosanna<br>
-      <input type='radio' name='sound' value='africa'>Africa<br>
-      <input type='radio' name='sound' value='watermelon_sugar'>Watermelon Sugar<br>
-      <input type='radio'。name='sound' vale='给你一瓶魔法药水'>给你一瓶魔法药水<br>
-      <input type='radio' name='sound' value='向云端'>向云端<br>
-      <input type='radio' name='sound' value='若把你'>若把你<br>
-      <input type='radio' name='sound' value='merry_christmas'>Merry Christmas<br>
-      <input type='radio' name='sound' value='你要的全拿走live'>你要的全拿走live<br>
-      <input type='radio' name='sound' value='账号已注销'>账号已注销<br>
-      <input type='radio' name='sound' value='是妈妈是女儿'>是妈妈是女儿<br>
-      <input type='radio' name='sound' value='sea_of_problems'>Sea Of Problems<br>
-      <input type='radio' name='sound' value='爱上你是一个错'>爱上你是一个错<br>
-      <input type="radio" name='sound' value='耍把戏'>耍把戏<br>
-      <input type='radio' name='sound' value='爱如火'>爱如火<br>
-      <input type='radio' name='sound' value='不问'>不问<br>
-      <inout type='radio' name='sound' value='我也常常问自己'>我也常常问自己<br>
+       <input type='radio' name='sound' value='冰雨'>冰雨<br>
+       <input type='radio' name='sound' value='老公老公辛苦'>老公老公辛苦<br>
+       <input type='radio' name='sound' value='给未来的自己'>给未来的自己<br>
+       <input type='radio' name='sound' value='牡丹江'>牡丹江<br>
+       <input type='radio' name='sound' value='勇敢爱'>勇敢爱<br>
+       <input type='radio' name='sound' value='多想把你抱住123'>多想把你抱住123<br>
+    <input type='radio' name='sound' value='monster'>monster<br>
+    <input type='radio' name='sound' value='怎么唱情歌'><br>
+    <input type='radio' name='sound' value='么唱情歌'><br>
+    <input type='radio' name='sound' value='是非题'>是非题<br>
+    <input type='radio' name='sound' value='白玫瑰'>白玫瑰<br>
+    <input type='radio' name='sound' value='第一次爱的人'>第一次爱的人<br>
+    <input type='radio' name='sound' value='喜欢孤独123'>喜欢孤独123<br>
+    <input type='radio' name='sound' value='我很快乐123'>我很快乐123<br>
+    <input type='radio' name='sound' value='我在那角落悬过伤风'>我在那角落悬过伤风<br>
+    <input type='radio' name='sound' value='浪漫爱'>浪漫爱<br>
+    <input type='radio' name='sound' value='我只在乎你'>我只在乎你<br>
+    <input type='radio' name='sound' value='full_易'>full_易<br>
+    <input type='radio' name='sound' value='佛系少女'>佛系少女<br>
+    <input type='radio' name='sound' value='全部都是你'>全部都是你<br>
+    <input type='radio' name='sound' value='多幸'>多幸<br>
+    <input type='radio' name='sound' value='冬眠'>冬眠<br>
+    <input type='radio' name='sound' value='春三月'>春三月<br>
+    <input type='radio' name='sound' value='烟雨行舟'>烟雨行舟<br>
+    <input type='radio' name='sound' value='冬眠_抖音'>冬眠_抖音<br>
+    <input type='radio' name='sound' value='星星在唱'>星星在唱<br>
+    <input type='radio' name='sound' value='冬眠_铃声'>冬眠_铃声<br>
+    <input type='radio' name='sound' value='白驹'>白驹<br>
+    <input type='radio' name='sound' value='晚风吹弗'>晚风吹弗<br>
+    <input type='radio' name='sound' value='尔尔'>尔尔<br>
+    <input type='radio' name='sound' value='盗将行'>盗将行<br>
+    <input type='radio' name='sound' value='谁_司南'>谁_司南<br>
+    <input type='radio' name='sound' value='不寂寞123'><br>
+    <input type='radio' name='sound' value='那就好好的'>那就好好的<br>
+    <input type='radio' name='sound' value='下一站是爱'>下一站是爱<br>
+    <input type='radio' name='sound' value='离开的那个人'>离开的那个人<br>
+    <input type='radio' name='sound' value='青春的故事'>青春的故事<br>
+    <input type='radio' name='sound' value='豆浆油条'>豆浆油条<br>
+    <input type='radio' name='sound' value='一千年以后'>一千年以后<br>
+    <input type='radio' name='sound' value='我还想她'>我还想她<br>
+    <input type='radio' name='sound' value='always_online'>always_online<br>
+    <input type='radio' name='sound' value='编号89757'>编号89757<br>
+    <input type='radio' name='sound' value='爱不会绝迹'>爱不会绝迹<br>
+    <input type='radio' name='sound' value='你要的不是我'>你要的不是我<br>
+    <input type='radio' name='sound' value='第二天堂'>第二天堂<br>
+    <input type='radio' name='sound' value='不存在的情人'>不存在的情人<br>
+    <input type='radio' name='sound' value='想见你_林俊杰'>想见你_林俊杰<br>
+    <input type='radio' name='sound' value='流行主教'>流行主教<br>
+    <input type='radio' name='sound' value='她说'>她说<br>
+    <input type='radio' name='sound' value='裹着心的光'>裹着心的光<br>
+    <input type='radio' name='sound' value='那些你狠冒险的梦'>那些你狠冒险的梦<br>
+    <input type='radio' name='sound' value='醉赤壁'>醉赤壁<br>
+    <input type='radio' name='sound' value='第几个一百天'>第几个一百天<br>
+    <input type='radio' name='sound' value='祝你一路顺'>祝你一路顺<br>
+    <input type='radio' name='sound' value='追风少年'>追风少年<br>
+    <input type='radio' name='sound' value='转弯'>转弯<br>
+    <input type='radio' name='sound' value='如果缘只到遇见'>如果缘只到遇见<br>
+    <input type='radio' name='sound' value='死心不息'>死心不息<br>
+    <input type='radio' name='sound' value='蓦然回首'>蓦然回首<br>
+    <input type='radio' name='sound' value='爱你的我今天长这样'>爱你的我今天长这样<br>
+    <input type='radio' name='sound' value='大城小爱123'>大城小爱123<br>
+    <input type='radio' name='sound' value='你不知道的事'>你不知道的事<br>
+    <input type='radio' name='sound' value='改变自己'>改变自己<br>
+    <input type='radio' name='sound' value='十二生肖'>十二生肖<br>
+    <input type='radio' name='sound' value='星光'>星光<br>
+    <input type='radio' name='sound' value='青山不争'>青山不争<br>
+    <input type='radio' name='sound' value='再不疯狂我们就老了'>再不疯狂我们就老了<br>
+    <input type='radio' name='sound' value='最美的期待'>最美的期待<br>
+    <input type='radio' name='sound' value='倒数'>倒数<br>
+    <input type='radio' name='sound' value='closer123'>closer123<br>
+    <input type='radio' name='sound' value='the_right_path'>the_right_path<br>
+    <input type='radio' name='sound' value='瞬间的永恒123'>瞬间的永恒123<br>
+    <input type='radio' name='sound' value='安静的午后'>安静的午后<br>
+    <input type='radio' name='sound' value='love_yourself_justin'>love_yourself_justin<br>
+    <input type='radio' name='sound' value='rush'>rush<br>
+    <input type='radio' name='sound' value='miracle'>miracle<br>
+    <input type='radio' name='sound' value='we_will_roc_you'>we_will_roc_you<br>
+    <input type='radio' name='sound' value='在你身边123'>在你身边123<br>
+    <input type='radio' name='sound' value='羡慕风羡慕雨'>羡慕风羡慕雨<br>
+    <input type='radio' name='sound' value='珊瑚海123'>珊瑚海123<br>
+    <input type='radio' name='sound' value='喜欢你123'>喜欢你123<br>
+    <input type='radio' name='sound' value='not_a_single_day'>not_a_single_day<br>
+    <input type='radio' name='sound' value='loves_me_not'>loves_me_not<br>
+    <input type='radio' name='sound' value='ten7岁的季节'>ten7岁的季节<br>
+    <input type='radio' name='sound' value='为什么受伤的总是我'>为什么受伤的总是我<br>
+    <input type='radio' name='sound' value='beautiful_in_white'>beautiful_in_white<br>
+    <input type='radio' name='sound' value='you_raise_me_up'>you_raise_me_up<br>
+    <input type='radio' name='sound' value='i_lay_my_love_for_youu'>i_lay_my_love_for_you<br>
+    <input type='radio' name='sound' value='i_need_you123'>i_need_you123<br>
+    <input type='radio' name='sound' value='when_you_come_around'>when_you_come_around<br>
+    <input type='radio' name='sound' value='swear_it_again'>swear_it_again<br>
+    <input type='radio' name='sound' value='home_123'>home_123<br>
+    <input type='radio' name='sound' value='fool_again'>fool_again<br>
+    <input type='radio' name='sound' value='i_have_a_dream'>i_have_a_dream<br>
+    <input type='radio' name='sound' value='flying_without_wings'>flying_without_wings<br>
+    <input type='radio' name='sound' value='dreams_come_true'>dreams_come_true<br>
+    <input type='radio' name='sound' value='i_get_weak'>i_get_weak<br>
+    <input type='radio' name='sound' value='sound_of_a_broken_heart'>sound_of_a_broken_heart<br>
+    <input type='radio' name='sound' value='you_light_up_my_life'>you_light_up_my_life<br>
+    <input type='radio' name='sound' value='when_you_tell_me'>when_you_tell_me<br>
+    <input type='radio' name='sound' value='destiny'>destiny<br>
+    <input type='radio' name='sound' value='library'>library<br>
+    <input type='radio' name='sound' value='gee'>gee<br>
+    <input type='radio' name='sound' value='honey_h'>honey_h<br>
+    <input type='radio' name='sound' value='说出愿望吧'>说出愿望吧<br>
+    <input type='radio' name='sound' value='bad_girl'>bad_girl<br>
+    <input type='radio' name='sound' value='犯贱'>犯贱<br>
+    <input type='radio' name='sound' value='客居不可以'>客居不可以<br>
+    <input type='radio' name='sound' value=' 红装'>红装<br>
+
+    <input type='radio' name='sound' value='默_live'>默_live<br>
+    <input type='radio' name='sound' value='雨爱_张_live'>雨爱_张_live<br>
+    <input type='radio' name='sound' value='迷途的孤鸟'>迷途的孤鸟<br>
+    <input type='radio' name='sound' value='被动'>被动<br>
+    <input type='radio' name='sound' value='北国之春'>北国之春<br>
+    <input type='radio' name='sound' value='雪山飞狐'>雪山飞狐<br>
+    <input type='radio' name='sound' value='月光水岸'>月光水岸<br>
+    <input type='radio' name='sound' value='春天的故事'>春天的故事<br>
+    <input type='radio' name='sound' value='爱尔兰风笛'>爱尔兰风笛<br>
+    <input type='radio' name='sound' value='美丽的神话'>美丽的神话<br>
+    <input type='radio' name='sound' value='太多'>太多<br>
+    <input type='radio' name='sound' value='小曲好唱口难开'>小曲好唱口难开<br>
+    <input type='radio' name='sound' value='小城故事'>小城故事<br>
+    <input type='radio' name='sound' value='十送红军'>十送红军<br>
+    <input type='radio' name='sound' value='你是风儿我是沙'>你是风儿我是沙<br>
+    <input type='radio' name='sound' value='静静的雪'>静静的雪<br>
+    <input type='radio' name='sound' value='大自然情诗'>大自然情诗<br>
+    <input type='radio' name='sound' value='萍聚'>萍聚<br>
+    <input type='radio' name='sound' value='breakout'>breakout<br>
+    <input type='radio' name='sound' value='迟来的爱'>迟来的爱<br>
+    <input type='radio' name='sound' value='边疆的清水清又纯'>边疆的清水清又纯<br>
+    <input type='radio' name='sound' value='心雨'>心雨<br>
+    <input type='radio' name='sound' value='舞女'>舞女<br>
+    <input type='radio' name='sound' value='渴望'>渴望<br>
+    <input type='radio' name='sound' value='青藏高原'>青藏高原<br>
+    <input type='radio' name='sound' value='北京的金山上'>北京的金山上<br>
+    <input type='radio' name='sound' value='爱情才会赢'>爱情才会赢<br>
+    <input type='radio' name='sound' value='妈妈的吻'>妈妈的吻<br>
+    <input type='radio' name='sound' value='牧羊曲'>牧羊曲<br>
+    <input type='radio' name='sound' value='美酒加咖啡'>美酒加咖啡<br>
+    <input type='radio' name='sound' value='九九女儿红'>九九女儿红<br>
+    <input type='radio' name='sound' value='兰花草'>兰花草<br>
+    <input type='radio' name='sound' value='风含情水含笑'>风含情水含笑<br>
+    <input type='radio' name='sound' value='走着走着就散了'>走着走着就散了<br>
+    <input type='radio' name='sound' value='暖暖_梁'>暖暖_梁<br>
+    <input type='radio' name='sound' value='再见只是陌生人123'>再见只是陌生人123<br>
+    <input type='radio' name='sound' value='不再联系123'>不再联系123<br>
+    <input type='radio' name='sound' value='爱就爱了'>爱就爱了<br>
+    <input type='radio' name='sound' value='旅行的意义'>旅行的意义<br>
+    <input type='radio' name='sound' value='你爱我像谁'>你爱我像谁<br>
+    <input type='radio' name='sound' value='小手拉大手'>小手拉大手<br>
+    <input type='radio' name='sound' value='启程'>启程<br>
+    <input type='radio' name='sound' value='星空剪影'>星空剪影<br>
+    <input type='radio' name='sound' value='算你狠'>算你狠<br>
+    <input type='radio' name='sound' value='他不懂'>他不懂<br>
+    <input type='radio' name='sound' value='不甘'>不甘<br>
+    <input type='radio' name='sound' value='玫瑰少年1'>玫瑰少年<br>
+    <input type='radio' name='sound' value='输了你赢了世界又如何'>输了你赢了世界又如何<br>
+    <input type='radio' name='sound' value='萱草花'>萱草花<br>
+    <input type='radio' name='sound' value='说说话'>说说话<br>
+    <input type='radio' name='sound' value=' 问风'> 问风<br>
+    <input type='radio' name='sound' value='大碗宽面'>大碗宽面<br>
+    <input type='radio' name='sound' value='少年中国说'>少年中国说<br>
+    <input type='radio' name='sound' value='出现又离开'>出现又离开<br>
+    <input type='radio' name='sound' value='天下有情人'>天下有情人<br>
+    <input type='radio' name='sound' value=' 漠河舞厅'> 漠河舞厅<br>
+    <input type='radio' name='sound' value='永不失联的爱'>永不失联的爱<br>
+    <input type='radio' name='sound' value='一滴泪的时间'>一滴泪的时间<br>
+    <input type='radio' name='sound' value='黎明前的黑暗'>黎明前的黑暗<br>
+    <input type='radio' name='sound' value='我想要1'>我想要<br>
+    <input type='radio' name='sound' value='你是人间四月天'>你是人间四月天<br>
+    <input type='radio' name='sound' value='阿刁'>阿刁<br>
+    <input type='radio' name='sound' value='路过人间'>路过人间<br>
+    <input type='radio' name='sound' value='天后'>天后<br>
+    <input type='radio' name='sound' value='千年之恋'>千年之恋<br>
+    <input type='radio' name='sound' value='左手指月'>左手指月<br>
+    <input type='radio' name='sound' value='山茶花读不懂白玫瑰'>山茶花读不懂白玫瑰<br>
+    <input type='radio' name='sound' value='雪distance'>雪distance<br>
+    <input type='radio' name='sound' value='普通人生'>普通人生<br>
+    <input type='radio' name='sound' value='星空叙爱曲'>星空叙爱曲<br>
+    <input type='radio' name='sound' value='该死的泪'>该死的泪<br>
+    <input type='radio' name='sound' value='故犯'>故犯<br>
+    <input type='radio' name='sound' value='小河淌水'>小河淌水<br>
+    <input type='radio' name='sound' value='半山腰'>半山腰<br>
+    <input type='radio' name='sound' value='想你123'>想你123<br>
+    <input type='radio' name='sound' value='遐想'>遐想<br>
+    <input type='radio' name='sound' value='谁家'>谁家<br>
+    <input type='radio' name='sound' value='姑娘在远方'>姑娘在远方<br>
+    <input type='radio' name='sound' value='超123'>超123<br>
+    <input type='radio' name='sound' value='忏悔录123'>忏悔录123<br>
+    <input type='radio' name='sound' value='nuna'>nuna<br>
+    <input type='radio' name='sound' value='隆里电丝'>隆里电丝<br>
+    <input type='radio' name='sound' value='朋友圈'>朋友圈<br>
+    <input type='radio' name='sound' value='五百二十赫兹'>五百二十赫兹<br>
+    <input type='radio' name='sound' value='瞬'>瞬<br>
+    <input type='radio' name='sound' value='循迹'>循迹<br>
+    <input type='radio' name='sound' value='不再需要你'>不再需要你<br>
+    <input type='radio' name='sound' value='橘子'>橘子<br>
+    <input type='radio' name='sound' value='true123'>true123<br>
+    <input type='radio' name='sound' value='升到天空_坠入海底'>升到天空_坠入海底<br>
+    <input type='radio' name='sound' value='真的没喝多'>真的没喝多<br>
+    <input type='radio' name='sound' value='声音123'>声音123<br>
+    <input type='radio' name='sound' value='暧昧33天'>暧昧33天<br>
+    <input type='radio' name='sound' value='如果突然想起我'>如果突然想起我<br>
+    <input type='radio' name='sound' value='时间胶囊'>时间胶囊<br>
+    <input type='radio' name='sound' value='破茧'>破茧<br>
+    <input type='radio' name='sound' value='躲避的爱'>躲避的爱<br>
+    <input type='radio' name='sound' value='无公益_不长安'>无公益_不长安<br>
+    <input type='radio' name='sound' value='曼陀山庄'>曼陀山庄<br>
+    <input type='radio' name='sound' value='义勇军进行曲'>义勇军进行曲<br>
+    <input type='radio' name='sound' value='假装一分钟'>假装一分钟<br>
+    <input type='radio' name='sound' value='circle_of_life'>circle_of_life<br>
+    <input type='radio' name='sound' value='寂寞才说爱'>寂寞才说爱<br>
+    <input type='radio' name='sound' value='风吹麦浪'>风吹麦浪<br>
+    <input type='radio' name='sound' value='windy_hil'>windy_hil<br>
+    <input type='radio' name='sound' value='西楼别'>西楼别<br>
+    <input type='radio' name='sound' value='带你去旅行'>带你去旅行<br>
+    <input type='radio' name='sound' value='最熟悉的陌生人'>最熟悉的陌生人<br>
+    <input type='radio' name='sound' value='我叫长安_你叫故里'>我叫长安_你叫故里<br>
+    <input type='radio' name='sound' value='落在生命里的光'>落在生命里的光<br>
+    <input type='radio' name='sound' value='守在阳台的猫'>守在阳台的猫<br>
+    <input type='radio' name='sound' value='记忆停留'>记忆停留<br>
+    <input type='radio' name='sound' value='目光所及皆是你'>目光所及皆是你<br>
+    <input type='radio' name='sound' value='wuli'>雾里<br>
+    <input type='radio' name='sound' value='xiaqian'>下潜<br>
+    <input type='radio' name='sound' value='一眼光年'>一眼光年<br>
+    <input type='radio' name='sound' value='那就这样吧123'>那就这样吧123<br>
+    <input type='radio' name='sound' value='热情的沙漠'>热情的沙漠<br>
+
+    <input type='radio' name='sound' value='be_mine'>be_mine<br>
+    <input type='radio' name='sound' value='heejae'>heejae<br>
+    <input type='radio' name='sound' value='move_t5'>move_t5<br>
+    <input type='radio' name='sound' value='once_again'>once_again<br>
+    <input type='radio' name='sound' value='summer_comes'>summer_comes<br>
+    <input type='radio' name='sound' value='girls_h'>girls_h<br>
+    <input type='radio' name='sound' value='set_me_free'>set_me_free<br>
+    <input type='radio' name='sound' value='seesaw'>seesaw<br>
+    <input type='radio' name='sound' value='sneakers'>sneakers<br>
+    <input type='radio' name='sound' value='fearless_h'>fearless_h<br>
+    <input type='radio' name='sound' value='cigars_chu'>cigars_chu<br>
+    <input type='radio' name='sound' value='unthinkable'>unthinkable<br>
+    <input type='radio' name='sound' value='in_da_club'>in_da_club<br>
+    <input type='radio' name='sound' value='laugh_now_cry_late'>laugh_now_cry_late<br>
+    <input type='radio' name='sound' value='turn_down_for_what'>turn_down_for_what<br>
+    <input type='radio' name='sound' value='see_you_again_chun'>see_you_again_chun<br>
+    <input type='radio' name='sound' value='toccat'>toccat<br>
+    <input type='radio' name='sound' value='give_me_your_love'>give_me_your_love<br>
+    <input type='radio' name='sound' value='empire_state_of_mind'>empire_state_of_mind<br>
+    <input type='radio' name='sound' value='spring'>spring<br>
+    <input type='radio' name='sound' value='introduction'>introduction<br>
+    <input type='radio' name='sound' value='breezin'>breezin<br>
+    <input type='radio' name='sound' value='classic'>classic<br>
+    <input type='radio' name='sound' value='rain'>rain<br>
+    <input type='radio' name='sound' value='lean_back'>lean_back<br>
+    <input type='radio' name='sound' value='lost_without_you'>lost_without_you<br>
+    <input type='radio' name='sound' value='fur_elise'>fur_elise<br>
+    <input type='radio' name='sound' value='street_violin'>street_violin<br>
+    <input type='radio' name='sound' value='black_and_yellow'>black_and_yellow<br>
+    <input type='radio' name='sound' value='without_words'>without_words<br>
+    <input type='radio' name='sound' value='because_of_you_chun'>because_of_you_chun<br>
+    <input type='radio' name='sound' value='a_thousand_miles'>a_thousand_miles<br>
+    <input type='radio' name='sound' value='秋水悠悠'>秋水悠悠<br>
+    <input type='radio' name='sound' value='collapsing_world'>collapsing_world<br>
+    <input type='radio' name='sound' value='秋的思念'>秋的思念<br>
+    <input type='radio' name='sound' value='the_sounds_of_silence'>the_sounds_of_silence<br>
+    <input type='radio' name='sound' value='sakura_tear'>sakura_tear<br>
+    <input type='radio' name='sound' value='青空'>青空<br>
+    <input type='radio' name='sound' value='瞬间的永恒'>瞬间的永恒<br>
+    <input type='radio' name='sound' value='城南花已开'>城南花已开<br>
+    <input type='radio' name='sound' value='we_like_two_party'>we_like_two_par<br>
+    <input type='radio' name='sound' value='pop123'>pop123<br>
+    <input type='radio' name='sound' value='love_dive'>love_dive:<br>
+    <input type='radio' name='sound' value='talk_that_talk'>talk_that_talk<br>
+    <input type='radio' name='sound' value='cold_winte'>cold_winte<br>
+    <input type='radio' name='sound' value='i_am_h'>i_am_h<br>
+    <input type='radio' name='sound' value='cupid'>cupid<br>
+    <input type='radio' name='sound' value='knock_h'>knock_h<br>
+    <input type='radio' name='sound' value='i_want_h'>i_want_h<br>
+    <input type='radio' name='sound' value='zoom_h'>zoom_h<br>
+    <input type='radio' name='sound' value='kitsch'>kitsch<br>
+    <input type='radio' name='sound' value='friend_the_end'>friend_the_end<br>
+    <input type='radio' name='sound' value='in_the_novel'>in_the_novel<br>
+    <input type='radio' name='sound' value='let_me_love_you_h'>let_me_love_you_h:<br>
+    <input type='radio' name='sound' value='only_one_person'>only_one_person<br>
+    <input type='radio' name='sound' value='口己'>口己<br>
+    <input type='radio' name='sound' value='teddy_bea'>teddy_bea<br>
+    <input type='radio' name='sound' value='ride_or_die'>ride_or_di<br>
+    <input type='radio' name='sound' value='love_me_like_this'>love_me_like_this<br>
+    <input type='radio' name='sound' value='underwater_h'>underwater_h<br>
+    <input type='radio' name='sound' value='邱正'>邱正<br>
+    <input type='radio' name='sound' value='generation_h'>generation_h<br>
+    <input type='radio' name='sound' value='nanana_h'>nanana_h<br>
+    <input type='radio' name='sound' value='roller_coaster'>roller_coaster<br>
+    <input type='radio' name='sound' value='good_boy_gone_bad'>good_boy_gone_bad<br>
+    <input type='radio' name='sound' value='maniac'>maniac<br>
+    <input type='radio' name='sound' value='life_goes_on'>life_goes_on<br>
+    <input type='radio' name='sound' value='love_countdown'>love_countdown<br>
+    <input type='radio' name='sound' value='poppy'>poppy<br>
+    <input type='radio' name='sound' value='young_dumb_stupid'>young_dumb_stupid<br>
+    <input type='radio' name='sound' value='for_couple'>for_couple<br>
+    <input type='radio' name='sound' value='slience'>slience<br>
+    <input type='radio' name='sound' value='the_flash'>the_flash<br>
+    <input type='radio' name='sound' value='不远不近'>不远不近<br>
+    <input type='radio' name='sound' value='晚'>晚<br>
+    <input type='radio' name='sound' value='想不通'>想不通<br>
+    <input type='radio' name='sound' value='归还人海'>归还人海<br>
+    <input type='radio' name='sound' value='妥协'>妥协<br>
+    <input type='radio' name='sound' value='三千雪'>三千雪<br>
+    <input type='radio' name='sound' value='恋爱味道' 恋爱味道><br>
+    <input type='radio' name='sound' value='独一无二'>独一无二<br>
+    <input type='radio' name='sound' value='出逃'>出逃<br>
+    <input type='radio' name='sound' value='送你'>送你<br>
+    <input type='radio' name='sound' value='患者'>患者<br>
+    <input type='radio' name='sound' value='白日造梦'>白日造梦<br>
+    <input type='radio' name='sound' value='此去123'>此去123<br>
+    <input type='radio' name='sound' value='狐狸的童话'>狐狸的童话<br>
+    <input type='radio' name='sound' value='予爱'>予爱<br>
+    <input type='radio' name='sound' value='孤单治愈'>孤单治愈<br>
+    <input type='radio' name='sound' value='郎中'>郎中<br>
+    <input type='radio' name='sound' value='九九二'>九九二<br>
+    <input type='radio' name='sound' value='young_love'>young_love<br>
+    <input type='radio' name='sound' value='新时代'>新时代<br>
+    <input type='radio' name='sound' value='嘘头'>嘘头<br>
+    <input type='radio' name='sound' value='花塔'>花塔<br>
+    <input type='radio' name='sound' value='分上'>分上<br>
+    <input type='radio' name='sound' value='moon_halo'>moon_halo<br>
+    <input type='radio' name='sound' value='我多想拥抱'>我多想拥抱<br>
+    <input type='radio' name='sound' value='一首跨越时间的歌'>一首跨越时间的歌<br>
+    <input type='radio' name='sound' value='逆光'>逆光<br>
+    <input type='radio' name='sound' value='恋爱脑'>恋爱脑<br>
+    <input type='radio' name='sound' value='一吻天荒123'>一吻天荒(片段版)<br>
+    <input type='radio' name='sound' value='记忆时空'>记忆时空<br>
+    <input type='radio' name='sound' value='不让我的眼泪陪我过夜'>不让我的眼泪陪我过夜<br>
+    <input type='radio' name='sound' value='照亮'>照亮<br>
+    <input type='radio' name='sound' value='无拘'>无拘<br>
+    <input type='radio' name='sound' value='流沙'>流沙<br>
+    <input type='radio' name='sound' value='心之火'>心之火<br>
+    <input type='radio' name='sound' value='三菜一汤'>三菜一汤<br>
+    <input type='radio' name='sound' value='你不知道的事'>你不知道的事<br>
+    <input type='radio' name='sound' value='别怕我伤心'>别怕我伤心<br>
+    <input type='radio' name='sound' value='海芋恋'>海芋恋<br>
+    <input type='radio' name='sound' value='你要的爱'>你要的爱<br>
+    <input type='radio' name='sound' value='爱相随123'>爱相随123<br>
+    <input type='radio' name='sound' value='唯一'>唯一<br>
+    <input type='radio' name='sound' value='挚友'>挚友<br>
+    <input type='radio' name='sound' value='亲爱的对象'>亲爱的对象<br>
+    <input type='radio' name='sound' value='别叫我达芬奇'>别叫我达芬奇<br>
+    <input type='radio' name='sound' value='我们都拥有海洋'>我们都拥有海洋<br>
+    <input type='radio' name='sound' value='达尔文'>达尔文<br>
+    <input type='radio' name='sound' value='恋爱的循环'>恋爱的循环<br>
+    <input type='radio' name='sound' value='心安的屋檐'>心安的屋檐<br>
+    <input type='radio' name='sound' value='流浪记'>流浪记<br>
+    <input type='radio' name='sound' value='念奴娇_中秋'>念奴娇_中秋<br>
+    <input type='radio' name='sound' value='whitespace'>空白格<br>
+    <input type='radio' name='sound' value='可惜不是你'>可惜不是你<br>
+    <input type='radio' name='sound' value='yicijiuhao'>一次就好<br>
+    <input type='radio' name='sound' value='liangliang'>凉凉<br>
+    <input type='radio' name='sound' value='yangcong'>洋葱<br>
+    <input type='radio' name='sound' value='我想要'>我想要<br>
+    <input type='radio' name='sound' value='我的心太乱了'>我的心太乱了<br>
+    <input type='radio' name='sound' value='篇章'>篇章<br>
+    <input type='radio' name='sound' value='诀爱'>诀爱<br>
+    <input type='radio' name='sound' value='晚风作酒123'>晚风作酒<br>
+    <input type='radio' name='sound' value='buy_dirt'>Buy Dirt<br>
+    <input type='radio' name='sound' value='mercury'>mercury<br>
+    <input type='radio' name='sound' value='命运的思量'>命运的思量<br>
+    <input type='radio' name='sound' value='微微_铃声版'>微微(铃声版)<br>
+    <input type='radio' name='sound' value='游山恋'>游山恋<br>
+    <input type='radio' name='sound' value='勇往直前'>勇往直前<br>
+    <input type='radio' name='sound' value='起风了_林'>起风了(林俊杰)<br>
+    <input type='radio' name='sound' value='butterfly123'>butterfly123<br>
+    <input type='radio' name='sound' value='ferrari'>ferrari<br>
+    <input type='radio' name='sound' value='生而平凡'>生而平凡<br>
+    <input type='radio' name='sound' value='听'>听<br>
+    <input type='radio' name='sound' value='难却'>难却<br>
+    <input type='radio' name='sound' value='就忘了吧'>就忘了吧<br>
+    <input type='radio' name='sound' value='风雨飘散'>风雨飘散<br>
+    <input type='radio' name='sound' value='中意你'>中意你<br>
+    <input type='radio' name='sound' value='等不来花开'>等不来花开<br>
+    <input type='radio' name='sound' value='把回忆拼好给你123'>把回忆拼好给你123<br>
+    <input type='radio' name='sound' value='everytime_we_touch'>everytime_we_touch<br>
+    <input type='radio' name='sound' value='莫问'>莫问<br>
+    <input type='radio' name='sound' value='剑魂'>剑魂<br>
+    <input type='radio' name='sound' value='很任性'>很任性<br>
+    <input type='radio' name='sound' value='逃之夭夭'>逃之夭夭<br>
+    <input type='radio' name='sound' value='我们的歌'>我们的歌<br>
+    <input type='radio' name='sound' value='你的眼神'>你的眼神<br>
+    <input type='radio' name='sound' value='大花轿'>大花轿<br>
+    <input type='radio' name='sound' value='赐我'>赐我<br>
+    <input type='radio' name='sound' value='不问ciaga'>不问ciaga<br>
+    <input type='radio' name='sound' value='baby_i_love_you'>Baby I Love You<br>
+    <input type='radio' name='sound' value='偷了黄昏的酒'>偷了黄昏的酒<br>
+    <input type='radio' name='sound' value='爱情指南'>爱情指南<br>
+    <input type='radio' name='sound' value='当我娶过她'>当我娶过她<br>
+    <input type='radio' name='sound' value='三生三幸'>三生三幸<br>
+    <input type='radio' name='sound' value='在他乡'>在他乡<br>
+    <input type='radio' 。name='sound' value='须尽欢'>须尽欢<br>
+    <input type='radio' name='sound' value='花轿里的人'>花轿里的人<br>
+    <input type='radio' name='sound' value='折风渡夜'>折风渡夜<br>
+    <input type='radio' name='sound' value='五十二度的酒37度的手'>52度的酒37度的手<br>
+    <input type='radio' name='sound' value='月老掉线'>月老掉线<br>
+    <input type='radio' name='sound' value='moves_like_jagger'>Moves Like Jagger<br>
+    <input type='radio' name='sound' value='在你身边'>在你身边<br>
+    <input type='radio' name='sound' value='i_am_you'>I am you<br>
+    <input type='radio' name='sound' value='pontoon'>Pontoon<br>
+    <input type='radio' name='sound' value='mr_jones'>M Jones<br>
+    <input type='radio' name='sound' value='heat_waves'>Heat Waves<br>
+    <input type='radio' name='sound' value='bless_the_broken_road'>Bless The Broken Road<br>
+    <input type='radio' name='sound' value='christmas_is_canceled'>Christmas is cancelled<br>
+    <input type='radio' name='sound' value='rosanna'>Rosanna<br>
+    <input type='radio' name='sound' value='africa'>Africa<br>
+    <input type='radio' name='sound' value='watermelon_sugar'>Watermelon Sugar<br>
+    <input type='radio' 。name='sound' vale='给你一瓶魔法药水'>给你一瓶魔法药水<br>
+    <input type='radio' name='sound' value='向云端'>向云端<br>
+    <input type='radio' name='sound' value='若把你'>若把你<br>
+    <input type='radio' name='sound' value='merry_christmas'>Merry Christmas<br>
+    <input type='radio' name='sound' value='你要的全拿走live'>你要的全拿走live<br>
+    <input type='radio' name='sound' value='账号已注销'>账号已注销<br>
+    <input type='radio' name='sound' value='是妈妈是女儿'>是妈妈是女儿<br>
+    <input type='radio' name='sound' value='sea_of_problems'>Sea Of Problems<br>
+    <input type='radio' name='sound' value='爱上你是一个错'>爱上你是一个错<br>
+    <input type="radio" name='sound' value='耍把戏'>耍把戏<br>
+    <input type='radio' name='sound' value='爱如火'>爱如火<br>
+    <input type='radio' name='sound' value='不问'>不问<br>
+    <inout type='radio' name='sound' value='我也常常问自己'>我也常常问自己<br>
       <input type='radio' name='sound' value='人间惊鸿客'>人间惊鸿客<br>
       <input type='radio' name='sound' value='一曲相思'>一曲相思<br>
-      <input type='radio'  name='sound' value='旧梦'>旧梦<br>
+      <input type='radio' name='sound' value='旧梦'>旧梦<br>
       <input type='radio' name='sound' value='情字最大'>情字最大<br>
       <input type='radio' name='sound' value='太想念'>太想念<br>
       <input type='radio' name='sound' value=''><br>
@@ -574,9 +596,9 @@
       <input type='radio' name='sound' value='danger_zone'>Danger Zone<br>
       <input type='radio' name='sound' value='you_cant'>You Can't<br>
       <input type='radio' name='sound' value='太想念'>太想念<br>
-      <input type='radio'。name='sound' value='爱似水仙'>花似水仙<br>
+      <input type='radio' 。name='sound' value='爱似水仙'>花似水仙<br>
       <input type='radio' name='sound' value='曲中人'>曲中人<br>
-     <input type='radio' name='sound' value='群青'>群青<br>
+      <input type='radio' name='sound' value='群青'>群青<br>
       <input type='radio' name='sound' value='goldfish_memory'>Goldfish Memory<br>
       <input type='radio' name='sound' value='越过寒冬与你相拥'>越过寒冬与你相拥<br>
       <input type='radio' name='sound' value='苦茶子'>苦茶子<br>
@@ -594,7 +616,7 @@
       <input type='radio' name='sound' value='always_online'>Always Online<br>
       <input type='radio' name='sound' value='想见你123'>想见你想见你想见你<br>
       <input type='radio' name='sound' value='千里之外'>千里之外<br>
-      <input type='radio'，name='sound' value='出现又离开'>出现又离开<br >
+      <input type='radio' ，name='sound' value='出现又离开'>出现又离开<br>
       <input type='radio' name='sound' value='夏天的风123'>夏天的风<br>
       <input type='radio' name='sound' value='solo'>Solo<br>
       <input type='radio' name='sound' value='melancholy'>melancholy<br>
@@ -635,682 +657,683 @@
       <input type='radio' name='sound' value='friendships'>Friendships<br>
       <input type='radio' name='sound' value='light_it_up'>Light It Up<br>
       <ibput type='radio' name='sound' value='where_is_your_love'>Where Is Your Love<br>
-      <input type='radio' name='sound' value='end_of_the_night'>End Of The Night<br>
-      <input type='radio' name='sound' value='play'>Play(k-391)<br>
-      <input type='radio' name='sound' value='time_to_pretend'>Time To Pretend<br>
-      <input type='radio' name='sound' value='溯_reverse'>溯(Reverse)<br>
-      <input type='radio' name='sound' value='sth_just_like_this'>Something Just Like This<br>
-      <input type='radio' name='sound' value='ee0'>0EE<br>
-      <input type='radio' name='sound' value='lost_control'>Lost Control<br>
-      <input type='radio' name='sound' value='legends_never_die'>Legends Never Die<br>
-      <input type='radio' name='sound' value='heater_1'>Heater-1<br>
-      <input type='radio' name='sound' value='the_rythm'>The Rhythm Of My Heart<br>
-      <input type='radio' name='sound' value='Horizon'>Horizon<br>
-      <input type='radio' name='sound' value='outside'>Outside<br>
-      <input type='radio' name='sound' value='lgnite'>Lgnite<br>
-      <input type='radio' name='sound' value=just_like_this>Just Like This<br>
-      <input type='radio' name='sound' value='larg'>Larg<br>
-      <input type='radio' name='sound' value='the_spectre'>The Spectre<br>
-      <input type='radio' name='sound' value='dont_touch'>Don't Touch<br>
-      <input type='radio' name='sound' value='astronomia'>Astronomia<br>
-      <input type='radio' name='sound' value='this_far'>This Far<br>
-      <input type='radio' name='sound' value='run_free'>Run Free<br>
-      <input type='radio' name='sound' value='reality'>Reality<br>
-      <input type='radio' name='sound' value='Skin'>Skin<br>
-      <input type='radio' name='sound' value='waiting_for_love'>Waiting For Love<br>
-      <input type='radio' name='sound' value='salt'>Salt<br>
-      <input type='radio' name='sound' value='please_dont_go'>Please Don't Go<br>
-      <input type='radio' name='sound' value='Alone'>Alone<br>
-      <input type='radio' name='sound' value='野狼disco1'>野狼disco<br>
-      <input type='radio' name='sound' value='back_to_december'>Back T December<br>
-      <input type='radio' name='sound' value='you_belong_with_me123'>You Belong With Me<br>
-      <input type='radio' name='sound' value='放松身心'>放松身心<br>
-      <input type='radio' name='sound' value='bye333'>Bye Bye Bye<br>
-      <input type='radio' name='sound' value='不再是朋友'>不再是朋友<br>
-      <input type='radio' name='sound' value='如果我是DJ'>如果我是DJ,你会爱我吗?<br>
-      <input type='radio' name='sound' value='嗜好'>嗜好<br>
-      <input type='radio' name='sound' value='together123'>Together<br>
-      <input type='radio' name='sound' value='拳似天下'>拳似天下<br>
-      <input type='radio' name='sound' value='跳飞机'>跳飞机<br>
-      <input type='radio' name='sound' value='悟空'>悟空<br>
-      <input type='radio' name='sound' value='功课'>功课<br>
-      <input type='radio' name='sound' value='当年情'>当年情<br>
-      <input type='radio' name='sound' value='我生'>我生<br>
-      <input type='radio' name='sound' value='往生'>往生<br>
-      <input type='radio' name='sound' value='爱是永恒'>爱是永恒<br>
-      <input type='radio' name='sound' value='年年有今'>年年有今<br>
-      <input type='radio' name='sound' value='爱与城'>爱与城<br>
-      <input type='radio' name='sound' value='秋冷了月光'>秋冷了月光<br>
-      <input type='radio' name='sound' value='来年来日'>来年来日<br>
-      <input type='radio' name='sound' value='夜空的精灵'>夜空的精灵<br>
-      <input type='radio' name='sound' value='不要说你不知道'>不要说你不知道<br>
-      <onput type='radio' name='sound' value='在这离别时候'>在这离别时候<br>
-      <input type='radio' name='sound' value='欢乐今宵'>欢乐今宵<br>
-      <input type='radio' name='sound' value='必杀技'>必杀技<br>
-      <input type='radio' name='sound' value='当爱已成往事'>当爱已成往事<br>
-      <input type='radio' name='sound' value='像朋友一样'>像朋友一样<br>
-      <input type='radio' name='sound' value='许愿'>许愿<br>
-      <input type='radio' name='sound' value='友共情'>友共情<br>
-      <input type='radio' name='sound' value='匆匆那年'>匆匆那年<br>
-      <input type='radio' name='sound' value='共同度过'>共同度过<br>
-      <input type='radio' name='sound' value='dear_leslie'>Dear Leslie<br>
-      <input type='radio' name='sound' value='小明星'>小明星</br>
-      <input type='radio' name='sound' value='一生所爱'>一生所爱<br>
-      <input type='radio' name='sound' value='情歌王123'>情歌王<br>
-      <input type='radio' name='sound' value='假如爱有天意'>假如爱有天意<br>
-      <input type='radio' name='sound' value='几万光年'>几万光年<br>
-      <input type='radio' name='sound' value='爱降落在'>爱降落在<br>
-      <input type='radio' name='sound' value='ring123'>Ring Ring Ring<br>
-      <input type='radio' name='sound' value='下个路口再见吧'>下个路口再见吧<br>
-      <input type='radio' name='sound' value='心跳的证明'>心跳的证明<br>
-      <input type='radio' name='sound' value='陨落'>陨落<br>
-      <input type='radio' name='sound' value='父亲'>父亲<br>
-      <input type='radio' name='sound' value='明天是否还是爱我'>明天是否还是爱我<br>
-      <input type='radio' name='sound' value='让我欢喜让我忧'>让我欢喜让我忧<br>
-      <input type='radio' name='sound' value='风中的承诺'>风中的承诺<br>
-      <input type='radio' name='sound' value='玻璃心'>玻璃心<br>
-      <input type='radio' name='sound' value='只要你过得比我好'>只要你过得比我好<br>
-      <input type='radio' name='sound' value='让我一次爱个够'>让我一次爱个够<br>
-      <input type='radio' name='sound' value='驿动的心'>驿动的心<br>
-      <input type='radio' name='sound' value='风继续吹'>风继续吹<br>
-      <input type='radio' name='sound' value='一场游戏一场梦'>一场游戏一场梦<br>
-      <input type='radio' name='sound' value='爱情故事'>爱情故事<br>
-      <input type='radio' name='sound' value='all_for_you'>All For You<br>
-      <input type='radio' name='sound' value='warriors'>Warriors<br>
-      <input type='radio' name='sound' value='gold'>Gold<br>
-      <input type='radio' name='sound' value='second_chances'>Second Chances<br>
-      <input type='radio' name='sound' value='summer'>Summer<br>
-      <input type='radio' name='sound' value='thunder'>Thunder<br>
-      <input type='radio' name='sound' value='i_am_so_sorry'>I Am So Sorry<br>
-      <input type='radio' name='sound' value='enemy'>Enemy<br>
-      <input type='radio' name='sound' value='monster'>Monster<br>
-      <input type='radio' name='sound' value='believer'>Bliever<br>
-      <input type='radio' name='sound' value='我的大学'>我的大学<br>
-      <input type='radio' name='sound' value='睡在我上铺的兄弟'>睡在我上铺的兄弟<br>
-      <input type='radio' name='sound' value='好久不见'>好久不见<br>
-      <input type='radio' name='sound' value='偏偏喜欢你'>偏偏喜欢你<br>
-      <input type='radio' name='sound' value='浮夸'>浮夸<br>
-      <input type='radio' name='sound' value='如果当时'>如果当时<br>
-      <input type='radio' name='sound' value='星语心愿'>星语心愿<br>
-      <input type='radio' name='sound' value='留什么给你'>留什么给你<br>
-      <input type='radio' name='sound' value='少年游'>少年游<br>
-      <input type='radio' name='sound' value='jingle_bells'>Jingle Bells<br>
-      <input type='radio' name='sound' value='记得_心墙_当你'>记得_心墙_当你<br>
-      <input type='radio' name='sound' value='当你'>当你<br>
-      <input type='radio' name='sound' value='偏爱'>偏爱<br>
-      <input type='radio' name='sound' value='背对背拥抱123'>背对背拥抱<br>
-      <input type='radio' name='sound' value='流动的城市'>流动的城市<br>
-      <input type='radio' name='sound' value='空灵'>空灵<br>
-      <input type='radio' name='sound' value='菊次郎的夏天'>菊次郎的夏天<br>
-      <input type='radio' name='sound' value='intro_the_xx'>Intro(The XX)<br>
-      <input type='radio' name='sound' value='一个人的时光'>一个人的时光<br>
-      <input type='radio' name='sound' value='森林狂想曲'>森林狂想曲<br>
-      <input type='radio' name='sound' value='绿野仙踪'>绿野仙踪<br>
-      <input type='radio' name='sound' value='snowdreams'>SnowDreams<br>
-      <input type='radio' name='sound' value='childhood_memory'>Childhood Memory<br>
-      <input type='radio' name='sound' value='琵琶语'>琵琶语<br>
-      <input type='radio' name='sound' value='kiss_the_rain'>Kiss The Rain<br>
-      <input type='radio' name='sound' value='the_truth_that_you_leave'>The Truth That You Leave<br>
-      <input type='radio', name='sound' value='move_your_body'>Move Your Body<br>
-      <input type='radio' name='sound' value='就让我爱你'>就让我爱你<br>
-      <input type='radio' name='sound' value='笑纳'>笑纳<br>
-      <input type='radio' name='sound' value='that_girl'>That Girl<br>
-      <input type='radio' name='sound' value='roll123'>Rolling In The Deep<br>
-      <input type='radio' name='sound' value='wide_open_spaces'>Wide Open Space<br>
-      <input type='radio' name='sound' value='lucky123'>Lucky<br>
-      <input type='radio' name='sound' value='enchanted'>Enchanted<br>
-      <input type='radio' name='sound' value='stay_here_forever'>Stay Here Forever<br>
-      <input type='radio' name='sound' value='santa_baby'>Santa Baby<br>
-      <input type='radio' name='sound' value='try123'>Try<br>
-      <input type='radio' name='sound' value='蒙娜丽莎的眼泪'>蒙娜丽莎的眼泪<br>
-      <input type='radio' name='sound' value='apologize'>Apologize<br>
-      <input type='radio' name='sound' value='wonderful_tonight'>Wonderful Tonight<br>
-      <input type='radio' name='sound' value='set_fire_to_the_rain'>Set Fire To The Rain<br>
-      <input type='radio' name='sound' value='tears_in_heaven'>Tears In Heaven<br>
-      <input type='radio' name='sound' value='some_dreams'>Some Dreams<br>
-      <input type='radio' name='sound' value='南山南'>南山南<br>
-      <input type='radio' name='sound' value='speak_now'>Speak Now<br>
-      <input type='radio' name='sound' value='what_you_say_anything_at_all'>What You Say Anything At All<br>
-      <input type='radio' name='sound' value='good_time'>Good Time<br>
-      <input type='radio' name='sound' value='bucket'>Bucket<br>
-      <input type='radio' name='sound' value='call_me_maybe'>Call Me Maybe<br>
-      <input type='radio' name='sound' value='the_one'>The One<br>
-      <input type='radio' name='sound' value='物是人非'>物是情非<br>
-      <input type='radio' name='sound' value='刹那芳华曲'>刹那芳华曲<br>
-      <input type='radio' name='sound' value='intro'>Intro<br>
-      <input type='radio' name='sound' value='何必再问'>何必再问<br>
-      <input type='radio' name='sound' value='给你一瓶魔法的药水'>给你一瓶魔法的药水<br>
-      <input type='radio' name='sound' value='爱怎么了'>爱怎么了<br>
-      <input type='radio' name='sound' value='亲爱的下雨了'>亲爱的下雨了<br>
-      <input type='radio' name='sound' value='野花做了场玫瑰的梦'>野花做了场玫瑰的梦<br>
-      <input type='radio' name='sound' value='生命之书'>生命之书<br>
-      <input type='radio' name='sound' value='相思渡口'>相思渡口<br>
-      <input type='radio' name='sound' value='一花一剑'>一花一剑<br>
-      <input type='radio' name='sound' value='江山雪'>江山雪<br>
-      <input type='radio' name='sound' value='英雄联盟各英雄配音'>英雄联盟各英雄配音<br>
-      <input type='radio' name='sound' value='太极韵'>太极韵<br>
-      <input type='radio' name='sound' value='满庭芳'>满庭芳<br>
-      <input type='radio' name='sound' value='千万个我'>千万个我<br>
-      <input type='radio' name='sound' value='哪里都是你'>哪里都是你<br>
-      <input type='radio' name='sound' value='三两三'>三两三<br>
-      <input type='radio' name='sound' value='绝望的生鱼片'><br>
-      <input type='radio' name='sound' value='爱如火'>爱如火<br>
-      <input type='radio' name='sound' value='乌兰巴托的夜'>乌兰巴托的夜<br>
-      <input type='radio' name='sound' value='爱情悬崖'>爱情悬崖<br>
-      <input type='radio' name='sound' value='游戏'>游戏<br>
-      <input type='radio' name='sound' value='fake_love'>Fake Love<br>
-      <input type='radio' name='sound' value='翠花'>翠花<br>
-      <input type='radio' name='sound' value='假装一秒钟'>假装一秒钟<br>
-      <input type='radio' name='sound' value='好像失去了很多'>好像失去了很多<br>
-      <input type='radio' name='sound' value='浪人情歌'>浪人情歌<br>
-      <input type='radio' name='sound' value='痛哭的人'>痛哭的人<br>
-      <input type='radio' name='sound' value='再度重相逢'>再度重相逢</br>
-      <input type='radio' name='sound' value='挪威的森林'>挪威的森林<br>
-      <input type='radio' name='sound' value='方圆几里'>方圆几里<br>
-      <input type='radio' name='sound' value='我害怕'>我害怕<br>
-      <input type='radio' name='sound' value='哑巴'>哑巴<br>
-      <input type='radio' name='sound' value='认真的雪'>认真的雪<br>
-      <input type='radio' name='sound' value='刚刚好'>刚刚好<br>
-      <input type='radio' name='sound' value='怪咖'>怪咖<br>
-      <input type='radio' name='sound' value='突然的自我'>突然的自我<br>
-      <input type='radio' name='sound' value='你还要我怎样'>你还要我怎样<br>
-      <input type='radio' name='sound' value='丑八怪'>丑八怪<br>
-      <input type='radio' name='sound' value='每一次'>每一次<br>
-      <input type='radio' name='sound' value='我叫车静子'>我叫车静子<br>
-      <input type='radio' name='sound' value='让我们相爱'>让我们相爱<br>
-      <input type='radio' name='sound' value='爱情钢索'>爱情钢索<br>
-      <input type='radio' name='sound' value='寂寞才说爱'>寂寞才说爱<br>
-      <input type='radio' name='sound' value='曼陀山庄'>曼陀山庄<br>
-      <input type='radio' name='sound' value='everybody'>Everoybody<br>
-      <input type='radio' name='sound' value='need_you_now'>Need You Now<br>
-      <input type='radio' name='sound' value='mine_taylor'>Mine</br>
-      <input type='radio' name='sound' value='home_buble'></br>
-      <input type='radio' name='sound' value='shake_it_off'>Shake It Off</br>
-      <input type='radio' name='sound' value='free_loop'>Free Loop</br>
-      <input type='radio' name='sound' value='人前人后'>人前人后</br>
-      <input type='radio' name='sound' value='可惜我不够好'>可惜我不够好</br>
-      <input type='radio' name='sound' value='错爱'>错爱</br>
-      <input type='radio' name='sound' value='真的不容易'>真的不容易</br>
-      <input type='radio' name='sound' value='两个人的回忆一个人过'>两个人的回忆一起过</br>
-      <input type='radio' name='sound' value='再见只是陌生人'>再见只是陌生人</br>
-      <input type='radio' name='sound' value='探清水河'>探清水河</br>
-      <input type='radio' name='sound' value='下辈子不一定还能遇见你'>下辈子不一定还能遇见你</br>
-      <input type='radio' name='sound' value='求佛'>求佛</br>
-      <input type='radio' name='sound' value='别错过'>别错过</br>
-      <input type='radio' name='sound' value='大鱼'>大鱼</br>
-      <input type='radio' name='sound' value='一路生花1'>一路生花</br>
-      <input type='radio' name='sound' value='雨下一整晚'>雨下一整晚</br>
-      <input type='radio' name='sound' value='庐州月'>庐州月</br>
-      <input type='radio' name='sound' value='枫'>枫</br>
-      <input type='radio' name='sound' value='beautiful_day'>Beautiful Day</br>
-      <input type='radio' name='sound' value='with_or_without_you'>With Or Without You</br>
-      <input type='radio' name='sound' value='hours10000'>10,000 hours</br>
-      <input type='radio' name='sound' value='one_time1'>One Time</br>
-      <input type='radio' name='sound' value='as_long_as_you_love_me'>As Long As You Love Me</br>
-      <input type='radio' name='sound' value='boyfriend'>Boyfriend</br>
-      <input type='radio' name='sound' value='love_yourself'>Love Yourself</br>
-            <input type='radio' name='sound' value='step2'>2 Step</br>
-      <input type='radio' name='sound' value='sunburn'>Sunburn</br>
-      <input type='radio' name='sound' value='thinking_out_loud'>Thinking Out Loud</br>
-      <input type='radio' name='sound' value='photograph'>Photograph</br>
-      <input type='radio' name='sound' value='galway_girl'>Galway Girl</br>
-      <input type='radio' name='sound' value='perfect'>Perfect</br>
-      <input type='radio' name='sound' value='庆幸遇见你'>庆幸遇见你</br>
-      <input type='radio' name='sound' value='到底'>到底</br>
-      <input type='radio' name='sound' value='我会好好过'>我会好好过</br>
-      <input type='radio' name='sound' value='月伴湾'>月伴湾</br>
-      <input type='radio' name='sound' value='初恋'>初恋</br>
-      <input type='radio' name='sound' value='为你写下这首歌'>为你写下这首歌</br>
-      <input type='radio' name='sound' value='山樱花'>山樱花</br>
-      <input type='radio' name='sound' value='胆小鬼'>胆小鬼</br>
-      <input type='radio' name='sound' value='想太多'>想太多</br>
-      <input type='radio' name='sound' value='must_get_out'>Must Get Out</br>
-      <input type='radio' name='sound' value='cant_stop'>Cant Stop</br>
-      <input type='radio' name='sound' value='makes_me_wonder'>Makes Me Wonder</br>
-      <input type='radio' name='sound' value='tonight_bigbang'>TONIGHT(BIGBANG)</br>
-      <input type='radio' value='not_coming_home'>Not Coming Home</br>
-      <input type='radio' name='sound' value='story_maroon5'>Story(Maroon5)</br>
-      <input type='radio' name='sound' value='you_belong_with_me'>You Belong With Me</br>
-      <input type='radio' name='sound' value='me_taylor_swift'>Me(Taylor Swift)</br>
-      <input type='radio' name='sound' value='haunted'>Haunted</br>
-      <input type='radio' name='sound' value='your_face'>Your Face</br>
-      <input type='radio' name='sound' value='never_mind'>Never Mind</br>
-      <input type='radio' name='sound' value='better_off'>Better Off</br>
-      <input type='radio' name='sound' value='christmas_tree_farm'>Christmas Tree Farm</br>
-      <input type='radio' name='sound' value='august'>August</br>
-      <input type='radio' name='sound' value='glitch'>Glitch</br>
-      <input type='radio' name='sound' value=''></br>
-      <input type='radio' name='sound' value='fearless'>Fearless</br>
-      <input type='radio' name='sound' value='invisible'>Invisible</br>
-      <input type='radio' name='sound' value='white_horse'>White Horse</br>
-      <input type='radio' name='sound' value='kama'>Kama(clean)</br>
-      <input type='radio'  name='sound' value='songs_about_you'>Songs About You</br>
-      <input type='radio' name='sound' value='wake_up_call'>Wake Up Call</br>
-      <input type='radio' name='sound' value='naked'>Naked</br>
-      <input type='radio' name='sound' value='the_sun'>The Sun</br>
-      <input type='radio' name='sound' value='give_a_little_more'>Give A Little More </br>
-      <input type='radio' name='sound' value=''></br>
-      <input type='radio' name='sound' value='shivers_maroon5'>Shivers(Maroon5)</br>
-      <input type='radio'  name='sound' value='move_like_jagger'>Move Like Jagger</br>
-      <input type='radio' name='sound' value=''></br>
-      <input type='radio' name='sound' value='payphone'>PayPhone</br>    
-      <input type='radio' name='sound' value='逐梦青春'>逐梦青春</br>
-      <input type='radio' name='sound' value='千里之外'>千里之外(MIC)</br>
-      <input type='radio' name='sound' value='摩天轮'>摩天轮</br>
-      <input type='radio' name='sound' value='要命的烦恼'>要命的烦恼</br>
-      <input type='radio' name='sound' value='半梦'>半梦</br>
-      <input type='radio' name='sound' value='将爱'>将爱</br>
-      <input type='radio' name='sound' value='春心荡漾'>春心荡漾</br>
-      <input type='radio' name='sound' value='show_time'>Show Time</br>
-      <input type='radio' name='sound' value='当你看着我的眼睛'>当你看着我的眼睛</br>
-      <input type='radio' name='sound' value='心恋'>心恋</br>
-      <input type='radio' name='sound' value='找自己'>找自己</br>
-      <input type='radio' name='sound' value='rockstar'>Rockstar</br>
-      <input type='radio' name='sound' value='逐梦传奇'>逐梦传奇</br>
-      <input type='radio' name='sound' value='相信未来'>相信未来</br>
-      <input type='radio' name='sound' value='月光光'>月光光</br>
-      <input type='radio' name='sound' value='结局'>结局</br>
-      <input type='radio' name='sound' value='梦'>梦(Beyond)</br>
-      <input type='radio' name='sound' value='身不由己'>身不由己</br>
-      <input type='radio' name='sound' value='心中的太阳'>心中的太阳</br>
-      <input type='radio' name='sound' value='无名的歌'>无名的歌</br>
-      <input type='radio' name='sound' value='午夜流浪'>午夜流浪</br>
-      <input type='radio' name='sound' value='午夜流浪'>午夜流浪</br>
-      <input type='radio' name='sound' value='天真的创伤'>天真的创伤</br>
-      <input type='radio' name='sound' value='遥远的paradise'>遥远的paradise</br>
-      <input type='radio' name='sound' value='为了你_为了我'>为了你_为了我</br>
-      <input type='radio' name='sound' value='无语问苍天'>无语问苍天</br>
-      <input type='radio' name='sound' value='午夜怨曲'>午夜怨曲</br>
-      <input type='radio' name='sound' value='我是愤怒'>我是愤怒</br>
-      <input type='radio' name='sound' value='无尽空虚'>无尽空虚</br>
-      <input type='radio' name='sound' value='我是否也在你心中'>我是否也在你心中</br>
-      <input type='radio' name='sound' value='岁月无声'>岁月无声</br>
-      <input type='radio' name='sound' value='谁伴我闯荡'>谁伴我闯荡</br>
-      <input type='radio' name='sound' value='大地'>大地</br>
-    <input type='radio' name='sound' value='时间煮雨'>时间煮雨</br>
-    <input type='radio' name='sound' value='不再见'>不再见</br>
-    <input type="radio" name="sound" value="let_not_fall">Let not fall in love</br>
-    <input type="radio" name="sound" value="one_day_double">One day double</br>
-    <input type="radio" name="sound" value="eye_nose_mouth">eye,nose,mouth</br>
-    <input type="radio" name="sound" value="RHTHMA">RHTHMA</br>
-    <input type="radio" name="sound" value="love_today">Love Today</br>
-    <input type="radio" name="sound" value="谎言">谎言</br>
-    <input type="radio" name="sound" value="danger">Danger</br>   
-    <input type="radio" name="sound" value="i_need_u">I Need U</br>
-    <input type="radio" name="sound" value="boy_spirit">Boy Spirit</br>
-    <input type="radio" name="sound" value="weeding_dress">Wedding Dress</br>
-    <input type="radio" name="sound" value="its_you">It's you</br>
-    <input type="radio" name="sound" value="The_Girl">The Girl</br>
-    <input type="radio" name="sound" value="Chinese_Just_Right">Just Right(中文版)</br>
-    <input type="radio" name="sound" value="red_toe">Red Toe</br>
-    <input type="radio" name="sound" value="love_west">Love West</br>
-    <input type="radio" name="sound" value="sunny">Sunny Day</br>
-    <input type="radio" name="sound" value="reverse_clock">Reverse Clock</br>
-    <input type="radio" name="sound" value="balloon">Balloon</br>
-    <input type="radio" name="sound" value="like_you">Like You</br>
-    <input type="radio" name="sound" value="baby">Baby</br>
-    <input type="radio" name="sound" value="daoxiang">稻香</br>
-    <input type="radio" name="sound" value="mmj">明明就</br>
-    <input type="radio" name="sound" value="a_song_time">一首歌的时间</br>
-    <input type="radio" name="sound" value="say_goodbye">说了再见</br>
-    <input type="radio" name="sound" value="quiet">静悄悄</br>
-    <input type="radio" name="sound" value="dont_cry">说好不哭</br>
-    <input type="radio" name="sound" value="anhao">暗号</br>
-    <input type="radio" name="sound" value="half">半岛铁盒</br>
-    <input type="radio" name="sound" value="swear">我落泪</br>
-    <input type="radio" name="sound" value="heart_wall">心墙</br>
-    <input type="radio" name="sound" value="flower_sea">花海</br>
-    <input type="radio" name="sound" value="so_incredible">So Incredible</br>
-    <input type="radio" name="sound" value="taotai">淘汰</br>
-    <input type="radio" name="sound" value="never">Never say Never</br>
-    <input type="radio" name="sound" value="be_fine"> I'll be fine</br>
-    <input type="radio" name="sound" value="break_heart">Before you break my heart</br>
-    <input type="radio" name="sound" value="nobody">Nobody</br>
-    <input type="radio" name="sound" value="hatelove">I Hate Falling in love</br>
-    <input type="radio" name="sound" value="mysecret">我的秘密</br>
-    <input type="radio" name="sound" value="pfzl">平凡之路</br>    
-    <input type="radio" name="sound" value="sl">少年</br>
-    <input type="radio" name="sound" value="whld">我怀恋的</br>
-    <input type="radio" name="sound" value="yj">遇见</br>
-    <input type="radio" name="sound" value="js">剑伤</br>
-    <input type="radio" name="sound" value="yq">夜曲</br> 
-            <input type="radio" name="sound" value="xlaq">修炼爱情</br>
-            <input type="radio" name="sound" value="gyz">孤勇者</br> 
-            <input type="radio" name="sound" value="zj">再见</br> 
-            <input type="radio" name="sound" value="syst">岁月神偷</br>
-            <input type="radio" name="sound" value="wake">Wake</br>
-            <input type="radio" name="sound" value="ya">雨爱</br>
-            <input type="radio" name="sound" value="stay">STAY</br>
-            <input type="radio" name="sound" value="jy">戒烟</br>
-            <input type="radio" name="sound" value="cjyzm">春娇与志明</br>
-            <input type="radio" name="sound" value="ysh">YSH</br>
-            <input type="radio" name="sound" value="jl">记恋</br>  
-            <input type="radio" name="sound" value="dnxk">等你下课</br>
-             <input type="radio" name="sound" value="afraid">Don't Be Afraid</br>
-            <input type="radio" name="sound" value="jiangnan">江南</br>
-            <input type="radio" name="sound" value="tbd">他不懂</br>
-             <input type="radio" name="sound" value="nyd">你要的全拿走</br>
-            <input type="radio" name="sound" value="tbd">他不懂</br>
-            <input type="radio" name="sound" value="dy">毒药</br>
-            <input type="radio" name="sound" value="ccao">曹操</br>
-            <input type="radio" name="sound" value="callmebaby">Call Me Baby</br>
-            <input type="radio" name="sound" value="shdxf">说好的幸福呢</br>
-            <input type="radio" name="sound" value="shuang">说谎</br>
-            <input type="radio" name="sound" value="qfl">起风了</br>
-            <input type="radio" name="sound" value="qlx">七里香</br>
-            <input type="radio" name="sound" value="tmian">体面</br>
-            <input type="radio" name="sound" value="laonh">老男孩</br>
-            <input type="radio" name="sound" value="yanyuan">演员</br>
-            <input type="radio" name="sound" value="pgy">蒲公英的约定</br>
-            <input type="radio" name="sound" value="airucs">爱如潮水</br>
-            <input type="radio" name="sound" value="pgy">蒲公英的约定</br>
-            <input type="radio" name="sound" value="longjf">龙卷风</br>
-            <input type="radio" name="sound" value="victory">Victory</br>
-            <input type="radio" name="sound" value="hzj">虹之间</br>
-           <input type='radio' name='sound' value='jrzdy'>就让这大雨全部落下</br>
+        <input type='radio' name='sound' value='end_of_the_night'>End Of The Night<br>
+        <input type='radio' name='sound' value='play'>Play(k-391)<br>
+        <input type='radio' name='sound' value='time_to_pretend'>Time To Pretend<br>
+        <input type='radio' name='sound' value='溯_reverse'>溯(Reverse)<br>
+        <input type='radio' name='sound' value='sth_just_like_this'>Something Just Like This<br>
+        <input type='radio' name='sound' value='ee0'>0EE<br>
+        <input type='radio' name='sound' value='lost_control'>Lost Control<br>
+        <input type='radio' name='sound' value='legends_never_die'>Legends Never Die<br>
+        <input type='radio' name='sound' value='heater_1'>Heater-1<br>
+        <input type='radio' name='sound' value='the_rythm'>The Rhythm Of My Heart<br>
+        <input type='radio' name='sound' value='Horizon'>Horizon<br>
+        <input type='radio' name='sound' value='outside'>Outside<br>
+        <input type='radio' name='sound' value='lgnite'>Lgnite<br>
+        <input type='radio' name='sound' value=just_like_this>Just Like This<br>
+        <input type='radio' name='sound' value='larg'>Larg<br>
+        <input type='radio' name='sound' value='the_spectre'>The Spectre<br>
+        <input type='radio' name='sound' value='dont_touch'>Don't Touch<br>
+        <input type='radio' name='sound' value='astronomia'>Astronomia<br>
+        <input type='radio' name='sound' value='this_far'>This Far<br>
+        <input type='radio' name='sound' value='run_free'>Run Free<br>
+        <input type='radio' name='sound' value='reality'>Reality<br>
+        <input type='radio' name='sound' value='Skin'>Skin<br>
+        <input type='radio' name='sound' value='waiting_for_love'>Waiting For Love<br>
+        <input type='radio' name='sound' value='salt'>Salt<br>
+        <input type='radio' name='sound' value='please_dont_go'>Please Don't Go<br>
+        <input type='radio' name='sound' value='Alone'>Alone<br>
+        <input type='radio' name='sound' value='野狼disco1'>野狼disco<br>
+        <input type='radio' name='sound' value='back_to_december'>Back T December<br>
+        <input type='radio' name='sound' value='you_belong_with_me123'>You Belong With Me<br>
+        <input type='radio' name='sound' value='放松身心'>放松身心<br>
+        <input type='radio' name='sound' value='bye333'>Bye Bye Bye<br>
+        <input type='radio' name='sound' value='不再是朋友'>不再是朋友<br>
+        <input type='radio' name='sound' value='如果我是DJ'>如果我是DJ,你会爱我吗?<br>
+        <input type='radio' name='sound' value='嗜好'>嗜好<br>
+        <input type='radio' name='sound' value='together123'>Together<br>
+        <input type='radio' name='sound' value='拳似天下'>拳似天下<br>
+        <input type='radio' name='sound' value='跳飞机'>跳飞机<br>
+        <input type='radio' name='sound' value='悟空'>悟空<br>
+        <input type='radio' name='sound' value='功课'>功课<br>
+        <input type='radio' name='sound' value='当年情'>当年情<br>
+        <input type='radio' name='sound' value='我生'>我生<br>
+        <input type='radio' name='sound' value='往生'>往生<br>
+        <input type='radio' name='sound' value='爱是永恒'>爱是永恒<br>
+        <input type='radio' name='sound' value='年年有今'>年年有今<br>
+        <input type='radio' name='sound' value='爱与城'>爱与城<br>
+        <input type='radio' name='sound' value='秋冷了月光'>秋冷了月光<br>
+        <input type='radio' name='sound' value='来年来日'>来年来日<br>
+        <input type='radio' name='sound' value='夜空的精灵'>夜空的精灵<br>
+        <input type='radio' name='sound' value='不要说你不知道'>不要说你不知道<br>
+        <onput type='radio' name='sound' value='在这离别时候'>在这离别时候<br>
+          <input type='radio' name='sound' value='欢乐今宵'>欢乐今宵<br>
+          <input type='radio' name='sound' value='必杀技'>必杀技<br>
+          <input type='radio' name='sound' value='当爱已成往事'>当爱已成往事<br>
+          <input type='radio' name='sound' value='像朋友一样'>像朋友一样<br>
+          <input type='radio' name='sound' value='许愿'>许愿<br>
+          <input type='radio' name='sound' value='友共情'>友共情<br>
+          <input type='radio' name='sound' value='匆匆那年'>匆匆那年<br>
+          <input type='radio' name='sound' value='共同度过'>共同度过<br>
+          <input type='radio' name='sound' value='dear_leslie'>Dear Leslie<br>
+          <input type='radio' name='sound' value='小明星'>小明星</br>
+          <input type='radio' name='sound' value='一生所爱'>一生所爱<br>
+          <input type='radio' name='sound' value='情歌王123'>情歌王<br>
+          <input type='radio' name='sound' value='假如爱有天意'>假如爱有天意<br>
+          <input type='radio' name='sound' value='几万光年'>几万光年<br>
+          <input type='radio' name='sound' value='爱降落在'>爱降落在<br>
+          <input type='radio' name='sound' value='ring123'>Ring Ring Ring<br>
+          <input type='radio' name='sound' value='下个路口再见吧'>下个路口再见吧<br>
+          <input type='radio' name='sound' value='心跳的证明'>心跳的证明<br>
+          <input type='radio' name='sound' value='陨落'>陨落<br>
+          <input type='radio' name='sound' value='父亲'>父亲<br>
+          <input type='radio' name='sound' value='明天是否还是爱我'>明天是否还是爱我<br>
+          <input type='radio' name='sound' value='让我欢喜让我忧'>让我欢喜让我忧<br>
+          <input type='radio' name='sound' value='风中的承诺'>风中的承诺<br>
+          <input type='radio' name='sound' value='玻璃心'>玻璃心<br>
+          <input type='radio' name='sound' value='只要你过得比我好'>只要你过得比我好<br>
+          <input type='radio' name='sound' value='让我一次爱个够'>让我一次爱个够<br>
+          <input type='radio' name='sound' value='驿动的心'>驿动的心<br>
+          <input type='radio' name='sound' value='风继续吹'>风继续吹<br>
+          <input type='radio' name='sound' value='一场游戏一场梦'>一场游戏一场梦<br>
+          <input type='radio' name='sound' value='爱情故事'>爱情故事<br>
+          <input type='radio' name='sound' value='all_for_you'>All For You<br>
+          <input type='radio' name='sound' value='warriors'>Warriors<br>
+          <input type='radio' name='sound' value='gold'>Gold<br>
+          <input type='radio' name='sound' value='second_chances'>Second Chances<br>
+          <input type='radio' name='sound' value='summer'>Summer<br>
+          <input type='radio' name='sound' value='thunder'>Thunder<br>
+          <input type='radio' name='sound' value='i_am_so_sorry'>I Am So Sorry<br>
+          <input type='radio' name='sound' value='enemy'>Enemy<br>
+          <input type='radio' name='sound' value='monster'>Monster<br>
+          <input type='radio' name='sound' value='believer'>Bliever<br>
+          <input type='radio' name='sound' value='我的大学'>我的大学<br>
+          <input type='radio' name='sound' value='睡在我上铺的兄弟'>睡在我上铺的兄弟<br>
+          <input type='radio' name='sound' value='好久不见'>好久不见<br>
+          <input type='radio' name='sound' value='偏偏喜欢你'>偏偏喜欢你<br>
+          <input type='radio' name='sound' value='浮夸'>浮夸<br>
+          <input type='radio' name='sound' value='如果当时'>如果当时<br>
+          <input type='radio' name='sound' value='星语心愿'>星语心愿<br>
+          <input type='radio' name='sound' value='留什么给你'>留什么给你<br>
+          <input type='radio' name='sound' value='少年游'>少年游<br>
+          <input type='radio' name='sound' value='jingle_bells'>Jingle Bells<br>
+          <input type='radio' name='sound' value='记得_心墙_当你'>记得_心墙_当你<br>
+          <input type='radio' name='sound' value='当你'>当你<br>
+          <input type='radio' name='sound' value='偏爱'>偏爱<br>
+          <input type='radio' name='sound' value='背对背拥抱123'>背对背拥抱<br>
+          <input type='radio' name='sound' value='流动的城市'>流动的城市<br>
+          <input type='radio' name='sound' value='空灵'>空灵<br>
+          <input type='radio' name='sound' value='菊次郎的夏天'>菊次郎的夏天<br>
+          <input type='radio' name='sound' value='intro_the_xx'>Intro(The XX)<br>
+          <input type='radio' name='sound' value='一个人的时光'>一个人的时光<br>
+          <input type='radio' name='sound' value='森林狂想曲'>森林狂想曲<br>
+          <input type='radio' name='sound' value='绿野仙踪'>绿野仙踪<br>
+          <input type='radio' name='sound' value='snowdreams'>SnowDreams<br>
+          <input type='radio' name='sound' value='childhood_memory'>Childhood Memory<br>
+          <input type='radio' name='sound' value='琵琶语'>琵琶语<br>
+          <input type='radio' name='sound' value='kiss_the_rain'>Kiss The Rain<br>
+          <input type='radio' name='sound' value='the_truth_that_you_leave'>The Truth That You Leave<br>
+          <input type='radio' , name='sound' value='move_your_body'>Move Your Body<br>
+          <input type='radio' name='sound' value='就让我爱你'>就让我爱你<br>
+          <input type='radio' name='sound' value='笑纳'>笑纳<br>
+          <input type='radio' name='sound' value='that_girl'>That Girl<br>
+          <input type='radio' name='sound' value='roll123'>Rolling In The Deep<br>
+          <input type='radio' name='sound' value='wide_open_spaces'>Wide Open Space<br>
+          <input type='radio' name='sound' value='lucky123'>Lucky<br>
+          <input type='radio' name='sound' value='enchanted'>Enchanted<br>
+          <input type='radio' name='sound' value='stay_here_forever'>Stay Here Forever<br>
+          <input type='radio' name='sound' value='santa_baby'>Santa Baby<br>
+          <input type='radio' name='sound' value='try123'>Try<br>
+          <input type='radio' name='sound' value='蒙娜丽莎的眼泪'>蒙娜丽莎的眼泪<br>
+          <input type='radio' name='sound' value='apologize'>Apologize<br>
+          <input type='radio' name='sound' value='wonderful_tonight'>Wonderful Tonight<br>
+          <input type='radio' name='sound' value='set_fire_to_the_rain'>Set Fire To The Rain<br>
+          <input type='radio' name='sound' value='tears_in_heaven'>Tears In Heaven<br>
+          <input type='radio' name='sound' value='some_dreams'>Some Dreams<br>
+          <input type='radio' name='sound' value='南山南'>南山南<br>
+          <input type='radio' name='sound' value='speak_now'>Speak Now<br>
+          <input type='radio' name='sound' value='what_you_say_anything_at_all'>What You Say Anything At All<br>
+          <input type='radio' name='sound' value='good_time'>Good Time<br>
+          <input type='radio' name='sound' value='bucket'>Bucket<br>
+          <input type='radio' name='sound' value='call_me_maybe'>Call Me Maybe<br>
+          <input type='radio' name='sound' value='the_one'>The One<br>
+          <input type='radio' name='sound' value='物是人非'>物是情非<br>
+          <input type='radio' name='sound' value='刹那芳华曲'>刹那芳华曲<br>
+          <input type='radio' name='sound' value='intro'>Intro<br>
+          <input type='radio' name='sound' value='何必再问'>何必再问<br>
+          <input type='radio' name='sound' value='给你一瓶魔法的药水'>给你一瓶魔法的药水<br>
+          <input type='radio' name='sound' value='爱怎么了'>爱怎么了<br>
+          <input type='radio' name='sound' value='亲爱的下雨了'>亲爱的下雨了<br>
+          <input type='radio' name='sound' value='野花做了场玫瑰的梦'>野花做了场玫瑰的梦<br>
+          <input type='radio' name='sound' value='生命之书'>生命之书<br>
+          <input type='radio' name='sound' value='相思渡口'>相思渡口<br>
+          <input type='radio' name='sound' value='一花一剑'>一花一剑<br>
+          <input type='radio' name='sound' value='江山雪'>江山雪<br>
+          <input type='radio' name='sound' value='英雄联盟各英雄配音'>英雄联盟各英雄配音<br>
+          <input type='radio' name='sound' value='太极韵'>太极韵<br>
+          <input type='radio' name='sound' value='满庭芳'>满庭芳<br>
+          <input type='radio' name='sound' value='千万个我'>千万个我<br>
+          <input type='radio' name='sound' value='哪里都是你'>哪里都是你<br>
+          <input type='radio' name='sound' value='三两三'>三两三<br>
+          <input type='radio' name='sound' value='绝望的生鱼片'><br>
+          <input type='radio' name='sound' value='爱如火'>爱如火<br>
+          <input type='radio' name='sound' value='乌兰巴托的夜'>乌兰巴托的夜<br>
+          <input type='radio' name='sound' value='爱情悬崖'>爱情悬崖<br>
+          <input type='radio' name='sound' value='游戏'>游戏<br>
+          <input type='radio' name='sound' value='fake_love'>Fake Love<br>
+          <input type='radio' name='sound' value='翠花'>翠花<br>
+          <input type='radio' name='sound' value='假装一秒钟'>假装一秒钟<br>
+          <input type='radio' name='sound' value='好像失去了很多'>好像失去了很多<br>
+          <input type='radio' name='sound' value='浪人情歌'>浪人情歌<br>
+          <input type='radio' name='sound' value='痛哭的人'>痛哭的人<br>
+          <input type='radio' name='sound' value='再度重相逢'>再度重相逢</br>
+          <input type='radio' name='sound' value='挪威的森林'>挪威的森林<br>
+          <input type='radio' name='sound' value='方圆几里'>方圆几里<br>
+          <input type='radio' name='sound' value='我害怕'>我害怕<br>
+          <input type='radio' name='sound' value='哑巴'>哑巴<br>
+          <input type='radio' name='sound' value='认真的雪'>认真的雪<br>
+          <input type='radio' name='sound' value='刚刚好'>刚刚好<br>
+          <input type='radio' name='sound' value='怪咖'>怪咖<br>
+          <input type='radio' name='sound' value='突然的自我'>突然的自我<br>
+          <input type='radio' name='sound' value='你还要我怎样'>你还要我怎样<br>
+          <input type='radio' name='sound' value='丑八怪'>丑八怪<br>
+          <input type='radio' name='sound' value='每一次'>每一次<br>
+          <input type='radio' name='sound' value='我叫车静子'>我叫车静子<br>
+          <input type='radio' name='sound' value='让我们相爱'>让我们相爱<br>
+          <input type='radio' name='sound' value='爱情钢索'>爱情钢索<br>
+          <input type='radio' name='sound' value='寂寞才说爱'>寂寞才说爱<br>
+          <input type='radio' name='sound' value='曼陀山庄'>曼陀山庄<br>
+          <input type='radio' name='sound' value='everybody'>Everoybody<br>
+          <input type='radio' name='sound' value='need_you_now'>Need You Now<br>
+          <input type='radio' name='sound' value='mine_taylor'>Mine</br>
+          <input type='radio' name='sound' value='home_buble'></br>
+          <input type='radio' name='sound' value='shake_it_off'>Shake It Off</br>
+          <input type='radio' name='sound' value='free_loop'>Free Loop</br>
+          <input type='radio' name='sound' value='人前人后'>人前人后</br>
+          <input type='radio' name='sound' value='可惜我不够好'>可惜我不够好</br>
+          <input type='radio' name='sound' value='错爱'>错爱</br>
+          <input type='radio' name='sound' value='真的不容易'>真的不容易</br>
+          <input type='radio' name='sound' value='两个人的回忆一个人过'>两个人的回忆一起过</br>
+          <input type='radio' name='sound' value='再见只是陌生人'>再见只是陌生人</br>
+          <input type='radio' name='sound' value='探清水河'>探清水河</br>
+          <input type='radio' name='sound' value='下辈子不一定还能遇见你'>下辈子不一定还能遇见你</br>
+          <input type='radio' name='sound' value='求佛'>求佛</br>
+          <input type='radio' name='sound' value='别错过'>别错过</br>
+          <input type='radio' name='sound' value='大鱼'>大鱼</br>
+          <input type='radio' name='sound' value='一路生花1'>一路生花</br>
+          <input type='radio' name='sound' value='雨下一整晚'>雨下一整晚</br>
+          <input type='radio' name='sound' value='庐州月'>庐州月</br>
+          <input type='radio' name='sound' value='枫'>枫</br>
+          <input type='radio' name='sound' value='beautiful_day'>Beautiful Day</br>
+          <input type='radio' name='sound' value='with_or_without_you'>With Or Without You</br>
+          <input type='radio' name='sound' value='hours10000'>10,000 hours</br>
+          <input type='radio' name='sound' value='one_time1'>One Time</br>
+          <input type='radio' name='sound' value='as_long_as_you_love_me'>As Long As You Love Me</br>
+          <input type='radio' name='sound' value='boyfriend'>Boyfriend</br>
+          <input type='radio' name='sound' value='love_yourself'>Love Yourself</br>
+          <input type='radio' name='sound' value='step2'>2 Step</br>
+          <input type='radio' name='sound' value='sunburn'>Sunburn</br>
+          <input type='radio' name='sound' value='thinking_out_loud'>Thinking Out Loud</br>
+          <input type='radio' name='sound' value='photograph'>Photograph</br>
+          <input type='radio' name='sound' value='galway_girl'>Galway Girl</br>
+          <input type='radio' name='sound' value='perfect'>Perfect</br>
+          <input type='radio' name='sound' value='庆幸遇见你'>庆幸遇见你</br>
+          <input type='radio' name='sound' value='到底'>到底</br>
+          <input type='radio' name='sound' value='我会好好过'>我会好好过</br>
+          <input type='radio' name='sound' value='月伴湾'>月伴湾</br>
+          <input type='radio' name='sound' value='初恋'>初恋</br>
+          <input type='radio' name='sound' value='为你写下这首歌'>为你写下这首歌</br>
+          <input type='radio' name='sound' value='山樱花'>山樱花</br>
+          <input type='radio' name='sound' value='胆小鬼'>胆小鬼</br>
+          <input type='radio' name='sound' value='想太多'>想太多</br>
+          <input type='radio' name='sound' value='must_get_out'>Must Get Out</br>
+          <input type='radio' name='sound' value='cant_stop'>Cant Stop</br>
+          <input type='radio' name='sound' value='makes_me_wonder'>Makes Me Wonder</br>
+          <input type='radio' name='sound' value='tonight_bigbang'>TONIGHT(BIGBANG)</br>
+          <input type='radio' value='not_coming_home'>Not Coming Home</br>
+          <input type='radio' name='sound' value='story_maroon5'>Story(Maroon5)</br>
+          <input type='radio' name='sound' value='you_belong_with_me'>You Belong With Me</br>
+          <input type='radio' name='sound' value='me_taylor_swift'>Me(Taylor Swift)</br>
+          <input type='radio' name='sound' value='haunted'>Haunted</br>
+          <input type='radio' name='sound' value='your_face'>Your Face</br>
+          <input type='radio' name='sound' value='never_mind'>Never Mind</br>
+          <input type='radio' name='sound' value='better_off'>Better Off</br>
+          <input type='radio' name='sound' value='christmas_tree_farm'>Christmas Tree Farm</br>
+          <input type='radio' name='sound' value='august'>August</br>
+          <input type='radio' name='sound' value='glitch'>Glitch</br>
+          <input type='radio' name='sound' value=''></br>
+          <input type='radio' name='sound' value='fearless'>Fearless</br>
+          <input type='radio' name='sound' value='invisible'>Invisible</br>
+          <input type='radio' name='sound' value='white_horse'>White Horse</br>
+          <input type='radio' name='sound' value='kama'>Kama(clean)</br>
+          <input type='radio' name='sound' value='songs_about_you'>Songs About You</br>
+          <input type='radio' name='sound' value='wake_up_call'>Wake Up Call</br>
+          <input type='radio' name='sound' value='naked'>Naked</br>
+          <input type='radio' name='sound' value='the_sun'>The Sun</br>
+          <input type='radio' name='sound' value='give_a_little_more'>Give A Little More </br>
+          <input type='radio' name='sound' value=''></br>
+          <input type='radio' name='sound' value='shivers_maroon5'>Shivers(Maroon5)</br>
+          <input type='radio' name='sound' value='move_like_jagger'>Move Like Jagger</br>
+          <input type='radio' name='sound' value=''></br>
+          <input type='radio' name='sound' value='payphone'>PayPhone</br>
+          <input type='radio' name='sound' value='逐梦青春'>逐梦青春</br>
+          <input type='radio' name='sound' value='千里之外'>千里之外(MIC)</br>
+          <input type='radio' name='sound' value='摩天轮'>摩天轮</br>
+          <input type='radio' name='sound' value='要命的烦恼'>要命的烦恼</br>
+          <input type='radio' name='sound' value='半梦'>半梦</br>
+          <input type='radio' name='sound' value='将爱'>将爱</br>
+          <input type='radio' name='sound' value='春心荡漾'>春心荡漾</br>
+          <input type='radio' name='sound' value='show_time'>Show Time</br>
+          <input type='radio' name='sound' value='当你看着我的眼睛'>当你看着我的眼睛</br>
+          <input type='radio' name='sound' value='心恋'>心恋</br>
+          <input type='radio' name='sound' value='找自己'>找自己</br>
+          <input type='radio' name='sound' value='rockstar'>Rockstar</br>
+          <input type='radio' name='sound' value='逐梦传奇'>逐梦传奇</br>
+          <input type='radio' name='sound' value='相信未来'>相信未来</br>
+          <input type='radio' name='sound' value='月光光'>月光光</br>
+          <input type='radio' name='sound' value='结局'>结局</br>
+          <input type='radio' name='sound' value='梦'>梦(Beyond)</br>
+          <input type='radio' name='sound' value='身不由己'>身不由己</br>
+          <input type='radio' name='sound' value='心中的太阳'>心中的太阳</br>
+          <input type='radio' name='sound' value='无名的歌'>无名的歌</br>
+          <input type='radio' name='sound' value='午夜流浪'>午夜流浪</br>
+          <input type='radio' name='sound' value='午夜流浪'>午夜流浪</br>
+          <input type='radio' name='sound' value='天真的创伤'>天真的创伤</br>
+          <input type='radio' name='sound' value='遥远的paradise'>遥远的paradise</br>
+          <input type='radio' name='sound' value='为了你_为了我'>为了你_为了我</br>
+          <input type='radio' name='sound' value='无语问苍天'>无语问苍天</br>
+          <input type='radio' name='sound' value='午夜怨曲'>午夜怨曲</br>
+          <input type='radio' name='sound' value='我是愤怒'>我是愤怒</br>
+          <input type='radio' name='sound' value='无尽空虚'>无尽空虚</br>
+          <input type='radio' name='sound' value='我是否也在你心中'>我是否也在你心中</br>
+          <input type='radio' name='sound' value='岁月无声'>岁月无声</br>
+          <input type='radio' name='sound' value='谁伴我闯荡'>谁伴我闯荡</br>
+          <input type='radio' name='sound' value='大地'>大地</br>
+          <input type='radio' name='sound' value='时间煮雨'>时间煮雨</br>
+          <input type='radio' name='sound' value='不再见'>不再见</br>
+          <input type="radio" name="sound" value="let_not_fall">Let not fall in love</br>
+          <input type="radio" name="sound" value="one_day_double">One day double</br>
+          <input type="radio" name="sound" value="eye_nose_mouth">eye,nose,mouth</br>
+          <input type="radio" name="sound" value="RHTHMA">RHTHMA</br>
+          <input type="radio" name="sound" value="love_today">Love Today</br>
+          <input type="radio" name="sound" value="谎言">谎言</br>
+          <input type="radio" name="sound" value="danger">Danger</br>
+          <input type="radio" name="sound" value="i_need_u">I Need U</br>
+          <input type="radio" name="sound" value="boy_spirit">Boy Spirit</br>
+          <input type="radio" name="sound" value="weeding_dress">Wedding Dress</br>
+          <input type="radio" name="sound" value="its_you">It's you</br>
+          <input type="radio" name="sound" value="The_Girl">The Girl</br>
+          <input type="radio" name="sound" value="Chinese_Just_Right">Just Right(中文版)</br>
+          <input type="radio" name="sound" value="red_toe">Red Toe</br>
+          <input type="radio" name="sound" value="love_west">Love West</br>
+          <input type="radio" name="sound" value="sunny">Sunny Day</br>
+          <input type="radio" name="sound" value="reverse_clock">Reverse Clock</br>
+          <input type="radio" name="sound" value="balloon">Balloon</br>
+          <input type="radio" name="sound" value="like_you">Like You</br>
+          <input type="radio" name="sound" value="baby">Baby</br>
+          <input type="radio" name="sound" value="daoxiang">稻香</br>
+          <input type="radio" name="sound" value="mmj">明明就</br>
+          <input type="radio" name="sound" value="a_song_time">一首歌的时间</br>
+          <input type="radio" name="sound" value="say_goodbye">说了再见</br>
+          <input type="radio" name="sound" value="quiet">静悄悄</br>
+          <input type="radio" name="sound" value="dont_cry">说好不哭</br>
+          <input type="radio" name="sound" value="anhao">暗号</br>
+          <input type="radio" name="sound" value="half">半岛铁盒</br>
+          <input type="radio" name="sound" value="swear">我落泪</br>
+          <input type="radio" name="sound" value="heart_wall">心墙</br>
+          <input type="radio" name="sound" value="flower_sea">花海</br>
+          <input type="radio" name="sound" value="so_incredible">So Incredible</br>
+          <input type="radio" name="sound" value="taotai">淘汰</br>
+          <input type="radio" name="sound" value="never">Never say Never</br>
+          <input type="radio" name="sound" value="be_fine"> I'll be fine</br>
+          <input type="radio" name="sound" value="break_heart">Before you break my heart</br>
+          <input type="radio" name="sound" value="nobody">Nobody</br>
+          <input type="radio" name="sound" value="hatelove">I Hate Falling in love</br>
+          <input type="radio" name="sound" value="mysecret">我的秘密</br>
+          <input type="radio" name="sound" value="pfzl">平凡之路</br>
+          <input type="radio" name="sound" value="sl">少年</br>
+          <input type="radio" name="sound" value="whld">我怀恋的</br>
+          <input type="radio" name="sound" value="yj">遇见</br>
+          <input type="radio" name="sound" value="js">剑伤</br>
+          <input type="radio" name="sound" value="yq">夜曲</br>
+          <input type="radio" name="sound" value="xlaq">修炼爱情</br>
+          <input type="radio" name="sound" value="gyz">孤勇者</br>
+          <input type="radio" name="sound" value="zj">再见</br>
+          <input type="radio" name="sound" value="syst">岁月神偷</br>
+          <input type="radio" name="sound" value="wake">Wake</br>
+          <input type="radio" name="sound" value="ya">雨爱</br>
+          <input type="radio" name="sound" value="stay">STAY</br>
+          <input type="radio" name="sound" value="jy">戒烟</br>
+          <input type="radio" name="sound" value="cjyzm">春娇与志明</br>
+          <input type="radio" name="sound" value="ysh">YSH</br>
+          <input type="radio" name="sound" value="jl">记恋</br>
+          <input type="radio" name="sound" value="dnxk">等你下课</br>
+          <input type="radio" name="sound" value="afraid">Don't Be Afraid</br>
+          <input type="radio" name="sound" value="jiangnan">江南</br>
+          <input type="radio" name="sound" value="tbd">他不懂</br>
+          <input type="radio" name="sound" value="nyd">你要的全拿走</br>
+          <input type="radio" name="sound" value="tbd">他不懂</br>
+          <input type="radio" name="sound" value="dy">毒药</br>
+          <input type="radio" name="sound" value="ccao">曹操</br>
+          <input type="radio" name="sound" value="callmebaby">Call Me Baby</br>
+          <input type="radio" name="sound" value="shdxf">说好的幸福呢</br>
+          <input type="radio" name="sound" value="shuang">说谎</br>
+          <input type="radio" name="sound" value="qfl">起风了</br>
+          <input type="radio" name="sound" value="qlx">七里香</br>
+          <input type="radio" name="sound" value="tmian">体面</br>
+          <input type="radio" name="sound" value="laonh">老男孩</br>
+          <input type="radio" name="sound" value="yanyuan">演员</br>
+          <input type="radio" name="sound" value="pgy">蒲公英的约定</br>
+          <input type="radio" name="sound" value="airucs">爱如潮水</br>
+          <input type="radio" name="sound" value="pgy">蒲公英的约定</br>
+          <input type="radio" name="sound" value="longjf">龙卷风</br>
+          <input type="radio" name="sound" value="victory">Victory</br>
+          <input type="radio" name="sound" value="hzj">虹之间</br>
+          <input type='radio' name='sound' value='jrzdy'>就让这大雨全部落下</br>
           <input type='radio' name='sound' value='nnh'>那女孩对我说</br>
           <input type='radio' name='sound' value='一路生花'>一路生花</br>
-     <input type='radio' name='sound' value='sugar'>Sugar</br>
-           <input type='radio' name='sound' value='love_story'>Love Story</br>
-                 <input type='radio' name='sound' value='zzjj'>字字句句</br>
-                 <input type='radio' name='sound' value='whd'>我会等</br>
-                 <input type='radio' name='sound' value='hnh'>坏女孩</br>
-                    <input type='radio' name='sound' value='mhc'>面会菜</br>
-                 <input type='radio' name='sound' value='xiaoxx'>小星星</br>
-   <input type='radio' name='sound' value='exile'>Exile</br>
-     <input type='radio' name='sound' value='dreamit'>Dream It Possible</br>
-           <input type='radio' name='sound' value='sljxh'>所念皆星河</br>
-     <input type='radio' name='sound' value='夜的钢琴曲五'>夜的钢琴曲</br>
-     <input type='radio' name='sound' value='sgl'>三国恋</br>
-     <input type='radio' name='sound' value='sgx'>三国杀</br>
-     <input type='radio' name='sound' value='dwcqzsg'>当我唱起这首歌</br>
-     <input type='radio' name='sound' value='sgx'>三国杀</br>
-     <input type='radio' name='sound' value='taiyang'>太阳</br>
-    <input type='radio' name='sound' value='青花瓷'>青花瓷</br>
-    <input type='radio' name='sound' value='兰亭序'>兰亭序</br>
-      <input type='radio' name='sound' value='后来'>后来</br>
-      <input type='radio' name='sound' value='一路向北'>一路向北</br>
-      <input type='radio' name='sound' value='这世界那么多人'>这世界那么多人</br>
-      <input type='radio' name='sound' value='你的答案'>你的答案</br>
-      <input type='radio' name='sound' value='富士山下'>富士山下</br>
-      <input type='radio' name='sound' value='真的爱你'>真的爱你</br>
-      <input type='radio' name='sound' value='踏山河'>踏山河</br>
-      <input type='radio' name='sound' value='最长的电影'>最长的电影</br>
-      <input type='radio' name='sound' value='最后的问候'>最后的问候</br>
-      <input type='radio' name='sound' value='wonderful'>Wonderful</br>
-      <input type='radio' name='sound' value='cruel'>Cruel Summer</br>
-      <input type='radio' name='sound' value='shivers'>Shivers</br>
-      <input type='radio' name='sound' value='这就是爱'>这就是爱</br>
-      <input type='radio' name='sound' value='so_good'>So Good</br>
-      <input type='radio' name='sound' value='long_time_no_see'>Long Time No See</br>
-      <input type='radio' name='sound' value='my_type'>My Type</br>
-      <input type='radio' name='sound' value='快乐环岛'>快乐环岛</br>
-      <input type='radio' name='sound' value='爱出发'>爱出发</br>
-      <input type='radio' name='sound' value='想唱就唱'>想唱就唱</br>
-      <input type='radio' name='sound' value='样'>样(Young)</br>
-      <input type='radio' name='sound' value='剩下的盛夏'>剩下的盛夏</br>
-      <input type='radio' name='sound' value='秒针'>秒针</br>
-      <input type='radio' name='sound' value='吻别'>吻别</br>
-      <input type='radio' name='sound' value='说了再见'>说了再见</br>
-      <input type='radio' name='sound' value='说爱你'>说爱你</br>
-      <input type='radio' name='sound' value='错位时空'>错位时空</br>
-      <input type='radio' name='sound' value='突然的自我'>突然的自我</br>
-      <input type='radio' name='sound' value='咆哮'>咆哮</br>
-      <input type='radio' name='sound' value='狼与美女'>狼与美女</br>
-      <input type='radio' name='sound' value='约定'>约定</br>
-      <input type='radio' name='sound' value='光辉岁月'>光辉岁月<br>
-      <input type='radio' name='sound' value='海阔天空'>海阔天空</br>
-      <input type='radio' name='sound' value='喜欢你'>喜欢你</br>
-      <input type='radio' name='sound' value='冷雨夜'>冷雨夜</br>
-      <input type='radio' name='sound' value='童话'>童话</br>
-      <input type='radio' name='sound' value='水手'>水手</br>
-      <input type='radio' name='sound' value='爱要怎么说出口'>爱要怎么说出口</br>
-      <input type='radio' name='sound' value='卡路里'>燃烧我的卡路里</br>
-      <input type='radio' name='sound' value='因为你'>Because Of You</br>
-      <input type='radio' name='sound' value='热爱105'>热爱105°C的你</br>
-      <input type='radio' name='sound' value='十年'>十年</br>
-      <input type='radio' name='sound' value='你给我听好'>你给我听好</br>
-      <input type='radio' name='sound' value='爱情转移'>爱情转移</br>
-      <input type='radio' name='sound' value='成都'>成都</br>
-      <input type='radio' name='sound' value='可能'>可能</br>
-      <input type='radio' name='sound' value='水星记'>水星记</br>
-      <input type='radio' name='sound' value='faded'>Faded</br>
-      <input type='radio' name='sound' value='年少有为'>年少有为</br>
-      <input type='radio' name='sound' value='可不可以'>可不可以</br>
-      <input type='radio' name='sound' value='绿光'>绿光</br>
-      <input type='radio' name='sound' value='一路走过的日子'>一路走过的日子</br>
-      <input type='radio' name='sound' value='发如雪'>发如雪</br>
-      <input type='radio' name='sound' value='信仰'>信仰</br>
-      <input type='radio' name='sound' value='爱存在'>爱,存在</br>
-      <input type='radio' name='sound' value='微微'>微微</br>
-      <input type='radio' name='sound' value='一笑倾城'>一笑倾城</br>
-      <input type='radio' name='sound' value='泡沫'>泡沫</br>
-      <input type='radio' name='sound' value='你把我灌醉'>你把我灌醉</br>
-      <input type='radio' name='sound' value='光年之外'>光年之外</br>
-      <input type='radio' name='sound' value='夜空中最亮的星'>夜空中最亮的星</br>
-      <input type='radio' name='sound' value='模特'>模特</br>
-      <input type='radio' name='sound' value='不爱我就拉倒'>不爱我就拉倒</br>
-      <input type='radio' name='sound' value='李白'>李白</br>
-      <input type='radio' name='sound' value='白色风车'>白色风车</br>
-      <input type='radio' name='sound' value='洋葱'>洋葱</br>
-      <input type='radio' name='sound' value='银河与星斗'>银河与星斗</br>
-      <input type='radio' name='sound' value='后来'>后来</br>
-      <input type='radio' name='sound' value='rolling_in_the_deep'>Rolling In The Deep</br>
-      <input type='radio' name='sound' value='陪你度过漫长岁月'>陪你度过漫长岁月</br>
-      <input type='radio' name='sound' value='处处吻'>处处吻</br>
-      <input type='radio' name='sound' value='简单爱'>简单爱</br>
-      <input type='radio' name='sound' value='爱你'>爱你</br>
-      <input type='radio' name='sound' value='一千年以后'>一千年以后</br>
-      <input type='radio' name='sound' value='追梦赤子心'>追梦赤子心</br>
-      <input type='radio' name='sound' value='你的背包'>你的背包</br>
-      <input type='radio' name='sound' value='last_dance'>Last Dance</br>
-      <input type='radio' name='sound' value='shape_of_you'>Shape Of You</br>
-      <input type='radio' name='sound' value='可惜没如果'>可惜没如果</br>
-      <input type='radio' name='sound' value='来迟'>来迟</br>
-      <input type='radio' name='sound' value='新地球'>新地球</br>
-      <input type='radio' name='sound' value='倒数'>倒数</br>
-      <input type='radio' name='sound' value='last_night'>Last Night</br>
-      <input type='radio' name='sound' value='sold_out'>Sold Out</br>
-      <input type='radio' name='sound' value='what_do_you_mean'>What Do You Mean?</br>
-      <input type='radio' name='sound' value='one_time'>One Time</br>
-      <input type='radio' name='sound' value='love_yourself'>Love Yourself</br>
-      <input type='radio' name='sound' value='不再犹豫'>不再犹豫</br>
-      <input type='radio' name='sound' value='半生雪'>半生雪</br>
-      <input type='radio' name='sound' value='星辰大海'>星辰大海</br>
-      <input type='radio' name='sound' value='寂寞沙洲冷'>寂寞沙洲冷</br>
-      <input type='radio' name='sound' value='消愁'>消愁</br>
-      <input type='radio' name='sound' value='小城夏天'>小城夏天</br>
-      <input type='radio' name='sound' value='罗刹海市'>罗刹海市</br>
-      <input type='radio' name='sound' value='芒种'>芒种</br>
-      <input type='radio' name='sound' value='奢香夫人'>奢香夫人</br>
-      <input type='radio' name='sound' value='世界这么大还是遇见你'>世界这么大还是遇见你</br>
-      <input type='radio' name='sound' value='像鱼'>像鱼</br>
-      <input type='radio' name='sound' value='夜空中最亮的星2'>夜空中最亮的星(逃跑计划)</br>
-      <input type='radio' name='sound' value='天外来吻'>天外来吻</br>
-      <input type='radio' name='sound' value='光的方向'>光的方向</br>
-      <input type='radio' name='sound' value='花妖'>花妖</br>
-      <input type='radio' name='sound' value='有何不可'>有何不可</br>
-      <input type='radio' name='sound' value='乌梅子酱'>乌梅子酱</br>
-      <input type='radio' name='sound' value='多远都要在一起'>多远都要在一起</br>
-      <input type='radio' name='sound' value='嘉宾'>嘉宾</br>
-      <input type='radio' name='sound' value='千千阙歌'>千千阙歌</br>
-      <input type='radio' name='sound' value='如果这都不算爱'>如果这都不算爱</br>
-      <input type='radio' name='sound' value='童话镇'>童话镇</br>
-      <input type='radio' name='sound' value='是你_梦然'>是你(梦然)</br>
-      <input type='radio' name='sound' value='雨一直下'>雨一直下</br>
-      <input type='radio' name='sound' value='讲不出再见'>讲不出再见</br>
-      <input type='radio' name='sound' value='see_you_again'>See You Again</br>
-      <input type='radio' name='sound' value='way_back'>Way Back</br>
-      <input type='radio' name='sound' value='再见再见'>再见再见</br>
-      <input type='radio' name='sound' value='年少有你'>年少有你</br>
-      <input type='radio' name='sound' value='听妈妈的话'>听妈妈的话</br>
-      <input type='radio' name='sound' value='我会等'>我会等</br>
-      <input type='radio' name='sound' value='没那么简单'>没那么简单</br>
-      <input type='radio' name='sound' value='我的歌声里'>我的歌声里</br>
-      <input type='radio' name='sound' value='素颜'>素颜</br>
-      <input type='radio' name='sound' value='特别的爱给特别的你'>特别的爱给特别的你</br>
-      <input type='radio' name='sound' value='如果我变成回忆'>如果我变成回忆</br>
-      <input type='radio' name='sound' value='回到过去'>回到过去</br>
-      <input type='radio' name='sound' value='nevada'>Nevada</br>
-      <input type='radio' name='sound' value='小酒窝'>小酒窝</br>
-      <input type='radio' name='sound' value='let_it_go'>Let It Go</br>
-      <input type='radio' name='sound' value='最美的太阳'>最美的太阳</br>
-      <input type='radio' name='sound' value='一吻天荒'>一吻天荒</br>
-      <input type='radio' name='sound' value='等你等到我心痛'>等你等到我心痛</br>
-      <input type='radio' name='sound' value='把回忆拼好给你'>把回忆拼好给你</br>
-      <input type='radio' name='sound' value='你不是真正的快乐'>你不是真正的快乐</br>
-      <input type='radio' name='sound' value='侧脸'>侧脸</br>
-      <input type='radio' name='sound' value='不能说的秘密'>不能说的秘密</br>
-      <input type="radio" name="sound" value="deep">The Deep</br>
-      <input type='radio' name='sound' value='春天里'>春天里</br>
-      <input type='radio' name='sound' value='someone_like_you'>Someone Like You</br>
-      <input type='radio' name='sound' value='背对背拥抱'>背对背拥抱</br>
-      <input type='radio' name='sound' value='梦醒时分'>梦醒时分</br>
-      <input type='radio' name='sound' value='大海'>大海</br>
-      <input type='radio' name='sound' value='有多少爱可以重来'>有多少爱可以重来</br>
-      <input type='radio' name='sound' value='滚滚红尘'>滚滚红尘</br>
-      <input type='radio' name='sound' value='相见恨晚'>相见恨晚</br>
-      <input type='radio' name='sound' value='当爱已成往事'>当爱已成往事</br>
-      <input type='radio' name='sound' value='断点'>断点</br>
-      <input type='radio' name='sound'>秋天不回来</br>
-      <input type='radio' name='sound' value='恋曲1990'>恋曲1990</br>
-      <input type='radio' name='sound' value='一起走过的日子'>一起走过的日子</br>
-      <input type='radio' name='sound' value='那就这样吧'>那就这样吧</br>
-      <input type='radio' name='sound' value='那就这样吧'>那就这样吧</br>
-      <input type='radio' name='sound' value='鬼迷心窍'>鬼迷心窍</br>
-      <input type='radio' name='sound' value='你就不要想起我'>你就不要想起我</br>
-      <input type='radio' name='sound' value='雨蝶'>雨蝶</br>
-      <input type='radio' name='sound' value='风中有朵雨做的云'>风中有朵雨做的云</br>
-      <input type='radio' name='sound' value='记事本'>记事本</br>
-      <input type='radio' name='sound' value='way_back1'>Way Back</br>
-      <input type='radio' name='sound' value='walk_thru_fire'>Walk Thru Fire</br>
-      <input type='radio' name='sound' value='closer'>Closer</br>
-      <input type='radio' name='sound' value='we_dont_talk_anymore'>We Don't Talk Anymore</br>
-      <input type='radio' name='sound' value='attention'>Attention</br>
-      <input type='radio' name='sound' value='wolves'>Wolves</br>
-      <input type='radio' name='sound' value='centuries'>Centuries</br>
-      <input type='radio' name='sound' value='Immortal'>Immortal</br>
-      <input type='radio' name='sound' value='爱情废柴'>爱情废柴</br>
-      <input type='radio' name='sound' value='后来的我们'>后来的我们</br>
-      <input type='radio' name='sound' value='吃炸鸡'>吃炸鸡</br>
-      <input type='radio' name='sound' value='漂洋过海来看你dj'>漂洋过海来看你(DJ版)</br>
-      <input type='radio' name='sound' value='人间烟火'>人间烟火</br>
-        <input type='radio' name='sound' value='最伟大的作品'>最伟大的作品</br>
-      <input type='radio' name='sound' value='粉色海洋'>粉色海洋</br>
-      <input type='radio' name='sound' value='可可托海的牧羊人'>可可托海的牧羊人</br>
-      <input type='radio' name='sound' value='像我这样的人'>像我这样的人</br>
-      <input type='radio' name='sound' value='她会魔法吧'>她会魔法吧</br>
-      <input type='radio' name='sound' value='化风行万里'>化风行万里</br>
-      <input type='radio' name='sound' value='美人鱼'>美人鱼</br>
-      <input type='radio' name='sound' value='四季予你'>四季予你</br>
-      <input type='radio' name='sound' value='一半疯了一半算了'>一半疯了一半算了</br>
-      <input type='radio' name='sound' value='你这该死的温柔'>你这该死的温柔</br>
-      <input type='radio' name='sound' value='手写的从前'>手写的从前</br>
-      <input type='radio' name='sound' value='情歌王'>情歌王</br>
-      <input type='radio' name='sound' value='中国话'>中国话</br>
-      <input type='radio' name='sound' value='rolling'>Rolling In The Deep</br>
-      <input type='radio' name='sound' value='neyo'>Because Of You</br>
-      <input type='radio' name='sound' value='成都'>成都</br>
-      <input type='radio' name='sound' value='桥边姑娘'>桥边娘</br>
-      <input type='radio' name='sound' value='单身情歌'>单身情歌</br>
-      <input type='radio' name='sound' value='绿色'>绿色</br>
-      <input type='radio' name='sound' value='敬不到来日方长'>敬不到来日方长</br>
-      <input type='radio' name='sound' value='克罗地亚狂想曲'>克罗地亚狂想曲</br>
-      <input type='radio' name='sound' value='西楼儿女'>西楼儿女</br>
-      <input type='radio' name='sound' value='有点甜'>有点甜</br>
-      <input type='radio' name='sound' value='苦笑'>苦笑</br>
-      <input type='radio' name='sound' value='倩女幽魂'>倩女幽魂</br>
-      <input type='radio' name='sound' value='倔强'>倔强</br>
-      <input type='radio' name='sound' value='咸鱼'>咸鱼</br>
-      <input type='radio' name='sound' value='离开地球表面'>离开地球表面</br>
-      <input type='radio' name='sound' value='孙悟空'>孙悟空</br>
-      <input type='radio' name='sound' value='将军令'>将军令</br>
-      <input type='radio' name='sound' value='叫我第一名'>叫我第一名</br>
-      <input type='radio' name='sound' value='快乐很伟大'>快乐很伟大</br>
-      <input type='radio' name='sound' value='伤心的人别听慢歌'>伤心的人别听慢歌</br>
-      <input type='radio' name='sound' value='数不尽的星空'>数不尽的星空</br>
-      <input type='radio' name='sound' value='出神入化'>出神入化</br>
-      <input type='radio' name='sound' value='我来人间一趟'>我来人间一趟</br>
-      <input type='radio' name='sound' value='浪子闲话'>浪子闲话</br>
-      <input type='radio' name='sound' value='爱江山更爱美人'>爱江山更爱美人</br>
-      <input type='radio' name='sound' value='今夜'>今夜</br>
-      <input type='radio' name='sound' value='向云端'>向云端</br>
-      <input type='radio' name='sound' value='忘川彼岸'>忘川彼岸</br>
-      <input type='radio' name='sound' value='最炫民族风'>最炫民族风</br>
-      <input type='radio' name='sound' value=本草纲目>本草纲目</br>
-      <input type='radio' name='sound' value='我们不一样'>我们不一样</br>
-      <input type='radio' name='sound' value='沉默是金'>沉默是金</br>
-      <input type='radio' name='sound' value='游园会'>游园会</br>
-      <input type='radio' name='sound' value='可惜不是你'>可惜不是你</br>
-      <input type='radio' name='sound' value='悬溺'>悬溺</br>
-      <input type='radio' name='sound' value='最好的我'>最好的我</br>
-      <input type='radio' name='sound' value='再见莫妮卡'>再见莫妮卡</br>
-      <input type='radio' name='sound' value='我不认为我像她'>I Don't Think That I Like Her</br>
-      <input type='radio' name='sound' value='一个像夏天一个像秋天'>一个像夏天一个像秋天</br>
-      <input type='radio' name='sound' value='Bones'>Bones</br>
-      <input type='radio' name='sound' value='电梯战神'>电梯战神</br>
-      <input type='radio' name='sound' value='亲爱的_那不是爱情'>亲爱的,那不是爱情</br>
-      <input type='radio' name='sound' value='开往早晨的午夜'>开往早餐的午夜</br>
-      <input type='radio' name='sound' value='无数'>无数</br>
-      <input type='radio' name='sound' value='倍儿爽'>倍儿爽</br>
-      <input type='radio' name='sound' value='left_and_right'>Left And Right</br>
-      <input type='radio' name='sound' value='heart_burn'>Heart Burn</br>
-      <input type='radio' name='sound' value='你不是一个人'>你不是一个人</br>
-      <input type='radio' name='sound' value='深蓝色太平洋'>深蓝色太平洋</br>
-      <input type='radio' name='sound' value='芯房'>芯房</br>
-      <input type='radio' name='sound' value='好好宠爱'>好好宠爱</br>
-      <input type='radio' name='sound' value='半壶纱'>半壶纱</br>
-      <input type='radio' name='sound' value='风筝误'>风筝误</br>
-      <input type='radio' name='sound' value='赤伶'>赤伶</br>
-      <input type='radio' name='sound' value='麒麟'>麒麟</br>
-      <input type='radio' name='sound' value='你曾是少年'>你曾是少年</br>
-      <input type='radio' name='sound' value='不怕'>不怕</br>
-      <input type='radio' name='sound' value='铠甲勇士变身'>铠甲勇士变身</br>
-      <input type='radio' name='sound' value='拿瓦'>拿瓦主题曲</br>
-      <input type='radio' name='sound' value='光的战役'>光的战役</br>
-      <input type='radio' name='sound' value='通往胜利'>通往胜利</br>
-      <input type='radio' name='sound' value='奇迹再现'>奇迹再现</br>
-      <input type='radio' name='sound' value='迪迦片尾曲'>迪迦片尾曲</br>
-      <input type='radio' name='sound' value='take_me_higher'>Take Me Higher</br>
-      <input type='radio' name='sound' value='请记住我'>请记住我</br>
-      <input type='radio' name='sound' value='do_you_want_to_build_a_snowman'>Do You Want To Build A Snowman?</br>
-      <input type='radio' name='sound' value='至夏'>至夏</br>
-      
-    </br>
-    </div>
+          <input type='radio' name='sound' value='sugar'>Sugar</br>
+          <input type='radio' name='sound' value='love_story'>Love Story</br>
+          <input type='radio' name='sound' value='zzjj'>字字句句</br>
+          <input type='radio' name='sound' value='whd'>我会等</br>
+          <input type='radio' name='sound' value='hnh'>坏女孩</br>
+          <input type='radio' name='sound' value='mhc'>面会菜</br>
+          <input type='radio' name='sound' value='xiaoxx'>小星星</br>
+          <input type='radio' name='sound' value='exile'>Exile</br>
+          <input type='radio' name='sound' value='dreamit'>Dream It Possible</br>
+          <input type='radio' name='sound' value='sljxh'>所念皆星河</br>
+          <input type='radio' name='sound' value='夜的钢琴曲五'>夜的钢琴曲</br>
+          <input type='radio' name='sound' value='sgl'>三国恋</br>
+          <input type='radio' name='sound' value='sgx'>三国杀</br>
+          <input type='radio' name='sound' value='dwcqzsg'>当我唱起这首歌</br>
+          <input type='radio' name='sound' value='sgx'>三国杀</br>
+          <input type='radio' name='sound' value='taiyang'>太阳</br>
+          <input type='radio' name='sound' value='青花瓷'>青花瓷</br>
+          <input type='radio' name='sound' value='兰亭序'>兰亭序</br>
+          <input type='radio' name='sound' value='后来'>后来</br>
+          <input type='radio' name='sound' value='一路向北'>一路向北</br>
+          <input type='radio' name='sound' value='这世界那么多人'>这世界那么多人</br>
+          <input type='radio' name='sound' value='你的答案'>你的答案</br>
+          <input type='radio' name='sound' value='富士山下'>富士山下</br>
+          <input type='radio' name='sound' value='真的爱你'>真的爱你</br>
+          <input type='radio' name='sound' value='踏山河'>踏山河</br>
+          <input type='radio' name='sound' value='最长的电影'>最长的电影</br>
+          <input type='radio' name='sound' value='最后的问候'>最后的问候</br>
+          <input type='radio' name='sound' value='wonderful'>Wonderful</br>
+          <input type='radio' name='sound' value='cruel'>Cruel Summer</br>
+          <input type='radio' name='sound' value='shivers'>Shivers</br>
+          <input type='radio' name='sound' value='这就是爱'>这就是爱</br>
+          <input type='radio' name='sound' value='so_good'>So Good</br>
+          <input type='radio' name='sound' value='long_time_no_see'>Long Time No See</br>
+          <input type='radio' name='sound' value='my_type'>My Type</br>
+          <input type='radio' name='sound' value='快乐环岛'>快乐环岛</br>
+          <input type='radio' name='sound' value='爱出发'>爱出发</br>
+          <input type='radio' name='sound' value='想唱就唱'>想唱就唱</br>
+          <input type='radio' name='sound' value='样'>样(Young)</br>
+          <input type='radio' name='sound' value='剩下的盛夏'>剩下的盛夏</br>
+          <input type='radio' name='sound' value='秒针'>秒针</br>
+          <input type='radio' name='sound' value='吻别'>吻别</br>
+          <input type='radio' name='sound' value='说了再见'>说了再见</br>
+          <input type='radio' name='sound' value='说爱你'>说爱你</br>
+          <input type='radio' name='sound' value='错位时空'>错位时空</br>
+          <input type='radio' name='sound' value='突然的自我'>突然的自我</br>
+          <input type='radio' name='sound' value='咆哮'>咆哮</br>
+          <input type='radio' name='sound' value='狼与美女'>狼与美女</br>
+          <input type='radio' name='sound' value='约定'>约定</br>
+          <input type='radio' name='sound' value='光辉岁月'>光辉岁月<br>
+          <input type='radio' name='sound' value='海阔天空'>海阔天空</br>
+          <input type='radio' name='sound' value='喜欢你'>喜欢你</br>
+          <input type='radio' name='sound' value='冷雨夜'>冷雨夜</br>
+          <input type='radio' name='sound' value='童话'>童话</br>
+          <input type='radio' name='sound' value='水手'>水手</br>
+          <input type='radio' name='sound' value='爱要怎么说出口'>爱要怎么说出口</br>
+          <input type='radio' name='sound' value='卡路里'>燃烧我的卡路里</br>
+          <input type='radio' name='sound' value='因为你'>Because Of You</br>
+          <input type='radio' name='sound' value='热爱105'>热爱105°C的你</br>
+          <input type='radio' name='sound' value='十年'>十年</br>
+          <input type='radio' name='sound' value='你给我听好'>你给我听好</br>
+          <input type='radio' name='sound' value='爱情转移'>爱情转移</br>
+          <input type='radio' name='sound' value='成都'>成都</br>
+          <input type='radio' name='sound' value='可能'>可能</br>
+          <input type='radio' name='sound' value='水星记'>水星记</br>
+          <input type='radio' name='sound' value='faded'>Faded</br>
+          <input type='radio' name='sound' value='年少有为'>年少有为</br>
+          <input type='radio' name='sound' value='可不可以'>可不可以</br>
+          <input type='radio' name='sound' value='绿光'>绿光</br>
+          <input type='radio' name='sound' value='一路走过的日子'>一路走过的日子</br>
+          <input type='radio' name='sound' value='发如雪'>发如雪</br>
+          <input type='radio' name='sound' value='信仰'>信仰</br>
+          <input type='radio' name='sound' value='爱存在'>爱,存在</br>
+          <input type='radio' name='sound' value='微微'>微微</br>
+          <input type='radio' name='sound' value='一笑倾城'>一笑倾城</br>
+          <input type='radio' name='sound' value='泡沫'>泡沫</br>
+          <input type='radio' name='sound' value='你把我灌醉'>你把我灌醉</br>
+          <input type='radio' name='sound' value='光年之外'>光年之外</br>
+          <input type='radio' name='sound' value='夜空中最亮的星'>夜空中最亮的星</br>
+          <input type='radio' name='sound' value='模特'>模特</br>
+          <input type='radio' name='sound' value='不爱我就拉倒'>不爱我就拉倒</br>
+          <input type='radio' name='sound' value='李白'>李白</br>
+          <input type='radio' name='sound' value='白色风车'>白色风车</br>
+          <input type='radio' name='sound' value='洋葱'>洋葱</br>
+          <input type='radio' name='sound' value='银河与星斗'>银河与星斗</br>
+          <input type='radio' name='sound' value='后来'>后来</br>
+          <input type='radio' name='sound' value='rolling_in_the_deep'>Rolling In The Deep</br>
+          <input type='radio' name='sound' value='陪你度过漫长岁月'>陪你度过漫长岁月</br>
+          <input type='radio' name='sound' value='处处吻'>处处吻</br>
+          <input type='radio' name='sound' value='简单爱'>简单爱</br>
+          <input type='radio' name='sound' value='爱你'>爱你</br>
+          <input type='radio' name='sound' value='一千年以后'>一千年以后</br>
+          <input type='radio' name='sound' value='追梦赤子心'>追梦赤子心</br>
+          <input type='radio' name='sound' value='你的背包'>你的背包</br>
+          <input type='radio' name='sound' value='last_dance'>Last Dance</br>
+          <input type='radio' name='sound' value='shape_of_you'>Shape Of You</br>
+          <input type='radio' name='sound' value='可惜没如果'>可惜没如果</br>
+          <input type='radio' name='sound' value='来迟'>来迟</br>
+          <input type='radio' name='sound' value='新地球'>新地球</br>
+          <input type='radio' name='sound' value='倒数'>倒数</br>
+          <input type='radio' name='sound' value='last_night'>Last Night</br>
+          <input type='radio' name='sound' value='sold_out'>Sold Out</br>
+          <input type='radio' name='sound' value='what_do_you_mean'>What Do You Mean?</br>
+          <input type='radio' name='sound' value='one_time'>One Time</br>
+          <input type='radio' name='sound' value='love_yourself'>Love Yourself</br>
+          <input type='radio' name='sound' value='不再犹豫'>不再犹豫</br>
+          <input type='radio' name='sound' value='半生雪'>半生雪</br>
+          <input type='radio' name='sound' value='星辰大海'>星辰大海</br>
+          <input type='radio' name='sound' value='寂寞沙洲冷'>寂寞沙洲冷</br>
+          <input type='radio' name='sound' value='消愁'>消愁</br>
+          <input type='radio' name='sound' value='小城夏天'>小城夏天</br>
+          <input type='radio' name='sound' value='罗刹海市'>罗刹海市</br>
+          <input type='radio' name='sound' value='芒种'>芒种</br>
+          <input type='radio' name='sound' value='奢香夫人'>奢香夫人</br>
+          <input type='radio' name='sound' value='世界这么大还是遇见你'>世界这么大还是遇见你</br>
+          <input type='radio' name='sound' value='像鱼'>像鱼</br>
+          <input type='radio' name='sound' value='夜空中最亮的星2'>夜空中最亮的星(逃跑计划)</br>
+          <input type='radio' name='sound' value='天外来吻'>天外来吻</br>
+          <input type='radio' name='sound' value='光的方向'>光的方向</br>
+          <input type='radio' name='sound' value='花妖'>花妖</br>
+          <input type='radio' name='sound' value='有何不可'>有何不可</br>
+          <input type='radio' name='sound' value='乌梅子酱'>乌梅子酱</br>
+          <input type='radio' name='sound' value='多远都要在一起'>多远都要在一起</br>
+          <input type='radio' name='sound' value='嘉宾'>嘉宾</br>
+          <input type='radio' name='sound' value='千千阙歌'>千千阙歌</br>
+          <input type='radio' name='sound' value='如果这都不算爱'>如果这都不算爱</br>
+          <input type='radio' name='sound' value='童话镇'>童话镇</br>
+          <input type='radio' name='sound' value='是你_梦然'>是你(梦然)</br>
+          <input type='radio' name='sound' value='雨一直下'>雨一直下</br>
+          <input type='radio' name='sound' value='讲不出再见'>讲不出再见</br>
+          <input type='radio' name='sound' value='see_you_again'>See You Again</br>
+          <input type='radio' name='sound' value='way_back'>Way Back</br>
+          <input type='radio' name='sound' value='再见再见'>再见再见</br>
+          <input type='radio' name='sound' value='年少有你'>年少有你</br>
+          <input type='radio' name='sound' value='听妈妈的话'>听妈妈的话</br>
+          <input type='radio' name='sound' value='我会等'>我会等</br>
+          <input type='radio' name='sound' value='没那么简单'>没那么简单</br>
+          <input type='radio' name='sound' value='我的歌声里'>我的歌声里</br>
+          <input type='radio' name='sound' value='素颜'>素颜</br>
+          <input type='radio' name='sound' value='特别的爱给特别的你'>特别的爱给特别的你</br>
+          <input type='radio' name='sound' value='如果我变成回忆'>如果我变成回忆</br>
+          <input type='radio' name='sound' value='回到过去'>回到过去</br>
+          <input type='radio' name='sound' value='nevada'>Nevada</br>
+          <input type='radio' name='sound' value='小酒窝'>小酒窝</br>
+          <input type='radio' name='sound' value='let_it_go'>Let It Go</br>
+          <input type='radio' name='sound' value='最美的太阳'>最美的太阳</br>
+          <input type='radio' name='sound' value='一吻天荒'>一吻天荒</br>
+          <input type='radio' name='sound' value='等你等到我心痛'>等你等到我心痛</br>
+          <input type='radio' name='sound' value='把回忆拼好给你'>把回忆拼好给你</br>
+          <input type='radio' name='sound' value='你不是真正的快乐'>你不是真正的快乐</br>
+          <input type='radio' name='sound' value='侧脸'>侧脸</br>
+          <input type='radio' name='sound' value='不能说的秘密'>不能说的秘密</br>
+          <input type="radio" name="sound" value="deep">The Deep</br>
+          <input type='radio' name='sound' value='春天里'>春天里</br>
+          <input type='radio' name='sound' value='someone_like_you'>Someone Like You</br>
+          <input type='radio' name='sound' value='背对背拥抱'>背对背拥抱</br>
+          <input type='radio' name='sound' value='梦醒时分'>梦醒时分</br>
+          <input type='radio' name='sound' value='大海'>大海</br>
+          <input type='radio' name='sound' value='有多少爱可以重来'>有多少爱可以重来</br>
+          <input type='radio' name='sound' value='滚滚红尘'>滚滚红尘</br>
+          <input type='radio' name='sound' value='相见恨晚'>相见恨晚</br>
+          <input type='radio' name='sound' value='当爱已成往事'>当爱已成往事</br>
+          <input type='radio' name='sound' value='断点'>断点</br>
+          <input type='radio' name='sound'>秋天不回来</br>
+          <input type='radio' name='sound' value='恋曲1990'>恋曲1990</br>
+          <input type='radio' name='sound' value='一起走过的日子'>一起走过的日子</br>
+          <input type='radio' name='sound' value='那就这样吧'>那就这样吧</br>
+          <input type='radio' name='sound' value='那就这样吧'>那就这样吧</br>
+          <input type='radio' name='sound' value='鬼迷心窍'>鬼迷心窍</br>
+          <input type='radio' name='sound' value='你就不要想起我'>你就不要想起我</br>
+          <input type='radio' name='sound' value='雨蝶'>雨蝶</br>
+          <input type='radio' name='sound' value='风中有朵雨做的云'>风中有朵雨做的云</br>
+          <input type='radio' name='sound' value='记事本'>记事本</br>
+          <input type='radio' name='sound' value='way_back1'>Way Back</br>
+          <input type='radio' name='sound' value='walk_thru_fire'>Walk Thru Fire</br>
+          <input type='radio' name='sound' value='closer'>Closer</br>
+          <input type='radio' name='sound' value='we_dont_talk_anymore'>We Don't Talk Anymore</br>
+          <input type='radio' name='sound' value='attention'>Attention</br>
+          <input type='radio' name='sound' value='wolves'>Wolves</br>
+          <input type='radio' name='sound' value='centuries'>Centuries</br>
+          <input type='radio' name='sound' value='Immortal'>Immortal</br>
+          <input type='radio' name='sound' value='爱情废柴'>爱情废柴</br>
+          <input type='radio' name='sound' value='后来的我们'>后来的我们</br>
+          <input type='radio' name='sound' value='吃炸鸡'>吃炸鸡</br>
+          <input type='radio' name='sound' value='漂洋过海来看你dj'>漂洋过海来看你(DJ版)</br>
+          <input type='radio' name='sound' value='人间烟火'>人间烟火</br>
+          <input type='radio' name='sound' value='最伟大的作品'>最伟大的作品</br>
+          <input type='radio' name='sound' value='粉色海洋'>粉色海洋</br>
+          <input type='radio' name='sound' value='可可托海的牧羊人'>可可托海的牧羊人</br>
+          <input type='radio' name='sound' value='像我这样的人'>像我这样的人</br>
+          <input type='radio' name='sound' value='她会魔法吧'>她会魔法吧</br>
+          <input type='radio' name='sound' value='化风行万里'>化风行万里</br>
+          <input type='radio' name='sound' value='美人鱼'>美人鱼</br>
+          <input type='radio' name='sound' value='四季予你'>四季予你</br>
+          <input type='radio' name='sound' value='一半疯了一半算了'>一半疯了一半算了</br>
+          <input type='radio' name='sound' value='你这该死的温柔'>你这该死的温柔</br>
+          <input type='radio' name='sound' value='手写的从前'>手写的从前</br>
+          <input type='radio' name='sound' value='情歌王'>情歌王</br>
+          <input type='radio' name='sound' value='中国话'>中国话</br>
+          <input type='radio' name='sound' value='rolling'>Rolling In The Deep</br>
+          <input type='radio' name='sound' value='neyo'>Because Of You</br>
+          <input type='radio' name='sound' value='成都'>成都</br>
+          <input type='radio' name='sound' value='桥边姑娘'>桥边娘</br>
+          <input type='radio' name='sound' value='单身情歌'>单身情歌</br>
+          <input type='radio' name='sound' value='绿色'>绿色</br>
+          <input type='radio' name='sound' value='敬不到来日方长'>敬不到来日方长</br>
+          <input type='radio' name='sound' value='克罗地亚狂想曲'>克罗地亚狂想曲</br>
+          <input type='radio' name='sound' value='西楼儿女'>西楼儿女</br>
+          <input type='radio' name='sound' value='有点甜'>有点甜</br>
+          <input type='radio' name='sound' value='苦笑'>苦笑</br>
+          <input type='radio' name='sound' value='倩女幽魂'>倩女幽魂</br>
+          <input type='radio' name='sound' value='倔强'>倔强</br>
+          <input type='radio' name='sound' value='咸鱼'>咸鱼</br>
+          <input type='radio' name='sound' value='离开地球表面'>离开地球表面</br>
+          <input type='radio' name='sound' value='孙悟空'>孙悟空</br>
+          <input type='radio' name='sound' value='将军令'>将军令</br>
+          <input type='radio' name='sound' value='叫我第一名'>叫我第一名</br>
+          <input type='radio' name='sound' value='快乐很伟大'>快乐很伟大</br>
+          <input type='radio' name='sound' value='伤心的人别听慢歌'>伤心的人别听慢歌</br>
+          <input type='radio' name='sound' value='数不尽的星空'>数不尽的星空</br>
+          <input type='radio' name='sound' value='出神入化'>出神入化</br>
+          <input type='radio' name='sound' value='我来人间一趟'>我来人间一趟</br>
+          <input type='radio' name='sound' value='浪子闲话'>浪子闲话</br>
+          <input type='radio' name='sound' value='爱江山更爱美人'>爱江山更爱美人</br>
+          <input type='radio' name='sound' value='今夜'>今夜</br>
+          <input type='radio' name='sound' value='向云端'>向云端</br>
+          <input type='radio' name='sound' value='忘川彼岸'>忘川彼岸</br>
+          <input type='radio' name='sound' value='最炫民族风'>最炫民族风</br>
+          <input type='radio' name='sound' value=本草纲目>本草纲目</br>
+          <input type='radio' name='sound' value='我们不一样'>我们不一样</br>
+          <input type='radio' name='sound' value='沉默是金'>沉默是金</br>
+          <input type='radio' name='sound' value='游园会'>游园会</br>
+          <input type='radio' name='sound' value='可惜不是你'>可惜不是你</br>
+          <input type='radio' name='sound' value='悬溺'>悬溺</br>
+          <input type='radio' name='sound' value='最好的我'>最好的我</br>
+          <input type='radio' name='sound' value='再见莫妮卡'>再见莫妮卡</br>
+          <input type='radio' name='sound' value='我不认为我像她'>I Don't Think That I Like Her</br>
+          <input type='radio' name='sound' value='一个像夏天一个像秋天'>一个像夏天一个像秋天</br>
+          <input type='radio' name='sound' value='Bones'>Bones</br>
+          <input type='radio' name='sound' value='电梯战神'>电梯战神</br>
+          <input type='radio' name='sound' value='亲爱的_那不是爱情'>亲爱的,那不是爱情</br>
+          <input type='radio' name='sound' value='开往早晨的午夜'>开往早餐的午夜</br>
+          <input type='radio' name='sound' value='无数'>无数</br>
+          <input type='radio' name='sound' value='倍儿爽'>倍儿爽</br>
+          <input type='radio' name='sound' value='left_and_right'>Left And Right</br>
+          <input type='radio' name='sound' value='heart_burn'>Heart Burn</br>
+          <input type='radio' name='sound' value='你不是一个人'>你不是一个人</br>
+          <input type='radio' name='sound' value='深蓝色太平洋'>深蓝色太平洋</br>
+          <input type='radio' name='sound' value='芯房'>芯房</br>
+          <input type='radio' name='sound' value='好好宠爱'>好好宠爱</br>
+          <input type='radio' name='sound' value='半壶纱'>半壶纱</br>
+          <input type='radio' name='sound' value='风筝误'>风筝误</br>
+          <input type='radio' name='sound' value='赤伶'>赤伶</br>
+          <input type='radio' name='sound' value='麒麟'>麒麟</br>
+          <input type='radio' name='sound' value='你曾是少年'>你曾是少年</br>
+          <input type='radio' name='sound' value='不怕'>不怕</br>
+          <input type='radio' name='sound' value='铠甲勇士变身'>铠甲勇士变身</br>
+          <input type='radio' name='sound' value='拿瓦'>拿瓦主题曲</br>
+          <input type='radio' name='sound' value='光的战役'>光的战役</br>
+          <input type='radio' name='sound' value='通往胜利'>通往胜利</br>
+          <input type='radio' name='sound' value='奇迹再现'>奇迹再现</br>
+          <input type='radio' name='sound' value='迪迦片尾曲'>迪迦片尾曲</br>
+          <input type='radio' name='sound' value='take_me_higher'>Take Me Higher</br>
+          <input type='radio' name='sound' value='请记住我'>请记住我</br>
+          <input type='radio' name='sound' value='do_you_want_to_build_a_snowman'>Do You Want To Build A Snowman?</br>
+          <input type='radio' name='sound' value='至夏'>至夏</br>
+
+          </br>
+  </div>
   </br></br>
-    <!--
+  <!--
     <input type="radio" name="sound" value="yj">遇见</br>
     
     -->
-    <!--<audio src="https://mp3app.haoge500.com/upload/128/2021/05/12/1198030.mp3" autoplay></audio> -->
-    <button id='play-btn' onclick='handlePlaySound()'>Play Sound</button>
+  <!--<audio src="https://mp3app.haoge500.com/upload/128/2021/05/12/1198030.mp3" autoplay></audio> -->
+  <button id='play-btn' onclick='handlePlaySound()'>Play Sound</button>
 
   </br></br>
-    <button id="play-btn" onclick="toggleFullscreen()">Switch Fullscreen</button>
+  <button id="play-btn" onclick="toggleFullscreen()">Switch Fullscreen</button>
 
-    <script>
-      function toggleFullscreen() {
-        if (!document.fullscreenElement && !document.mozFullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-          } else if (document.documentElement.msRequestFullscreen) {
-            document.documentElement.msRequestFullscreen();
-          } else if (document.documentElement.mozRequestFullscreen) {
-            document.documentElement.mozRequestFullscreen();
-          } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-          }
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.msExitFullscreen) {
-            document.mozExitfullscreen();
-          } else if (document.webkitExitfullscreen) {
-            document.webkitExitfullscreen();
-          }
+  <script>
+    function toggleFullscreen() {
+      if (!document.fullscreenElement && !document.mozFullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) {
+          document.documentElement.msRequestFullscreen();
+        } else if (document.documentElement.mozRequestFullscreen) {
+          document.documentElement.mozRequestFullscreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.mozExitfullscreen();
+        } else if (document.webkitExitfullscreen) {
+          document.webkitExitfullscreen();
         }
       }
-    </script>
-  </body>
+    }
+  </script>
+</body>
+
 </html>
