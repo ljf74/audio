@@ -1,5 +1,124 @@
 // Constants
-const sounds = {
+const sounds = { 
+强123:'https://freetyst.nf.migu.cn/public/product9th/product45/2022/08/0417/2013%E5%B9%B407%E6%9C%8817%E6%97%A5%E6%BB%9A%E7%9F%B3%E5%94%B1%E7%89%87%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A558%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/63480214292170055.mp3',
+my_heart_will_go_on:'https://mp3app.haoge500.com/new/2012/04-12/466375.mp3',
+还是要幸福:'https://mp3app.haoge500.com/hot/2011/09-06/413289.mp3',
+小宇:'https://mp3app.haoge500.com/hot/2007/07-09/86807.mp3',
+其实都没有:'http://music.163.com/song/media/outer/url?id=479408221.mp3',
+假如:'https://freetyst.nf.migu.cn/public/product9th/product46/2022/11/1415/2011%E5%B9%B404%E6%9C%8802%E6%97%A500030%E6%89%B9%E6%AC%A1/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60084700059153229.mp3',
+恋人心:'http://music.163.com/song/media/outer/url?id=28668855.mp3',
+搁浅123:'https://freetyst.nf.migu.cn/public/product9th/product45/2022/05/0717/2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60054701938170544.mp3',
+舞底线:'http://music.163.com/song/media/outer/url?id=32408056.mp3',
+千年之恋:'https://mp3app.haoge500.com/hot/2004/07-17/52042.mp3',
+冰雨:'https://mp3app.haoge500.com/hot/2004/07-13/1824.mp3',
+老公老公辛苦了:'https://mp3app.haoge500.com/upload/128/2018/07/10/880824.mp3',
+给未来的自己:'https://freetyst.nf.migu.cn/public/product02/2017/08/1%E6%9C%88%E7%9B%B8%E4%BF%A1%E9%9F%B3%E4%B9%9045%E9%A6%96%E5%85%A8%E6%9B%B2/%E6%AD%8C%E6%9B%B2%E4%B8%8B%E8%BD%BD/MP3_320_16_Stero/%E7%BB%99%E6%9C%AA%E6%9D%A5%E7%9A%84%E8%87%AA%E5%B7%B1-%E6%A2%81%E9%9D%99%E8%8C%B9.mp3',
+牡丹江:'https://freetyst.nf.migu.cn/public/product9th/product46/2023/02/0901/2020%E5%B9%B412%E6%9C%8815%E6%97%A511%E7%82%B917%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%A4%A9%E6%B5%A9%E7%9B%9B%E4%B8%9642849%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/69965801644014906.mp3',
+勇敢爱:'https://mp3app.haoge500.com/mp3/474/473010.mp3',
+多想把你抱住123:'https://mp3app.haoge500.com/hot/2007/11-20/92166.mp3',
+monster:'https://mp3app.haoge500.com/upload/rank/20211226/d73572f7ea6b591f9194be6489743c2d.mp3',
+怎么唱情歌:'http://music.163.com/song/media/outer/url?id=5231391.mp3',
+是非题:'https://freetyst.nf.migu.cn/public/product9th/product42/2021/01/2715/%E7%A6%8F%E8%8C%82%E4%B8%89%E6%9C%88%E7%94%B3%E6%8A%A5%E6%AD%8C%E6%9B%B2/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60083600466154124.mp3',
+白玫瑰:'https://mp3app.haoge500.com/upload/rank/20211221/a612d3cef6865f28be7c47a5f51e1a00.mp3',
+恋爱达人:'https://mp3app.haoge500.com/new/2004/11-24/62970.mp3',
+第一次爱的人:'http://music.163.com/song/media/outer/url?id=1953017440.mp3',
+喜欢孤独123:'http://music.163.com/song/media/outer/url?id=222408.mp3',
+我很快乐123:'http://music.163.com/song/media/outer/url?id=255294.mp3',
+我在那角落悬过伤风:'http://music.163.com/song/media/outer/url?id=255294.mp3',
+浪漫爱:'http://music.163.com/song/media/outer/url?id=247947.mp3',
+我只在乎你:'https://mp3app.haoge500.com/upload/128/2019/08/15/994845.mp3',
+full_易:'https://mp3app.haoge500.com/upload/128/2019/08/09/994427.mp3',
+佛系少女:'https://mp3app.haoge500.com/upload/128/2018/03/10/876640.mp3',
+全部都是你:'https://mp3app.haoge500.com/upload/128/2017/06/05/862051.mp3',
+多幸福:'https://mp3app.haoge500.com/upload/320/2016/05/31/829307.mp3',
+冬眠:'https://mp3app.haoge500.com/upload/rank/20211215/7e68916b26b35e0dbb5a255ecdcc55ee.mp3',
+春三月:'https://mp3app.haoge500.com/upload/128/2021/02/03/1002601.mp3',
+烟雨行舟:'https://mp3app.haoge500.com/upload/128/2019/09/16/996168.mp3',
+冬眠_抖音:'https://mp3app.haoge500.com/upload/128/2019/12/03/999606.mp3',
+星星在唱歌:'https://mp3app.haoge500.com/upload/128/2021/02/03/1016113.mp3',
+冬眠_铃声:'https://mp3app.haoge500.com/upload/128/2019/12/03/999605.mp3',
+白驹:'http://music.163.com/song/media/outer/url?id=1813843577.mp3',
+晚风吹弗:'http://music.163.com/song/media/outer/url?id=1974767909.mp3',
+尔尔:'https://mp3app.haoge500.com/upload/128/2022/06/15/1393975.mp3',
+盗将行:'http://music.163.com/song/media/outer/url?id=1310985150.mp3',
+谁_司南:'https://mp3app.haoge500.com/upload/128/2023/02/28/1570395.mp3',
+不寂寞123:'https://mp3app.haoge500.com/upload/128/2018/08/24/881529.mp3',
+那就好好的:'https://mp3app.haoge500.com/upload/128/2018/08/24/881530.mp3',
+下一站是爱情:'https://mp3app.haoge500.com/upload/128/2018/08/29/881596.mp3',
+离开的那个人:'https://mp3app.haoge500.com/upload/128/2018/09/06/881733.mp3',
+青春的故事:'https://mp3app.haoge500.com/upload/128/2018/09/06/881734.mp3',
+豆浆油条:'https://mp3app.haoge500.com/hot/2004/07-17/56498.mp3',
+一千年以后:'https://mp3app.haoge500.com/upload/rank/20211227/36d8470218115d309d0d5dfb766519a1.mp3',
+我还想她:'https://mp3app.haoge500.com/upload/rank/20211227/36d8470218115d309d0d5dfb766519a1.mp3',
+always_online:'https://mp3app.haoge500.com/upload/rank/20211227/36d8470218115d309d0d5dfb766519a1.mp3',
+编号89757 :'https://mp3app.haoge500.com/new/2005/04-03/65134.mp3',
+爱不会绝迹:'https://mp3app.haoge500.com/hot/2009/07-22/184789.mp3',
+你要的不是我:'https://mp3app.haoge500.com/hot/2006/02-21/75240.mp3',
+第二天堂:'https://mp3app.haoge500.com/hot/2004/07-17/56495.mp3',
+不存在的情人:'https://mp3app.haoge500.com/hot/2011/12-29/462250.mp3',
+想见你_林俊杰:'http://music.163.com/song/media/outer/url?id=2019562365.mp3', 
+流行主教:'http://music.163.com/song/media/outer/url?id=108842.mp3',
+她说:'https://freetyst.nf.migu.cn/public/product10th/productB35/2022/05/0916/2010%E5%B9%B412%E6%9C%8809%E6%97%A500014%E6%89%B9%E6%AC%A1/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058622891161430.mp3',
+裹着心的光:'https://mp3app.haoge500.com/upload/rank/20211202/831c1b2c4b2e594fb592e70f301214ec.mp3',
+那些你狠冒险的梦:'https://freetyst.nf.migu.cn/public/ringmaker01/n16/2016/12/2016%E5%B9%B403%E6%9C%8831%E6%97%A514%E7%82%B917%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%BF%AB%E4%B9%90%E9%98%B3%E5%85%89%E9%A2%84%E7%95%99389%E9%A6%96/%E6%AD%8C%E6%9B%B2%E4%B8%8B%E8%BD%BD/MP3_320_16_Stero/%E9%82%A3%E4%BA%9B%E4%BD%A0%E5%BE%88%E5%86%92%E9%99%A9%E7%9A%84%E6%A2%A6(%E5%BF%AB%E4%B9%90%E5%A4%A7%E6%9C%AC%E8%90%A5)-%E6%9E%97%E4%BF%8A%E6%9D%B0.mp3',
+醉赤壁:'https://freetyst.nf.migu.cn/public/product7th/productB25/2020/08/1013/%E9%A2%84%E7%94%9F%E6%95%88%E5%A5%A5%E8%BF%90%E7%AC%AC12%E6%89%B9600586/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60058621111134857.mp3', 
+第几个一百天:'https://freetyst.nf.migu.cn/public/product02/2017/08/2009%E5%B9%B412%E6%9C%8804%E6%97%A5%E6%B5%B7%E8%9D%B6%E5%94%B1%E7%89%87/%E6%AD%8C%E6%9B%B2%E4%B8%8B%E8%BD%BD/MP3_320_16_Stero/%E7%AC%AC%E5%87%A0%E4%B8%AA100%E5%A4%A9-%E6%9E%97%E4%BF%8A%E6%9D%B0.mp3',
+祝你一路顺风:'https://freetyst.nf.migu.cn/public/product02/2017/08/2009%E5%B9%B412%E6%9C%8804%E6%97%A5%E6%B5%B7%E8%9D%B6%E5%94%B1%E7%89%87/%E6%AD%8C%E6%9B%B2%E4%B8%8B%E8%BD%BD/MP3_320_16_Stero/%E7%AC%AC%E5%87%A0%E4%B8%AA100%E5%A4%A9-%E6%9E%97%E4%BF%8A%E6%9D%B0.mp3',
+追风少年:'https://mp3app.haoge500.com/hot/2004/07-13/12195.mp3',
+转弯:'http://music.163.com/song/media/outer/url?id=156329.mp3',
+如果缘只到遇见:'https://mp3app.haoge500.com/mp3/602/601967.mp3',
+死心不息:'http://music.163.com/song/media/outer/url?id=156620.mp3',
+蓦然回首:'http://music.163.com/song/media/outer/url?id=5281648.mp3',
+爱你的我今天长这样:'https://mp3app.haoge500.com/mp3/598/597178.mp3',
+大城小爱123:'http://music.163.com/song/media/outer/url?id=25643093.mp3',
+你不知道的事:'http://music.163.com/song/media/outer/url?id=406907358.mp3',
+改变自己:'http://music.163.com/song/media/outer/url?id=25642225.mp3',
+十二生肖:'https://mp3app.haoge500.com/upload/rank/20220201/9735b0783613591f9f2abd9aefc58766.mp3',
+星光:'http://music.163.com/song/media/outer/url?id=1343776657.mp3',
+青山不争:'http://music.163.com/song/media/outer/url?id=1343776657.mp3',
+再不疯狂我们就老了:'http://music.163.com/song/media/outer/url?id=22853023.mp3',
+最美的期待:'https://mp3app.haoge500.com/upload/128/2018/03/10/876643.mp3',
+倒数:'https://freetyst.nf.migu.cn/public/product9th/product45/2022/08/0211/2021%E5%B9%B411%E6%9C%8826%E6%97%A515%E7%82%B901%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%98%89%E7%BE%8E%E4%B9%B0%E6%96%AD4236%E9%A6%96190374/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/69002603029112430.mp3',
+closer123:'http://music.163.com/song/media/outer/url?id=2037073779.mp3',
+the_right_path:'http://music.163.com/song/media/outer/url?id=2061452.mp3',
+瞬间的永恒123:'https://mp3app.haoge500.com/upload/rank/20211125/5e82766956f75c13a75930529311e58f.mp3',
+安静的午后:'http://music.163.com/song/media/outer/url?id=139730.mp3',
+love_yourself_justin:'http://music.163.com/song/media/outer/url?id=1865095005.mp3',
+rush:'http://music.163.com/song/media/outer/url?id=1990208030.mp3',
+miracle:'http://music.163.com/song/media/outer/url?id=2028687888.mp3',
+we_will_roc_you:'https://freetyst.nf.migu.cn/public/product9th/product46/2023/05/1119/2018%E5%B9%B408%E6%9C%8823%E6%97%A515%E7%82%B956%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY957%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005970UHFT190702.mp3',
+在你身边123:'http://music.163.com/song/media/outer/url?id=64668.mp3',
+羡慕风羡慕雨:'https://mp3app.haoge500.com/upload/128/2023/08/31/1882728.mp3',
+珊瑚海123:'https://freetyst.nf.migu.cn/public/product9th/product45/2022/07/2210/2009%E5%B9%B406%E6%9C%8826%E6%97%A5%E5%8D%9A%E5%B0%94%E6%99%AE%E6%96%AF/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/60054701956103831.mp3',
+喜欢你123:'https://mp3app.haoge500.com/hot/2014/08-15/645800.mp3',
+not_a_single_day:'https://mp3app.haoge500.com/mp3/374/373956.mp3',
+loves_me_not:'https://mp3app.haoge500.com/hot/2010/08-26/373927.mp3',
+ten7岁的季节:'https://mp3app.haoge500.com/hot/2004/07-17/52279.mp3',
+为什么受伤的总是我:'https://mp3app.haoge500.com/hot/2004/07-17/52278.mp3',
+beautiful_in_white:'https://mp3app.haoge500.com/mp3/401/400327.mp3',
+you_raise_me_up:'http://music.163.com/song/media/outer/url?id=20707713.mp3',
+i_lay_my_love_for_you:'https://mp3app.haoge500.com/upload/rank/20211218/d8f8e6aa5fe75c679b09d994b7c918af.mp3',
+i_need_you123:'https://mp3app.haoge500.com/hot/2004/07-13/18782.mp3',
+when_you_come_around:'https://mp3app.haoge500.com/mp3/125/124309.mp3',
+swear_it_again:'https://mp3app.haoge500.com/hot/2004/07-13/18790.mp3',
+home_123:'https://mp3app.haoge500.com/hot/2007/10-11/90147.mp3',
+fool_again:'https://mp3app.haoge500.com/new/2004/07-13/18780.mp3',
+i_have_a_dream:'http://music.163.com/song/media/outer/url?id=28033776.mp3',
+flying_without_wings:'http://music.163.com/song/media/outer/url?id=28033776.mp3',
+dreams_come_true:'https://mp3app.haoge500.com/hot/2004/07-13/18798.mp3',
+i_get_weak:'https://mp3app.haoge500.com/hot/2004/07-13/18798.mp3',
+sound_of_a_broken_heart:'https://mp3app.haoge500.com/mp3/202/201853.mp3',
+you_light_up_my_life:'http://music.163.com/song/media/outer/url?id=20707451.mp3',
+when_you_tell_me:'https://mp3app.haoge500.com/mp3/73/72102.mp3',
+destiny:'https://mp3app.haoge500.com/hot/2010/02-28/210772.mp3',
+library:'https://mp3app.haoge500.com/mp3/467/466885.mp3',
+gee:'http://music.163.com/song/media/outer/url?id=29535435.mp3',
+honey_h:'https://mp3app.haoge500.com/hot/2010/05-27/276087.mp3',
+说出愿望吧:'https://mp3app.haoge500.com/new/2009/08-16/185882.mp3',
+bad_girl:'http://music.163.com/song/media/outer/url?id=28844139.mp3',
+犯贱:'https://mp3app.haoge500.com/hot/2010/12-21/407509.mp3',
+客居不可以:'https://mp3app.haoge500.com/upload/rank/20220209/45168ea8e2da5503997e53004fdf1496.mp3',
+ 红装:'https://mp3app.haoge500.com/upload/rank/20220211/7891f28e84c1577a962a6a120a8a39c8.mp3',
 左手指月:'https://mp3app.haoge500.com/upload/rank/20211209/f3cb65119c695f25a8094e4f05d8fc6c.mp3',
 千年之恋:'https://mp3app.haoge500.com/upload/rank/20211228/3a0777d44f3a5d7fa847659e323a2801.mp3',
 天后:'https://mp3app.haoge500.com/upload/rank/20211209/310c8fc668ea5318a28b338e2b9e1524.mp3',
@@ -1254,10 +1373,55 @@ function playSingleSong() {
 */
 
 //playSound(sounds_key[Math.ceil(Math.random() * (sounds_key.length - 0) + 0)]);
-let idolSong = window.prompt("What song do you want to listen?")
+//let idolSong = window.prompt("What song do you want to listen?")
+let idolSong;
 
 function alertSound(idolSong) {
-  idolSong = window.prompt('What song do you want to listen?')
-  playSound(idolSong)
+  idolSong = window.prompt('What song do you want to listen?');
+  //idolSong = idolSong.replace(/\s+/g, '');
+  if (idolSong.trim() == '') {
+    alert('Please enter a song name.');
+    alertSound(idolSong);
+  }
+  if (!sounds_key.includes(idolSong)) {
+     document.getElementById('currentSong').innerText = "Sorry, not in the Audio Library X_X";
+  }
+  else {
+     playSound(idolSong);
+     document.getElementById('currentSong').innerText = idolSong;
+  }
 }
+
 //playSound(idolSong)
+
+// random sound
+function randomSound(currentSong) {
+  // currentSong = sounds_key[Math.ceil(Math.random() * (sounds_key.length - 0) + 0)];
+   currentSong = sounds_key[Math.floor(Math.random() * sounds_key.length)];
+   playSound(currentSong);
+   document.getElementById('currentSong').innerText = currentSong;
+}
+
+// Play or Pause
+var count = 0;
+var playPauseBTN = document.getElementById('playPauseBTN');
+
+
+function playPause(){
+  if (count == 0) {
+    count = 1;
+    player.play();
+    playPauseBTN.innerHTML = 'Pause &#9208;'
+  }else {
+    count = 0;
+    player.pause();
+    playPauseBTN.innerHTML = 'Play &#9658;'
+  }
+}
+
+function stop() {
+  playPause();
+  player.pause();
+  player.currentTime = 0;
+  playPauseBTN.innerHTML = 'Play &#9658;';
+}
