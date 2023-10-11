@@ -1,5 +1,6 @@
 body {
   background: url("https://picsum.photos/1000/1000") no-repeat center center fixed;
+  /*background-color: skyblue;*/
   background-size: cover;
   /*background-color: skyblue;*/
   font-family: system-ui;
@@ -90,4 +91,26 @@ h1 {
 
 button {
   cursor: pointer;
+}
+
+#currentSong {
+ font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+ justify-content: center;
+ text-align: center;
+}
+
+#playPauseBTN, #stopBtn {
+  padding: 10px 25px;
+  font-size: 22px;
+  line-height: 40px;
+  min-width: 150px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(to right bottom, #273c75, #079992);
+  color: #fff;
+  border-radius: 5px;
+  border: 0px;
+  height: 60px;
 }
