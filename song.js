@@ -1,6 +1,6 @@
 // Constants
 const sounds = { 
-  总有一天你会出现在我身边:'https://music.jsbaidu.com/upload/128/2022/07/05/1396382.mp3',
+  总有一天你会出现在我身边:'https://mp3app.haoge500.com/upload/128/2022/07/05/1396382.mp3',
   逆战:'https://mp3app.haoge500.com/hot/2012/03-21/465484.mp3',
   逆态度:'https://mp3app.haoge500.com/hot/2013/11-22/568122.mp3',
   ycyx: 'https://mp3app.haoge500.com/upload/rank/20211224/7377087b268a54c39e1b2df57fc02db1.mp3',
