@@ -1853,39 +1853,26 @@ taiyang:'http://m701.music.126.net/20230904202341/c1d6cf609996cf34039c8726c5f2e8
   一半疯了一半算了: 'https://mp3app.haoge500.com/upload/192/2022/07/06/1396408.mp3',
   四季予你: 'https://freetyst.nf.migu.cn/public/product9th/product46/2023/03/1014/2023%E5%B9%B403%E6%9C%8807%E6%97%A510%E7%82%B922%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%88%9B%E5%93%8D%E5%A8%B1%E4%B9%901%E9%A6%96215173/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/69938800212143032.mp3',
   天天想你:'  https://mp3app.haoge500.com/mp3/465/464580.mp3 ',
-  快乐很伟大:'  https://mp3app.haoge500.com/hot/2007/01-04/80371.mp3 ',
-  时光机:'  https://freetyst.nf.migu.cn/public/product9th/product46/2023/05/0216/2013%E5%B9%B405%E6%9C%8807%E6%97%A5%E6%BB%9A%E7%9F%B3%E5%94%B1%E7%89%87%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5327%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/63480207172162759.mp3   ',
-  伤心的人别听慢歌:'  https://mp3app.haoge500.com/upload/rank/20220112/6339df985e8d58379dc598ab3beda755.mp3  ',
-  数不尽人的星空:'  https://freetyst.nf.migu.cn/public/product8th/product40/2020/06/0307/2019%E5%B9%B409%E6%9C%8806%E6%97%A517%E7%82%B911%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%8D%8E%E7%BA%B314%E9%A6%96209014/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005751X84S073918.mp3   ',
-  出神入化:'   https://mp3app.haoge500.com/hot/2008/01-04/93567.mp3 ',
-  
-//thl:'https://mp3app.haoge500.com/upload/128/2017/05/27/861909.mp3'
-  
-  // unknown: 'https://mp3.haoge500.com/upload/z128/2021/02-06/1612584603.mp3'
-// song address
-  // https://zz123.com/xplay/?act=songplay&id=aamzdss&email
-// Dm i dont know the song address. it is to be hidden and encrypted.
+  快乐很伟大:'https://mp3app.haoge500.com/hot/2007/01-04/80371.mp3 ',
+  时光机:'https://freetyst.nf.migu.cn/public/product9th/product46/2023/05/0216/2013%E5%B9%B405%E6%9C%8807%E6%97%A5%E6%BB%9A%E7%9F%B3%E5%94%B1%E7%89%87%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5327%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/63480207172162759.mp3   ',
+  伤心的人别听慢歌:'https://mp3app.haoge500.com/upload/rank/20220112/6339df985e8d58379dc598ab3beda755.mp3  ',
+  数不尽人的星空:'https://freetyst.nf.migu.cn/public/product8th/product40/2020/06/0307/2019%E5%B9%B409%E6%9C%8806%E6%97%A517%E7%82%B911%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%8D%8E%E7%BA%B314%E9%A6%96209014/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005751X84S073918.mp3   ',
+  出神入化:'https://mp3app.haoge500.com/hot/2008/01-04/93567.mp3',
 };
 
 // Cached DOM Elements
 const player = new Audio();
-//const bgPlayer = document.getElementById('bg-player');
-//const bgCheckbox = document.querySelector('input[type="checkbox"]');
-
-// Adjust volume of background music to 50%
-//bgPlayer.volume = .3;
-
-// Event Listeners
-//document.getElementById('play-btn').addEventListener('click', handlePlaySound);
-
-//bgCheckbox.addEventListener('change', handleBgChanged);
+let sounds_key = Object.keys(sounds);
 let rnd = Math.random;
-//let n = sounds_key.length;
 let m = 0;
+
+for (let i of sounds_key)
+{
+  document.write("<input type='radio' name='sound' value='" + i + "'>" + i + "<br>");
+}
 
 // Functions
 function handlePlaySound() {
-  // Use the CSS :checked pseudoclass to select the selected radio button
   const selSoundInp = document.querySelector('input[name="sound"]:checked');
   playSound(selSoundInp.value);
   document.getElementById('currentSong').innerText =  selSoundInp.value;
@@ -1896,55 +1883,10 @@ function playSound(name) {
   player.play();
 }
 
-/*function handleBgChanged() {
-  bgCheckbox.checked ? bgPlayer.play() : bgPlayer.pause();
-}
-*/
-//var keys = ["flower_sea"];
-
-
-let sounds_key = Object.keys(sounds);
-/*for (var key in sounds) {
-  if (key.hasOwnProperty(key)) {
-    keys.push(key);
-  }
-}*/
-
-//if (1 === 1) {
-   /*for (var i = 0; i < keys.length; i++) {
-      playSound(`${keys[i]}`);
-  } */
-  // console.log("Starting...");
-  // console.log(keys[0]);
-  // console.log(Object.keys(sounds));
-  // playSound(keys[0]);
-  /*for (var key in keys) {
-    console.log(key[0]);
-  } */
- // playSound(sounds_key[0]);
- // playSound(sounds_key[1]);
-  
-//}
-/*
-playSound("flower_sea");
-playSound("heart_wall");
-playSound("swear");
-playSound("half");
-*/
-//console.log(sounds_key[162]);
-/*
-function playSingleSong() {
-  playSound(sounds_key[160]);
-}
-*/
-
-//playSound(sounds_key[Math.ceil(Math.random() * (sounds_key.length - 0) + 0)]);
-//let idolSong = window.prompt("What song do you want to listen?")
 let idolSong;
 
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
-  //idolSong = idolSong.replace(/\s+/g, '');
   if (idolSong.trim() == '') {
     alert('Please enter a song name.');
     alertSound(idolSong);
@@ -1966,11 +1908,8 @@ function alertSound(idolSong) {
   }
 }
 
-//playSound(idolSong)
-
 // random sound
 function randomSound(currentSong) {
-  // currentSong = sounds_key[Math.ceil(Math.random() * (sounds_key.length - 0) + 0)];
    currentSong = sounds_key[Math.floor(Math.random() * sounds_key.length)];
    playSound(currentSong);
    document.getElementById('currentSong').innerText = currentSong;
@@ -1979,7 +1918,6 @@ function randomSound(currentSong) {
 // Play or Pause
 var count = 0;
 var playPauseBTN = document.getElementById('playPauseBTN');
-
 
 function playPause(){
   if (count == 0) {
@@ -2000,8 +1938,24 @@ function stop() {
   playPauseBTN.innerHTML = 'Play &#9658;';
 }
 
-
-for (let i of sounds_key)
-{
-  document.write("<input type='radio' name='sound' value='" + i + "'>" + i + "<br>");
+function toggleFullscreen() {
+  if (!document.fullscreenElement && !document.mozFullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullscreen) {
+      document.documentElement.mozRequestFullscreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.mozExitfullscreen();
+    } else if (document.webkitExitfullscreen) {
+      document.webkitExitfullscreen();
+    }
+  }
 }

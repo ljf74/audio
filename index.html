@@ -20,38 +20,14 @@
     <button id='playPauseBTN' onclick="playPause()">Play &#9658;</button>
     <br><br>
     <button id='stopBtn' onclick="stop()">Stop &#9611;</button><br></br>
-    <script src="song.js"></script>
+    <script src="./song.js">
+    </script>
     </br></br>
     </div>
     </br></br></br>
     <button id='play-btn' onclick='handlePlaySound()'>Play Sound</button>
-
     </br></br>
     <button id="play-btn" onclick="toggleFullscreen()">Switch Fullscreen</button>
-
-    <script>
-      function toggleFullscreen() {
-        if (!document.fullscreenElement && !document.mozFullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-          if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-          } else if (document.documentElement.msRequestFullscreen) {
-            document.documentElement.msRequestFullscreen();
-          } else if (document.documentElement.mozRequestFullscreen) {
-            document.documentElement.mozRequestFullscreen();
-          } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-          }
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.msExitFullscreen) {
-            document.mozExitfullscreen();
-          } else if (document.webkitExitfullscreen) {
-            document.webkitExitfullscreen();
-          }
-        }
-      }
-    </script>
 </body>
 
 </html>
