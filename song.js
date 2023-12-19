@@ -1,6 +1,6 @@
 const sounds = {
   i_need_a_girl:'https://mp3app.haoge500.com/hot/2010/07-02/426482.mp3',
-  korean_gee:'https://mp3app.haoge500.com/upload/rank/2.mp3',
+  oh_my_love:'https://mp3app.haoge500.com/new/2004/07-13/17354.mp3',
   总有一天你会出现在我身边:'https://mp3app.haoge500.com/upload/128/2022/07/05/1396382.mp3',
   逆战:'https://mp3app.haoge500.com/hot/2012/03-21/465484.mp3',
   逆态度:'https://mp3app.haoge500.com/hot/2013/11-22/568122.mp3',
