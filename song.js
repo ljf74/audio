@@ -1,4 +1,7 @@
 const sounds = {
+  last_goodbye:'https://mp3app.haoge500.com/upload/320/2021/02/27/1062386.mp3',
+  yellow:'https://mp3app.haoge500.com/hot/2009/10-13/197117.mp3',
+  make_love:'https://mp3app.haoge500.com/hot/2010/02-07/208790.mp3',
   i_need_a_girl:'https://mp3app.haoge500.com/hot/2010/07-02/426482.mp3',
   oh_my_love:'https://mp3app.haoge500.com/new/2004/07-13/17354.mp3',
   ty_simon:'https://mp3app.haoge500.com/upload/128/2023/07/28/1773585.mp3',
