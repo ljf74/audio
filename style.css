@@ -2,17 +2,11 @@
   box-sizing: border-box;
 }
 body {
- /* background: url("https://picsum.photos/1000/1000") no-repeat center center fixed; */
-  /*background-color: skyblue;*/
   background: url('https://picsum.photos/1000/1000') no-repeat center center fixed;
   background-size: cover;
-  /*background-color: skyblue;*/
   font-family: system-ui;
   font-color: black;
-  /*text-align: center;*/
   padding: 120px;
- /* display: flex;
-  flex-direction: column;*/
 }
 
 h1 {
@@ -27,14 +21,6 @@ h1 {
   background: white;
   border-radius: 10px;
 }
-
-/*
-#play-btn2 {
-  border-color: orange;
-  font-family: cursive;
-  font-size: 20px
-}
-*/
 
 #play-btn {
   width: 100%;
