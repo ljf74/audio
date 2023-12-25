@@ -1,6 +1,6 @@
 const sounds = {
-  园游会:'https://music.jsbaidu.com/hot/2004/08-03/58721.mp3',
-  monday_cj:'https://music.jsbaidu.com/upload/128/2023/03/31/1673069.mp3',
+  园游会:'https://mp3app.haoge500.com/hot/2004/08-03/58721.mp3',
+  monday_cj:'https://mp3app.haoge500.com/upload/128/2023/03/31/1673069.mp3',
   last_goodbye:'https://mp3app.haoge500.com/upload/320/2021/02/27/1062386.mp3',
   yellow:'https://mp3app.haoge500.com/hot/2009/10-13/197117.mp3',
   make_love:'https://mp3app.haoge500.com/hot/2010/02-07/208790.mp3',
