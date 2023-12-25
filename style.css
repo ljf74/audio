@@ -121,19 +121,13 @@ button {
   height: 60px;
 }
 
-/*p::after {
-  content: 'I love Andy';
-}*/
-
-/*
-#sss {
-  transform: translate(50px, 100px);
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+  buuton {
+    padding: 10px;
+    font-size: 18px;
+    line-height: 30px;
+  }
 }
-*/
-
-/*
-button {
-  width: calc(100% - 480px);
-  height: calc(100% - 480px);
-}
-*/
