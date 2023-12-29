@@ -3,7 +3,7 @@ const sounds = {
   目及皆是你:'https://db.ljf72.repl.co/audio/目及皆是你.mp3',
   致爱_young_song:'https://db.ljf72.repl.co/audio/致爱_young_song.mp3',
   勋章:'https://db.ljf72.repl.co/audio/勋章.mp3',
-  我们的明天:'http://music.163.com/song/media/outer/url?id=29771231.mp3',
+  我们的明天:'https://db.ljf72.repl.co/audio/我们的明天.mp3',
   超级冠军:'https://db.ljf72.repl.co/audio/超级冠军.mp3',
   诺言:'https://db.ljf72.repl.co/audio/诺言.mp3',
   有点儿意思:'https://db.ljf72.repl.co/audio/有点儿意思.mp3',
