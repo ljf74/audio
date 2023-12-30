@@ -1,5 +1,6 @@
 const sounds = {
   party_少女时代:'https://db.ljf72.repl.co/audio/party_少女时代.mp3',
+  empty_winner:'https://db.ljf72.repl.co/audio/empty_winner.mp3',
   目及皆是你:'https://db.ljf72.repl.co/audio/目及皆是你.mp3',
   致爱_young_song:'https://db.ljf72.repl.co/audio/致爱_young_song.mp3',
   勋章:'https://db.ljf72.repl.co/audio/勋章.mp3',
