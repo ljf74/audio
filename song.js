@@ -1,4 +1,5 @@
 const sounds = {
+  想见你想见你想见你:'https://music-player1.ljf72.repl.co/songs/想见你想见你想见你.mp3',
   ringa_linga:'https://db.ljf72.repl.co/audio/ringa_linga.mp3',
   party_少女时代:'https://db.ljf72.repl.co/audio/party_少女时代.mp3',
   静悄悄:'https://db.ljf72.repl.co/audio/静悄悄.mp3',
