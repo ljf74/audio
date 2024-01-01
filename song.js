@@ -1,4 +1,6 @@
 const sounds = {
+  超级风格:'https://db.ljf72.repl.co/audio/超级风格.mp3',
+  鸭梨大:'https://db.ljf72.repl.co/audio/鸭梨大.mp3',
   想见你想见你想见你:'https://db.ljf72.repl.co/audio/想见你3.mp3',
   ringa_linga:'https://db.ljf72.repl.co/audio/ringa_linga.mp3',
   party_少女时代:'https://db.ljf72.repl.co/audio/party_少女时代.mp3',
