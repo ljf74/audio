@@ -1,4 +1,5 @@
 const sounds = {
+  听见下雨的声音:'https://github.com/ljf74/db/raw/main/audio/听见下雨的声音.mp3',
   梦寐以求:'https://github.com/ljf74/db/raw/main/audio/梦寐以求.mp3',
   超级风格:'https://github.com/ljf74/db/raw/main/audio/超级风格.mp3',
   鸭梨大:'https://github.com/ljf74/db/raw/main/audio/鸭梨大.mp3',
