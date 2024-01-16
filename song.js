@@ -1,4 +1,5 @@
 const sounds = {
+  情人_杜德伟:'https://github.com/ljf74/db/raw/main/audio/情人_杜德伟.mp3',
   胆小鬼_梁咏琪:'https://github.com/ljf74/db/raw/main/audio/胆小鬼_梁咏琪.mp3',
   寂寞烟雨:'https://github.com/ljf74/db/raw/main/audio/寂寞烟雨.mp3',
   听见下雨的声音:'https://github.com/ljf74/db/raw/main/audio/听见下雨的声音.mp3',
