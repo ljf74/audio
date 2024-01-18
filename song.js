@@ -1,4 +1,5 @@
 const sounds = {
+  wait_for_you:'https://lx-sycdn.kuwo.cn/c3385bce02dfdde81cf760274133a747/65a9041d/resource/n1/65/33/2316421854.mp3',
   你不知道的事_王力宏:'https://github.com/ljf74/db/raw/main/audio/你不知道的事_王力宏.mp3',
   爱的就是你_王力宏:'https://github.com/ljf74/db/raw/main/audio/爱的就是你_王力宏.mp3',
   情人_杜德伟:'https://github.com/ljf74/db/raw/main/audio/情人_杜德伟.mp3',
