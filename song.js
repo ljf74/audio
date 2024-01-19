@@ -1901,11 +1901,6 @@ let sounds_key = Object.keys(sounds);
 let rnd = Math.random;
 let m = 0;
 
-for (let i of sounds_key)
-{
-  document.write("<input type='radio' name='sound' value='" + i + "'>" + i + "<br>");
-}
-
 // Functions
 function handlePlaySound() {
   const selSoundInp = document.querySelector('input[name="sound"]:checked');
