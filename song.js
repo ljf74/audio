@@ -1,4 +1,8 @@
 const sounds = {
+  秘密_蓝又时:'https://github.com/ljf74/db/raw/main/audio/秘密_蓝又时.mp3',
+  陪你度过漫长岁月:'https://github.com/ljf74/db/raw/main/audio/陪你度过漫长岁月.mp3',
+  wait_for_you:'https://github.com/ljf74/db/raw/main/audio/wait_for_you.mp3',
+  潮汐:'https://github.com/ljf74/db/raw/main/audio/潮汐.mp3',
   你不知道的事_王力宏:'https://github.com/ljf74/db/raw/main/audio/你不知道的事_王力宏.mp3',
   爱的就是你_王力宏:'https://github.com/ljf74/db/raw/main/audio/爱的就是你_王力宏.mp3',
   情人_杜德伟:'https://github.com/ljf74/db/raw/main/audio/情人_杜德伟.mp3',
