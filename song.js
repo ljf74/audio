@@ -1,4 +1,5 @@
 const sounds = {
+  追:'https://github.com/ljf74/db/raw/main/audio/追_陈壹千.mp3',
   秘密_蓝又时:'https://github.com/ljf74/db/raw/main/audio/秘密_蓝又时.mp3',
   陪你度过漫长岁月_陈奕迅:'https://github.com/ljf74/db/raw/main/audio/陪你度过漫长岁月_陈奕迅.mp3',
   wait_for_you:'https://github.com/ljf74/db/raw/main/audio/wait_for_you.mp3',
