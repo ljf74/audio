@@ -1898,6 +1898,11 @@ let m = 0;
 // Functions
 let idolSong;
 
+function playSound(name) {
+  player.src = sounds[name];
+  player.play();
+}
+
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
   if (idolSong.trim() == '') {
