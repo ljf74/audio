@@ -270,11 +270,7 @@ const sounds = {
   她踏上了旅途:'http://music.163.com/song/media/outer/url?id=509106775.mp3',
   secret_base1:'http://music.163.com/song/media/outer/url?id=435948251.mp3',
   若能绽放光芒:'https://mp3app.haoge500.com/new/2015/04-22/662494.mp3',
-
-
-
-
-   鬼迷心窍:'https://mp3app.haoge500.com/upload/128/2022/04/01/1387359.mp3',
+  鬼迷心窍:'https://mp3app.haoge500.com/upload/128/2022/04/01/1387359.mp3',
   当爱已成往事:'https://mp3app.haoge500.com/mp3/30/29160.mp3',
   我终于失去了你你:'https://mp3app.haoge500.com/mp3/336/335943.mp3',
   真心英雄:'https://mp3app.haoge500.com/hot/2007/10-08/90083.mp3',
@@ -365,10 +361,7 @@ const sounds = {
   shine123:'http://music.163.com/song/media/outer/url?id=19639740.mp3',
   无需要太多_张:'http://music.163.com/song/media/outer/url?id=2032784582.mp3',
   奔向未来的日子_张:'http://music.163.com/song/media/outer/url?id=1891385147.mp3',
-  由零开始:'http://music.163.com/song/media/outer/url?id=188639.mp3',
-
-
-    
+  由零开始:'http://music.163.com/song/media/outer/url?id=188639.mp3', 
   黄种人:'https://mp3app.haoge500.com/new/2005/01-10/64225.mp3',
   因为爱所以爱:'https://mp3app.haoge500.com/upload/rank/20220105/896d9c18a13b50a3ae473547c811bcfe.mp3',
   爱_情癫大圣:'https://mp3app.haoge500.com/hot/2005/11-24/73125.mp3',
@@ -1034,7 +1027,6 @@ ring333:'https://mp3app.haoge500.com/upload/128/2022/05/10/1389652.mp3',
  照亮: 'https://mp3app.haoge500.com/upload/128/2023/06/03/1759109.mp3',
  不让我的眼泪陪我过夜: 'https://freetyst.nf.migu.cn/public/product9th/product46/2023/05/2715/2023%E5%B9%B405%E6%9C%8827%E6%97%A512%E7%82%B902%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%92%AA%E5%92%95%E9%9F%B3%E4%B9%90%E8%87%AA%E6%9C%89%E7%89%88%E6%9D%83427%E9%A6%96215370/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/69905306945151740.mp3',
  记忆时空: 'https://mp3app.haoge500.com/upload/320/2022/06/19/1394404.mp3',
-
  ferrari: 'https://mp3app.haoge500.com/upload/128/2022/05/06/1386441.mp3',
   生而平凡:'https://mp3app.haoge500.com/upload/128/2022/07/29/1398761.mp3',
   听:'https://mp3app.haoge500.com/upload/128/2023/02/05/1569014.mp3',
