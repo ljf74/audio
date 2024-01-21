@@ -1905,10 +1905,6 @@ function playSound(name) {
 
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
-  if (idolSong.length > 10) {
-    document.getElementById('currentSong').style.width = 70%;
-    document.getElementById('currentSong').style.color = 'red';
-  }
   if (idolSong.trim() == '') {
     alert('Please enter a song name.');
     alertSound(idolSong);
@@ -1934,10 +1930,6 @@ function alertSound(idolSong) {
 function randomSound(currentSong) {
    currentSong = sounds_key[Math.floor(Math.random() * sounds_key.length)];
    playSound(currentSong);
-   if (currentSong.length > 10) {
-     document.getElementById('currentSong').style.width = 70%;
-     document.getElementById('currentSong').style.color = 'red';
-   }
    document.getElementById('currentSong').innerText = currentSong;
 }
 
