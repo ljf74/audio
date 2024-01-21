@@ -1903,11 +1903,12 @@ function playSound(name) {
   player.play();
 }
 
+let words =  document.getElementById('currentSong');
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
   if (idolSong.length > 10) {
-    idolSong.style.width = 70%;
-    idolSong.style.color = 'red';
+    words.style.width = 70%;
+    words.style.color = 'red';
   }
   if (idolSong.trim() == '') {
     alert('Please enter a song name.');
@@ -1919,7 +1920,7 @@ function alertSound(idolSong) {
   }
   else {
      playSound(idolSong);
-     document.getElementById('currentSong').innerText = idolSong;
+     words.innerText = idolSong;
    }
   } catch {
     if (idolSong == null) {
