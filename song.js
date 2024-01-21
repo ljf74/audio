@@ -1904,17 +1904,6 @@ let rnd = Math.random;
 let m = 0;
 
 // Functions
-function handlePlaySound() {
-  const selSoundInp = document.querySelector('input[name="sound"]:checked');
-  playSound(selSoundInp.value);
-  document.getElementById('currentSong').innerText =  selSoundInp.value;
-}
-
-function playSound(name) {
-  player.src = sounds[name];
-  player.play();
-}
-
 let idolSong;
 
 function alertSound(idolSong) {
@@ -1968,26 +1957,4 @@ function stop() {
   player.pause();
   player.currentTime = 0;
   playPauseBTN.innerHTML = 'Play &#9658;';
-}
-
-function toggleFullscreen() {
-  if (!document.fullscreenElement && !document.mozFullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) {
-      document.documentElement.msRequestFullscreen();
-    } else if (document.documentElement.mozRequestFullscreen) {
-      document.documentElement.mozRequestFullscreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.mozExitfullscreen();
-    } else if (document.webkitExitfullscreen) {
-      document.webkitExitfullscreen();
-    }
-  }
 }
