@@ -1903,7 +1903,7 @@ function playSound(name) {
   player.play();
 }
 
-let words =  document.getElementById('currentSong');
+var words =  document.getElementById('currentSong');
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
   if (idolSong.length > 10) {
@@ -1916,7 +1916,7 @@ function alertSound(idolSong) {
   }
   try {
     if (!sounds_key.includes(idolSong)) {
-     document.getElementById('currentSong').innerText = "Sorry, not in the Audio Library X_X";
+     words.innerText = "Sorry, not in the Audio Library X_X";
   }
   else {
      playSound(idolSong);
