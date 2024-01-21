@@ -1905,6 +1905,10 @@ function playSound(name) {
 
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
+  if (idolSong.length > 10) {
+    idolSong.style.width = 70%;
+    idolSong.style.color = 'red';
+  }
   if (idolSong.trim() == '') {
     alert('Please enter a song name.');
     alertSound(idolSong);
