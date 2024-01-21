@@ -1903,12 +1903,11 @@ function playSound(name) {
   player.play();
 }
 
-var words =  document.getElementById('currentSong');
 function alertSound(idolSong) {
   idolSong = window.prompt('What song do you want to listen?');
   if (idolSong.length > 10) {
-    words.style.width = 70%;
-    words.style.color = 'red';
+    document.getElementById('currentSong').style.width = 70%;
+    document.getElementById('currentSong').style.color = 'red';
   }
   if (idolSong.trim() == '') {
     alert('Please enter a song name.');
@@ -1916,11 +1915,11 @@ function alertSound(idolSong) {
   }
   try {
     if (!sounds_key.includes(idolSong)) {
-     words.innerText = "Sorry, not in the Audio Library X_X";
+      document.getElementById('currentSong').innerText = "Sorry, not in the Audio Library X_X";
   }
   else {
      playSound(idolSong);
-     words.innerText = idolSong;
+     document.getElementById('currentSong').innerText = idolSong;
    }
   } catch {
     if (idolSong == null) {
@@ -1935,6 +1934,10 @@ function alertSound(idolSong) {
 function randomSound(currentSong) {
    currentSong = sounds_key[Math.floor(Math.random() * sounds_key.length)];
    playSound(currentSong);
+   if (currentSong.length > 10) {
+     document.getElementById('currentSong').style.width = 70%;
+     document.getElementById('currentSong').style.color = 'red';
+   }
    document.getElementById('currentSong').innerText = currentSong;
 }
 
