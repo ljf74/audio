@@ -822,7 +822,7 @@ const sounds = {
     "http://music.163.com/song/media/outer/url?id=1865095005.mp3",
   rush: "http://music.163.com/song/media/outer/url?id=1990208030.mp3",
   miracle: "http://music.163.com/song/media/outer/url?id=2028687888.mp3",
-  we_will_roc_you:
+  we_will_rock_you:
     "https://freetyst.nf.migu.cn/public/product9th/product46/2023/05/1119/2018%E5%B9%B408%E6%9C%8823%E6%97%A515%E7%82%B956%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY957%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005970UHFT190702.mp3",
   在你身边123: "http://music.163.com/song/media/outer/url?id=64668.mp3",
   羡慕风羡慕雨: "https://mp3app.haoge500.com/upload/128/2023/08/31/1882728.mp3",
