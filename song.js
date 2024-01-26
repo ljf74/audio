@@ -2256,7 +2256,7 @@ const sounds = {
   像鱼: "http://m701.music.126.net/20230909203138/99596890a041015eb9abb3035661a1a4/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/28481685748/1482/59ba/55a5/5d42e0ac8f60b0b9f6f7a268857ece77.mp3",
   夜空中最亮的星2:
     "https://mp3app.haoge500.com/upload/128/2016/04/09/rv2kvoh3zqa.mp3",
-  天外来吻: "  https://mp3app.haoge500.com/upload/128/2020/07/17/1007258.mp3 ",
+  天外来物: "https://mp3app.haoge500.com/upload/128/2020/07/17/1007258.mp3 ",
   光的方向: " https://mp3app.haoge500.com/upload/128/2021/04/01/1130156.mp3 ",
   花妖: "  http://m701.music.126.net/20230909205946/8a7ebc7c12c0211be41f9ff22eaff607/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/29334103621/a557/9c02/3935/e5accb0b0983b913233a39d3bb5fb39f.mp3 ",
   有何不可:
