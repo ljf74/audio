@@ -1,4 +1,5 @@
 const sounds = {
+  开不了口:'https://github.com/ljf74/db/raw/main/audio/开不了口.mp3',
   手放开:'https://github.com/ljf74/db/raw/main/audio/手放开.mp3',
   butterfly_bts: "https://github.com/ljf74/db/raw/main/audio/butterfly_bts.mp3",
   搁浅_周杰伦: "https://github.com/ljf74/db/raw/main/audio/搁浅_周杰伦.mp3",
