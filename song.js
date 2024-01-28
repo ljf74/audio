@@ -1,4 +1,5 @@
 const sounds = {
+  anti_hero:'https://github.com/ljf74/db/raw/main/audio/anti_hero.mp3',
   爱很简单:'https://github.com/ljf74/db/raw/main/audio/爱很简单.mp3',
   开不了口:'https://github.com/ljf74/db/raw/main/audio/开不了口.mp3',
   手放开:'https://github.com/ljf74/db/raw/main/audio/手放开.mp3',
