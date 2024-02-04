@@ -1,4 +1,5 @@
 const sounds = {
+  gone_rose:'https://colddb.netlify.app/audio/gone_rose.mp3',
   anti_hero:'https://colddb.netlify.app/audio/anti_hero.mp3',
   爱很简单:'https://colddb.netlify.app/audio/爱很简单.mp3',
   开不了口:'https://colddb.netlify.app/audio/开不了口.mp3',
