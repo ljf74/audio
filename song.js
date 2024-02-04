@@ -20,7 +20,7 @@ const sounds = {
     "https://colddb.netlify.app/audio/爱的就是你_王力宏.mp3",
   情人_杜德伟: "https://colddb.netlify.app/audio/情人_杜德伟.mp3",
   胆小鬼_梁咏琪: "https://colddb.netlify.app/audio/胆小鬼_梁咏琪.mp3",
-  寂寞烟雨: "https://colddb.netlify.app/audio/寂寞烟雨.mp3",
+  寂寞烟火: "https://colddb.netlify.app/audio/寂寞烟火.mp3",
   听见下雨的声音:
     "https://colddb.netlify.app/audio/听见下雨的声音.mp3",
   梦寐以求: "https://colddb.netlify.app/audio/梦寐以求.mp3",
