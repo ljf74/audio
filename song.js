@@ -35,8 +35,8 @@ const sounds = {
     "https://colddb.netlify.app/audio/明天你好_牛奶咖啡.mp3",
   empty_winner: "https://colddb.netlify.app/audio/empty_winner.mp3",
   目及皆是你: "https://colddb.netlify.app/audio/目及皆是你.mp3",
-  致爱_young_song:
-    "https://colddb.netlify.app/audio/致爱_young_song.mp3",
+  致爱_your_song:
+    "https://colddb.netlify.app/audio/致爱_your_song.mp3",
   勋章: "https://colddb.netlify.app/audio/勋章.mp3",
   我们的明天: "https://colddb.netlify.app/audio/我们的明天.mp3",
   超级冠军: "https://colddb.netlify.app/audio/超级冠军.mp3",
