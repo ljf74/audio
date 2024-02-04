@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Audio Library</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src='https://www.w3schools.com/lib/w3.js'></script>
+   <script src="./song.js"></script>
 </head>
 
 <body>
@@ -17,13 +19,31 @@
     <br><br>
     <h2 id='currentSong'></h2>
      <br><br>
-    <button id='playPauseBTN' onclick="playPause()">Play &#9658;</button>
-    <br><br>
-    <button id='stopBtn' onclick="stop()">Stop &#9611;</button><br></br>
-    <script src="./song.js">
-    </script>
+      <div id='buttons'>
+        <button id='playPauseBTN' onclick="playPause()">Play &#9658;</button>
+        <button id='stopBtn' onclick="stop()">Stop &#9611;</button>
+        <button id='showBtn' onclick="toggleSong('#id01')">Songs</button><br><br>
+      </div>
+    <div id='search'>
+    <h3>Search song name: </h3>
+    <input oninput="w3.filterHTML('#id01', 'li', this.value)">
+      <ul id='id01' style='list-style: none;'>
+        <script>
+          let sounds_key1 = Object.keys(sounds);
+
+          // // Write song list
+          for (let i of sounds_key1)
+          {
+           document.write("<li><input type='radio' name='sound' value='" + i + "'>" + i + "</li>");
+          }
+        </script>
+      </ul>
+    </div>
     </br></br>
     </div>
+  <br></br>
+   <button id='play-btn' onclick='handlePlaySound()'>Play Sound</button>
+  <script src='./utils.js'></script>
 </body>
 
 </html>

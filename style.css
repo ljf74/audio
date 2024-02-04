@@ -92,7 +92,27 @@ button {
  text-align: center;
 }
 
-#playPauseBTN, #stopBtn {
+#buttons, #search {
+  text-align: center;
+  margin-left: auto;  /* Add this line to move the buttons to the right */
+  margin-right: auto; /* Add this line to center the buttons horizontally */
+}
+
+#search input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#search h3 {
+  font-family: Arial, Helvetica, sans-serif; /* Update the font family */
+  letter-spacing: 2px; /* Add some letter spacing for visual appeal */
+  text-align: center; /* Center the text */
+}
+
+#playPauseBTN, #stopBtn, #showBtn {
   padding: 10px 25px;
   font-size: 22px;
   line-height: 40px;
