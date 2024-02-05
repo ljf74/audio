@@ -1,4 +1,5 @@
 const sounds = {
+  帝皇再临:'http://m801.music.126.net/2024020/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/31223034401/f567/1dc8/3a35/9c2d1029ef9f16bb2ec13efd33c03032.mp3',
   gone_rose:'https://colddb.netlify.app/audio/gone_rose.mp3',
   anti_hero:'https://colddb.netlify.app/audio/anti_hero.mp3',
   爱很简单:'https://colddb.netlify.app/audio/爱很简单.mp3',
