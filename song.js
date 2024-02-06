@@ -2259,7 +2259,7 @@ const sounds = {
   奢香夫人: "  https://mp3app.haoge500.com/hot/2009/05-31/183202.mp3 ",
   世界这么大还是遇见你:
     "   https://freetyst.nf.migu.cn/public/product8th/product39/2020/04/1022/2020%E5%B9%B404%E6%9C%8810%E6%97%A522%E7%82%B902%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E5%88%9B%E5%93%8D%E5%A8%B1%E4%B9%901%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/69938800016224850.mp3",
-  像鱼: "http://m701.music.126.net/20230909203138/99596890a041015eb9abb3035661a1a4/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/28481685748/1482/59ba/55a5/5d42e0ac8f60b0b9f6f7a268857ece77.mp3",
+  像鱼: "https://colddb.netlify.app/audio/像鱼.mp3",
   夜空中最亮的星2:
     "https://mp3app.haoge500.com/upload/128/2016/04/09/rv2kvoh3zqa.mp3",
   天外来物: "https://mp3app.haoge500.com/upload/128/2020/07/17/1007258.mp3 ",
