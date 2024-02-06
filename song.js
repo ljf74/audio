@@ -2312,6 +2312,7 @@ const sounds = {
   你不是真正的快乐:
     "https://freetyst.nf.migu.cn/public/product9th/product46/2023/04/1411/2016%E5%B9%B401%E6%9C%8812%E6%97%A510%E7%82%B910%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E7%9B%B8%E4%BF%A1%E9%9F%B3%E4%B9%905024%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/64049300175115041.mp3",
   不能说的秘密: "https://mp3app.haoge500.com/upload/128/2021/04/24/1170396.mp3",
+  可爱女人:'https://colddb.netlify.app/audio/可爱女人.mp3',
   侧脸: "https://colddb.netlify.app/audio/侧脸.mp3",
   deep: "https://devildrey33.es/Ejemplos/Three.js-Journey/Audio-PlayGround/songs/Alone_-_Color_Out.mp3",
   春天里: " https://mp3app.haoge500.com/hot/2009/06-01/183237.mp3  ",
