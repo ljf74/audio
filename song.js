@@ -1,11 +1,11 @@
 const sounds = {
-  song_for_someone:'https://music.163.com/song/media/outer/url?id=29328071.mp3',
-  mojito:'https://colddb.netlify.app/audio/mojito.mp3',
-  gone_rose:'https://colddb.netlify.app/audio/gone_rose.mp3',
-  anti_hero:'https://colddb.netlify.app/audio/anti_hero.mp3',
-  爱很简单:'https://colddb.netlify.app/audio/爱很简单.mp3',
-  开不了口:'https://colddb.netlify.app/audio/开不了口.mp3',
-  手放开:'https://colddb.netlify.app/audio/手放开.mp3',
+  song_for_someone: 'https://music.163.com/song/media/outer/url?id=446508837.mp3',
+  mojito: 'https://colddb.netlify.app/audio/mojito.mp3',
+  gone_rose: 'https://colddb.netlify.app/audio/gone_rose.mp3',
+  anti_hero: 'https://colddb.netlify.app/audio/anti_hero.mp3',
+  爱很简单: 'https://colddb.netlify.app/audio/爱很简单.mp3',
+  开不了口: 'https://colddb.netlify.app/audio/开不了口.mp3',
+  手放开: 'https://colddb.netlify.app/audio/手放开.mp3',
   butterfly_bts: "https://colddb.netlify.app/audio/butterfly_bts.mp3",
   搁浅_周杰伦: "https://colddb.netlify.app/audio/搁浅_周杰伦.mp3",
   last_night_morgan:
@@ -2253,7 +2253,7 @@ const sounds = {
     " http://m801.music.126.net/20230909200908/cb632abf12b2b5e704c842c889adc139/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/27871051095/7e72/9831/e1d6/5fe7658b34a0150a501251d313fe48c1.mp3 ",
   黄昏: " https://freetyst.nf.migu.cn/public/product9th/product45/2022/04/2210/2018%E5%B9%B408%E6%9C%8829%E6%97%A516%E7%82%B932%E5%88%86%E7%B4%A7%E6%80%A5%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5SONY711%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/6005970UR4F105909.mp3",
   消愁: "  http://m701.music.126.net/20230909201145/f3d33cf9fcfe7ab5f9ef09fc5fec2c8d/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/28481677347/474c/85c2/535b/b2f2e46a8854595f90c56bf9a5db2ce2.mp3 ",
-  帝皇再临:'https://music.163.com/song/media/outer/url?id=405987118.mp3',
+  帝皇再临: 'https://music.163.com/song/media/outer/url?id=405987118.mp3',
   小城夏天: " http://music.163.com/song/media/outer/url?id=1934251776.mp3",
   罗刹海市:
     "http://m701.music.126.net/20230909201854/5079e649f3069aed0147cd9be3797eaf/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/29334103369/8b5a/2d11/2d7f/a2f495ec8dd2e5f87a487d6431d5efb9.mp3",
@@ -2314,7 +2314,7 @@ const sounds = {
   你不是真正的快乐:
     "https://freetyst.nf.migu.cn/public/product9th/product46/2023/04/1411/2016%E5%B9%B401%E6%9C%8812%E6%97%A510%E7%82%B910%E5%88%86%E5%86%85%E5%AE%B9%E5%87%86%E5%85%A5%E7%9B%B8%E4%BF%A1%E9%9F%B3%E4%B9%905024%E9%A6%96/%E6%A0%87%E6%B8%85%E9%AB%98%E6%B8%85/MP3_320_16_Stero/64049300175115041.mp3",
   不能说的秘密: "https://mp3app.haoge500.com/upload/128/2021/04/24/1170396.mp3",
-  可爱女人:'https://colddb.netlify.app/audio/可爱女人.mp3',
+  可爱女人: 'https://colddb.netlify.app/audio/可爱女人.mp3',
   侧脸: "https://colddb.netlify.app/audio/侧脸.mp3",
   deep: "https://devildrey33.es/Ejemplos/Three.js-Journey/Audio-PlayGround/songs/Alone_-_Color_Out.mp3",
   春天里: " https://mp3app.haoge500.com/hot/2009/06-01/183237.mp3  ",
