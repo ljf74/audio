@@ -1,4 +1,6 @@
 const sounds = {
+  like_a_rolling_stone: 'https://music.163.com/song/media/outer/url?id=26473399.mp3',
+  blowing_in_the_wind: 'https://music.163.com/song/media/outer/url?id=566993785.mp3',
   song_for_someone: 'https://music.163.com/song/media/outer/url?id=446508837.mp3',
   mojito: 'https://colddb.netlify.app/audio/mojito.mp3',
   gone_rose: 'https://colddb.netlify.app/audio/gone_rose.mp3',
