@@ -1,4 +1,5 @@
 const sounds = {
+  mahiru_fragrance: "https://colddb.netlify.app/audio/mahiru - fragrance.mp3",
   baby_i_need_you: 'https://colddb.netlify.app/audio/baby_i_need_you.mp3',
   风吹一夏: 'https://colddb.netlify.app/audio/风吹一夏.mp3',
   一个人想着一个人: 'https://colddb.netlify.app/audio/一个人想着一个人.mp3',
