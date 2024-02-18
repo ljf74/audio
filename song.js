@@ -1,5 +1,6 @@
 const sounds = {
-  风吹一夏:'https://colddb.netlify.app/audio/风吹一夏.mp3',
+  baby_i_need_you: 'https://colddb.netlify.app/audio/baby_i_need_you.mp3',
+  风吹一夏: 'https://colddb.netlify.app/audio/风吹一夏.mp3',
   一个人想着一个人: 'https://colddb.netlify.app/audio/一个人想着一个人.mp3',
   like_a_rolling_stone: 'https://music.163.com/song/media/outer/url?id=26473399.mp3',
   blowing_in_the_wind: 'https://music.163.com/song/media/outer/url?id=566993785.mp3',
