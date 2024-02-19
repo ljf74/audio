@@ -6,13 +6,13 @@ cd db
 git add .
 git config --global user.email "ljf@grr.la"
 git config --global user.name "Andy"
-git commit -m "Add workingmans_blues.jpg and mp3 via pixlr supports"
+git commit -m "Rename some mp3 and jpg"
 git push https://gitlab.com/ljf7/db
 cd ..
 # git clone https://github.com/ljf74/music-player
 cd music*
 git add .
-git commit -m "Add workingmans_blues"
+git commit -m "Rename some mp3 and jpg"
 git push -u origin main
 cd ..
 echo Process exited
