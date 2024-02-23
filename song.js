@@ -1,4 +1,6 @@
 const sounds = {
+  baby_i_need_you_sped: 'https://flacdb.netlify.app/audio/baby_i_need_you_sped.flac',
+  baby_i_need_you_joosiq: 'https://flacdb.netlify.app/audio/baby_i_need_you_joosiq.flac',
   you_blo4: "https://flacdb.netlify.app/audio/You(=|).flac",
   like_i_do: "https://colddb.netlify.app/audio/like_i_do.mp3",
   mahiru_fragrance: "https://colddb.netlify.app/audio/mahiru_fragrance.mp3",
