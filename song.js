@@ -5,6 +5,7 @@ const sounds = {
   like_i_do: "https://colddb.netlify.app/audio/like_i_do.mp3",
   mahiru_fragrance: "https://colddb.netlify.app/audio/mahiru_fragrance.mp3",
   baby_i_need_you: 'https://colddb.netlify.app/audio/baby_i_need_you.mp3',
+  心墙_郭静: 'https://colddb.netlify.app/audio/心墙_郭静.mp3',
   风吹一夏: 'https://colddb.netlify.app/audio/风吹一夏.mp3',
   一个人想着一个人: 'https://colddb.netlify.app/audio/一个人想着一个人.mp3',
   like_a_rolling_stone: 'https://music.163.com/song/media/outer/url?id=26473399.mp3',
