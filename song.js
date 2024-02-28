@@ -1579,7 +1579,7 @@ const sounds = {
   Alone: "https://mp3app.haoge500.com/upload/128/2018/04/21/878533.mp3",
   野狼disco1: "https://mp3app.haoge500.com/upload/320/2022/09/24/1559150.mp3",
   back_to_december: "https://mp3app.haoge500.com/hot/2010/10-22/400328.mp3",
-  you_beong_with_me123: "https://mp3app.haoge500.com/hot/2009/10-09/194551.mp3",
+  you_belong_with_me123: "https://mp3app.haoge500.com/hot/2009/10-09/194551.mp3",
   放松身心: "https://mp3app.haoge500.com/hot/2010/08-26/373861.mp3",
   bye333: "https://mp3app.haoge500.com/mp3/5/4533.mp3",
   不再是朋友: "http://music.163.com/song/media/outer/url?id=87391.mp3",
