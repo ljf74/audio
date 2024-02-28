@@ -11,9 +11,9 @@
 </head>
 
 <body>
-  <button id="play-btn" onclick="randomSound(currentSong);">Random Song</button>
+  <button id="play-btn" class='randomSong' onclick="randomSound(currentSong);">Random Song</button>
   <br><br>
-  <button id='play-btn' onclick='alertSound(idolSong)'>Choice Song</button>
+  <button id='play-btn' class='choiceSong' onclick='alertSound(idolSong)'>Choice Song</button>
   <br><br>
   <div id="song_list">
     <br><br>
@@ -42,7 +42,7 @@
     </br></br>
     </div>
   <br></br>
-   <button id='play-btn' onclick='handlePlaySound()'>Play Sound</button>
+   <button id='play-btn' onclick='handlePlaySound()' class='handlePlaySound'>Play Sound</button>
   <script src='./utils.js'></script>
 </body>
 
