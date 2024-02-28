@@ -1,8 +1,6 @@
 // Cached DOM Elements
 const player = new Audio();
 let sounds_key = Object.keys(sounds);
-let rnd = Math.random;
-let m = 0;
 
 // Functions
 let idolSong;
@@ -26,6 +24,7 @@ function alertSound(idolSong) {
       playSound(idolSong);
       document.getElementById("currentSong").innerText = idolSong;
       document.getElementById("currentSong").style.color = getRandomColor();
+      document.querySelector('.choiceSong').style.color = getRandomColor();
     }
   } catch {
     if (idolSong == null) {
@@ -42,29 +41,38 @@ function randomSound(currentSong) {
   playSound(currentSong);
   document.getElementById("currentSong").innerText = currentSong;
   document.getElementById("currentSong").style.color = getRandomColor();
+  document.querySelector('.randomSong').style.color = getRandomColor();
 }
 
 function handlePlaySound() {
   // Use the CSS :checked pseudoclass to select the selected radio button
   const selSoundInp = document.querySelector('input[name="sound"]:checked');
+  if (selSoundInp === null) {
+    alert('You must choose one from song list!!!');
+    return;
+  }
   playSound(selSoundInp.value);
    document.getElementById("currentSong").innerText = selSoundInp.value;
   document.getElementById("currentSong").style.color = getRandomColor();
+  document.querySelector('.handlePlaySound').style.color = getRandomColor();
 }
 
 // Play or Pause
 var count = 0;
 var playPauseBTN = document.getElementById("playPauseBTN");
+var showSongBTN = document.getElementById("showBtn");
 
 function playPause() {
   if (count == 0) {
     count = 1;
     player.play();
     playPauseBTN.innerHTML = "Pause &#9208;";
+    playPauseBTN.style.color = getRandomColor();
   } else {
     count = 0;
     player.pause();
     playPauseBTN.innerHTML = "Play &#9658;";
+    playPauseBTN.style.color = getRandomColor();
   }
 }
 
@@ -73,15 +81,18 @@ function stop() {
   player.pause();
   player.currentTime = 0;
   playPauseBTN.innerHTML = "Play &#9658;";
+  playPauseBTN.style.color = getRandomColor();
 }
 
 function toggleSong(id) {
   if (count == 0) {
     count = 1;
     w3.hide(id);
+    showSongBTN.style.color = getRandomColor();
   } else {
     count = 0;
     w3.show(id);
+    showSongBTN.style.color = getRandomColor();
   }
 }
 
