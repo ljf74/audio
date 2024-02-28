@@ -25,6 +25,7 @@ function alertSound(idolSong) {
       document.getElementById("currentSong").innerText = idolSong;
       document.getElementById("currentSong").style.color = getRandomColor();
       document.querySelector('.choiceSong').style.color = getRandomColor();
+      console.clear();
     }
   } catch {
     if (idolSong == null) {
@@ -42,6 +43,7 @@ function randomSound(currentSong) {
   document.getElementById("currentSong").innerText = currentSong;
   document.getElementById("currentSong").style.color = getRandomColor();
   document.querySelector('.randomSong').style.color = getRandomColor();
+  console.clear();
 }
 
 function handlePlaySound() {
@@ -55,6 +57,7 @@ function handlePlaySound() {
    document.getElementById("currentSong").innerText = selSoundInp.value;
   document.getElementById("currentSong").style.color = getRandomColor();
   document.querySelector('.handlePlaySound').style.color = getRandomColor();
+  console.clear();
 }
 
 // Play or Pause
