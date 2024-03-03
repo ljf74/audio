@@ -1,4 +1,5 @@
 const sounds = {
+  就事爱你:'https://colddb.netlify.app/audio/就事爱你.mp3',
   失落沙洲:'https://colddb.netlify.app/audio/失落沙洲.mp3',
   blank_space: 'https://colddb.netlify.app/audio/blank_space.mp3',
   baby_i_need_you_sped: 'https://flacdb.netlify.app/audio/baby_i_need_you_sped.flac',
