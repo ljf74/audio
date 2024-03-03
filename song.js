@@ -1,4 +1,6 @@
 const sounds = {
+  第一次:'https://colddb.netlify.app/audio/第一次.mp3',
+  醉清风:'https://colddb.netlify.app/audio/醉清风.mp3',
   独家记忆:'https://colddb.netlify.app/audio/独家记忆.mp3',
   练习:'https://colddb.netlify.app/audio/练习.mp3',
   就是爱你:'https://colddb.netlify.app/audio/就事爱你.mp3',
