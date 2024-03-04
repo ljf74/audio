@@ -1,4 +1,5 @@
 const sounds = {
+  baddiff:'https://colddb.netlify.app/audio/baddiff.mp3',
   有没有一首歌会让你想起我:'https://colddb.netlify.app/audio/有没有一首歌会让你想起我.mp3',
   背叛:'https://colddb.netlify.app/audio/背叛.mp3',
   情非得已:'https://colddb.netlify.app/audio/情非得已.mp3',
