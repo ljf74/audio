@@ -1,4 +1,7 @@
 const sounds = {
+  背叛:'https://colddb.netlify.app/audio/背叛.mp3',
+  情非得已:'https://colddb.netlify.app/audio/情非得已.mp3',
+  忽然之间:'https://colddb.netlify.app/audio/忽然之间.mp3',
   囚鸟:'https://colddb.netlify.app/audio/囚鸟.mp3',
   会呼吸的痛:'https://colddb.netlify.app/audio/会呼吸的痛.mp3',
   七里香:'https://colddb.netlify.app/audio/七里香.mp3',
