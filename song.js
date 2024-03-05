@@ -1,4 +1,5 @@
 const sounds = {
+  那些年:'https://colddb.netlify.app/audio/那些年.mp3',
   唯一_告五人:'https://colddb.netlify.app/audio/唯一_告五人.mp3',
   浪费:'https://colddb.netlify.app/audio/浪费.mp3',
   煎熬:'https://colddb.netlify.app/audio/煎熬.mp3',
