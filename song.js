@@ -1,4 +1,5 @@
 const sounds = {
+  风靡: 'https://music.163.com/song/media/outer/url?id=1329900355.mp3',
   baddiff:'https://colddb.netlify.app/audio/baddiff.mp3',
   有没有一首歌会让你想起我:'https://colddb.netlify.app/audio/有没有一首歌会让你想起我.mp3',
   背叛:'https://colddb.netlify.app/audio/背叛.mp3',
