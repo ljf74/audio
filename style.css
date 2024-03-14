@@ -1,6 +1,39 @@
 * {
-  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  font-family: 'Poppins', sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#progress {
+   background-color: #03cc65;
+   position: fixed;
+   left: 20px;
+   top: 10px;
+   width: 70px;
+   height: 70px;
+   display: none;
+   place-items: center;
+   border-radius: 50%;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
+#progress-value {
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  color: #001a2e;
+}
+
 body {
   background: url('https://picsum.photos/1000/1000') no-repeat center center fixed;
   background-size: cover;

@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width">
   <title>Audio Library</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel='shortcut icon' href='./Telegram_logo.svg.png'>
+  <link rel='shortcut icon' href='./tg.png'>
   <script src='https://www.w3schools.com/lib/w3.js'></script>
    <script src="./song.js"></script>
 </head>
 
 <body>
+   <div id='progress'>
+     <span id='progress-value'>&#x1F815;</span>
+   </div>
   <button id="play-btn" class='randomSong' onclick="randomSound(currentSong);">Random Song</button>
   <br><br>
   <button id='play-btn' class='choiceSong' onclick='alertSound(idolSong)'>Choice Song</button>
