@@ -33,7 +33,7 @@ html {
 }
 
 body {
-  background: url('https://picsum.photos/1000/1000') no-repeat center center fixed;
+  background-image: linear-gradient(to top left, #0fd061, #1cb5c1);
   background-size: cover;
   font-family: system-ui;
   font-color: black;
