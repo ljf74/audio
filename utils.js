@@ -20,9 +20,11 @@ function alertSound(idolSong) {
     if (!sounds_key.includes(idolSong)) {
       document.getElementById("currentSong").innerText =
         "Sorry, not in the Audio Library X_X";
+      document.title = "Audio Library"
     } else {
       playSound(idolSong);
       document.getElementById("currentSong").innerText = idolSong;
+      document.title = idolSong;
       document.getElementById("currentSong").style.color = getRandomColor();
       document.querySelector('.choiceSong').style.color = getRandomColor();
       console.clear();
@@ -41,6 +43,7 @@ function randomSound(currentSong) {
   currentSong = sounds_key[Math.floor(Math.random() * sounds_key.length)];
   playSound(currentSong);
   document.getElementById("currentSong").innerText = currentSong;
+  document.title = currentSong;
   document.getElementById("currentSong").style.color = getRandomColor();
   document.querySelector('.randomSong').style.color = getRandomColor();
   console.clear();
@@ -55,6 +58,7 @@ function handlePlaySound() {
   }
   playSound(selSoundInp.value);
    document.getElementById("currentSong").innerText = selSoundInp.value;
+  document.title = selSoundInp.value;
   document.getElementById("currentSong").style.color = getRandomColor();
   document.querySelector('.handlePlaySound').style.color = getRandomColor();
   console.clear();

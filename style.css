@@ -34,7 +34,6 @@ html {
 
 body {
   background-image: linear-gradient(to top left, #0fd061, #1cb5c1);
-  background-size: cover;
   font-family: system-ui;
   font-color: black;
   padding: 120px;
