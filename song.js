@@ -1,4 +1,5 @@
 const sounds = {
+  淋雨一直走:'https://colddb.netlify.app/audio/淋雨一直走.mp3',
   失眠飞行翻唱:'https://colddb.netlify.app/audio/失眠飞行翻唱.mp3',
   love_story_fc:'https://colddb.netlify.app/audio/love_story_fc.mp3',
   i_really_like_you_fc:'https://colddb.netlify.app/audio/i_really_like_you_fc.mp3',
