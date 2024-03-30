@@ -166,6 +166,9 @@ button {
     font-size: 18px;
     line-height: 30px;
   }
+  #searchSong {
+    width: 80%; /* Adjust the width of the search input on mobile */
+  }
 }
 
 @media only screen and (max-width: 600px) {

@@ -34,7 +34,7 @@
       </div>
     <div id='search'>
     <h3>Search song name: </h3>
-    <input oninput="w3.filterHTML('#id01', 'li', this.value)">
+    <input id="searchSong" oninput="w3.filterHTML('#id01', 'li', this.value)">
       <ul id='id01' style='list-style: none;'>
         <script>
           let sounds_key1 = Object.keys(sounds);
