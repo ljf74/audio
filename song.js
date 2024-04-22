@@ -1,4 +1,5 @@
 const sounds = {
+  好想每天都在你左右:'https://colddb.netlify.app/audio/好想每天都在你左右.mp3',
   clouds:'https://colddb.netlify.app/audio/clouds.mp3',
   清风bgm:'https://colddb.netlify.app/audio/清风bgm.mp3',
   淋雨一直走:'https://colddb.netlify.app/audio/淋雨一直走.mp3',
