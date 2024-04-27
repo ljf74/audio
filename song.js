@@ -1,5 +1,7 @@
 const sounds = {
-  magnetic:'https://colddb.netlify.app/audio/magnetic.mp3',
+    magnetic:'https://colddb.netlify.app/audio/magnetic.mp3',
+  tg_magnetic_live:'https://colddb.netlify.app/audio/tg_magnetic_live.mp3',
+  tg_magnetic:'https://colddb.netlify.app/audio/tg_magnetic.mp3',
   好想每天都在你左右:'https://colddb.netlify.app/audio/好想每天都在你左右.mp3',
   clouds:'https://colddb.netlify.app/audio/clouds.mp3',
   清风bgm:'https://colddb.netlify.app/audio/清风bgm.mp3',
