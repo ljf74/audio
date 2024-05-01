@@ -1,4 +1,5 @@
 const sounds = {
+  地球最可爱 :'https://colddb.netlify.app/audio/地球最可爱.mp3',
   致你 :'https://colddb.netlify.app/audio/致你.mp3',
   really_like_you:'https://colddb.netlify.app/audio/really_like_you.mp3',
     
