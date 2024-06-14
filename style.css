@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Space%20Grotesk:700|Space%20Grotesk:400');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Space Grotesk';
 }
 
 html {
@@ -12,17 +12,10 @@ html {
 }
 
 body {
-  background-image: linear-gradient(90deg, rgb(37, 163, 10),rgb(138, 191, 54),rgb(239, 219, 97));
-  font-family: system-ui;
+  background-color: #141516;
+  height: 100vh;
   font-color: black;
   padding: 120px;
-}
-
-h1 {
-  font-family: cursive;
-  text-align: center;
-  font-size: 2.5em;
-  transform: translate(0px, -50px);
 }
 
 #song_list {
@@ -30,72 +23,76 @@ h1 {
   border-radius: 10px;
 }
 
+:root {
+/*  change this for scaling  */
+  --m: 4rem;
+
+  --red: #FF6565;
+  --pink: #FF64F9;
+  --purple: #6B5FFF;
+  --blue: #4D8AFF;
+  --green: #5BFF89;
+  --yellow: #FFEE55;
+  --orange: #FF6D1B;
+}
+
 #play-btn {
-  width: 100%;
-  letter-spacng: 3px;
+  border: calc(0.08 * var(--m)) solid transparent;
   position: relative;
-  padding: 2.5rem;
-  text-align: center;
+  color: #F3F3F3;
+  font-family: 'Space Grotesk';
+  font-size: var(--m);
+  border-radius: calc(0.7 * var(--m));
+  padding: calc(0.5 * var(--m)) calc(1 * var(--m));
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 10px;
-  color: white;
-  font-size: 2.5em;
-  z-index: 2;
+  cursor: pointer;
+  background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background-origin: border-box;
+  background-clip: padding-box, border-box, border-box;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
 }
 
 #play-btn::before {
-  content: "";
+  content: '';
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  height: 30%;
+  width: 60%;
   position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 100%;
-  background-image: linear-gradient(
-    145deg,
-    #f60000,
-    #cd00cd,
-    #ff8c00,
-    #ffee00,
-    #4de94c,
-    #f60000,
-    #cd00cd,
-    #ff8c00,
-    #ffee00,
-    #4de94c,
-    #f60000,
-    #cd00cd
-  );
-  border-radius: 10px;
-  animation: animate 1.5s linear infinite;
+  bottom: -20%;
+  z-index: -5;
+  background-size: 200%;
+  animation: animate 2s infinite linear;
+  filter: blur(calc(0.8 * var(--m)));
+}
+
+#play-btn:hover, #play-btn:hover::before {
+  animation: animate 0.5s infinite linear;
 }
 
 @keyframes animate {
-  to {
-    transform: translateX(-50%);
+  0% {background-position: 0}
+  100% {background-position: 200%}
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 2rem;
   }
 }
 
-#play-btn::after {
-  content: "";
-  z-index: -1;
-  background: black;
-  position: absolute;
-  width: calc(100% - 1rem);
-  height: calc(100% - 1rem);
-  border-radius: 10px;
-}
 
 button {
   cursor: pointer;
 }
 
+ul li {
+  font-family: 'Space Grotesk';
+}
+
 #currentSong {
- font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
+ letter-spacing: 2px;
  justify-content: center;
  text-align: center;
 }
@@ -115,9 +112,9 @@ button {
 }
 
 #search h3 {
-  font-family: Arial, Helvetica, sans-serif; /* Update the font family */
   letter-spacing: 2px; /* Add some letter spacing for visual appeal */
   text-align: center; /* Center the text */
+  font-family: 'Space Grotesk';
 }
 
 #playPauseBTN, #stopBtn, #showBtn {
