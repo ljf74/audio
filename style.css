@@ -17,6 +17,14 @@ body {
   padding: 120px;
 }
 
+ul {
+  width: 300px; /* 容器宽度 */
+  height: 200px; /* 容器高度 */
+  overflow-x: auto; /* 水平滚动条 */
+  overflow-y: scroll; /* 垂直滚动条 */
+  margin-left: 200px;
+}
+
 ul li {
   color: #f3f3f3;
   font-family: 'Space Grotesk';
@@ -168,6 +176,9 @@ button {
   }
   #searchSong {
     width: 80%; /* Adjust the width of the search input on mobile */
+  }
+  ul {
+    margin-left: 0;
   }
 }
 
