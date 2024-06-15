@@ -14,12 +14,16 @@ html {
 body {
   background-color: #141516;
   height: 100vh;
-  font-color: black;
   padding: 120px;
 }
 
+ul li {
+  color: #f3f3f3;
+  font-family: 'Space Grotesk';
+}
+
 #song_list {
-  background: white;
+  background: #2d2d39;
   border-radius: 10px;
 }
 
@@ -87,10 +91,6 @@ button {
   cursor: pointer;
 }
 
-ul li {
-  font-family: 'Space Grotesk';
-}
-
 #currentSong {
  letter-spacing: 2px;
  justify-content: center;
@@ -115,6 +115,7 @@ ul li {
   letter-spacing: 2px; /* Add some letter spacing for visual appeal */
   text-align: center; /* Center the text */
   font-family: 'Space Grotesk';
+  color: #f4f4f4;
 }
 
 #playPauseBTN, #stopBtn, #showBtn {
@@ -146,7 +147,6 @@ ul li {
 }
 
 #progress-value {
-  display: block;
   height: calc(100% - 15px);
   width: calc(100% - 15px);
   background-color: #ffffff;
