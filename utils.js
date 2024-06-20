@@ -111,3 +111,31 @@ function getRandomColor() {
   }
   return color;
 }
+
+/// Play sound constantly
+player.onended = () => {
+  randomSound(sounds_key[Math.floor(Math.random() * sounds_key.length)])
+}
+
+// Adjust current song progress
+const progressBar = document.getElementById('progressBar');
+
+function updateProgressBar(value) {
+    // 将滑动条的值转换为音频的当前时间
+    const currentTime = (value / 100) * player.duration;
+    player.currentTime = currentTime;
+
+    // 更新滑块的位置
+    progressBar.value = value;
+}
+
+// 监听滑动条的变化
+progressBar.addEventListener('input', function() {
+    updateProgressBar(progressBar.value);
+});
+
+// 当音频播放时，更新滑动条的位置
+player.addEventListener('timeupdate', function() {
+    const progress = (player.currentTime / player.duration) * 100;
+    progressBar.value = Math.round(progress);
+});

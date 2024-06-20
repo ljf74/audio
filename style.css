@@ -141,28 +141,11 @@ button {
   height: 60px;
 }
 
-#progress {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  height: 70px;
-  width: 70px;
-  display: none;
-  place-items: center;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-#progress-value {
-  height: calc(100% - 15px);
-  width: calc(100% - 15px);
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 35px;
-  color: #001a2e;
+#progressBar {
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+  margin-top: 20px;
 }
 
 @media (max-width: 900px) {
