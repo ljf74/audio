@@ -754,8 +754,7 @@ const sounds = {
   一晃就老了: "https://mp3app.haoge500.com/upload/128/2019/02/16/885759.mp3",
   要不要买菜: "https://mp3app.haoge500.com/upload/128/2019/11/29/999491.mp3",
   你一定要幸福: "https://mp3app.haoge500.com/upload/128/2019/01/31/885267.mp3",
-  你笑起来5��好看:
-    "https://mp3app.haoge500.com/upload/128/2019/05/23/892206.mp3",
+  你笑起来真好看: "https://mp3app.haoge500.com/upload/128/2019/05/23/892206.mp3",
   你一定要幸福: "https://mp3app.haoge500.com/upload/128/2019/01/31/885267.mp3",
   出山123: "https://mp3app.haoge500.com/upload/128/2019/02/20/886096.mp3",
   往事只能回味123:
