@@ -11,8 +11,8 @@ function playSound(name) {
 }
 
 function alertSound(idolSong) {
-  idolSong = window.prompt("What song do you want to listen?");
-  if (idolSong.trim() == "") {
+  idolSong = window.prompt("What song do you want to listen?").trim();
+  if (idolSong == "") {
     alert("Please enter a song name.");
     alertSound(idolSong);
   }
