@@ -25,7 +25,6 @@ function alertSound(idolSong) {
       playSound(idolSong);
       document.getElementById("currentSong").innerText = idolSong;
       document.title = idolSong;
-      document.querySelector('.choiceSong').style.color = getRandomColor();
       console.clear();
     }
   } catch {
@@ -56,8 +55,6 @@ function handlePlaySound() {
   playSound(selSoundInp.value);
    document.getElementById("currentSong").innerText = selSoundInp.value;
   document.title = selSoundInp.value;
-  document.getElementById("currentSong").style.color = getRandomColor();
-  document.querySelector('.handlePlaySound').style.color = getRandomColor();
   console.clear();
 }
 
