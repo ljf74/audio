@@ -613,7 +613,7 @@ const sounds = {
   等把我养的人养大:
     "https://mp3app.haoge500.com/upload/320/2022/11/28/1565610.mp3",
   青衣遥: "https://mp3app.haoge500.com/upload/128/2021/02/21/1053712.mp3",
-  小辛运:
+  小幸运:
     "https://mp3app.haoge500.com/upload/rank/20220115/cc04f11fb71050e791de201d307b8292.mp3",
   痴情意外: "http://music.163.com/song/media/outer/url?id=212388.mp3",
   房间123:
@@ -2046,7 +2046,7 @@ const sounds = {
     " https://mp3app.haoge500.com/upload/128/2016/04/09/pdoqzoiw323.mp3",
   boy_spirit:
     " https://mp3app.haoge500.com/upload/128/2016/04/09/iaoc1fvqo3a.mp3",
-  weeding_dress:
+  wedding_dress:
     " https://mp3app.haoge500.com/upload/128/2023/03/25/1640490.mp3",
   its_you: "https://mp3app.haoge500.com/hot/2009/05-09/443621.mp3",
   The_Girl: "https://mp3app.haoge500.com/upload/128/2021/04/12/1148263.mp3",

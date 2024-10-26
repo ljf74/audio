@@ -25,7 +25,6 @@ function alertSound(idolSong) {
       playSound(idolSong);
       document.getElementById("currentSong").innerText = idolSong;
       document.title = idolSong;
-      document.getElementById("currentSong").style.color = getRandomColor();
       document.querySelector('.choiceSong').style.color = getRandomColor();
       console.clear();
     }
@@ -44,8 +43,6 @@ function randomSound(currentSong) {
   playSound(currentSong);
   document.getElementById("currentSong").innerText = currentSong;
   document.title = currentSong;
-  document.getElementById("currentSong").style.color = getRandomColor();
-  document.querySelector('.randomSong').style.color = getRandomColor();
   console.clear();
 }
 
@@ -74,12 +71,10 @@ function playPause() {
     count = 1;
     player.play();
     playPauseBTN.innerHTML = "Pause &#9208;";
-    playPauseBTN.style.color = getRandomColor();
   } else {
     count = 0;
     player.pause();
     playPauseBTN.innerHTML = "Play &#9658;";
-    playPauseBTN.style.color = getRandomColor();
   }
 }
 
@@ -88,28 +83,16 @@ function stop() {
   player.pause();
   player.currentTime = 0;
   playPauseBTN.innerHTML = "Play &#9658;";
-  playPauseBTN.style.color = getRandomColor();
 }
 
 function toggleSong(id) {
   if (count == 0) {
     count = 1;
     w3.hide(id);
-    showSongBTN.style.color = getRandomColor();
   } else {
     count = 0;
     w3.show(id);
-    showSongBTN.style.color = getRandomColor();
   }
-}
-
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
 }
 
 /// Play sound constantly

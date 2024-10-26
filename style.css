@@ -54,7 +54,7 @@ ul li {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+  background: linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)), linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
   background-origin: border-box;
   background-clip: padding-box, border-box, border-box;
   background-size: 200%;
@@ -74,13 +74,19 @@ ul li {
   filter: blur(calc(0.8 * var(--m)));
 }
 
-#play-btn:hover, #play-btn:hover::before {
+#play-btn:hover,
+#play-btn:hover::before {
   animation: animate 0.5s infinite linear;
 }
 
 @keyframes animate {
-  0% {background-position: 0}
-  100% {background-position: 200%}
+  0% {
+    background-position: 0
+  }
+
+  100% {
+    background-position: 200%
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -95,12 +101,14 @@ button {
 }
 
 #currentSong {
- letter-spacing: 2px;
- justify-content: center;
- text-align: center;
+  letter-spacing: 2px;
+  justify-content: center;
+  text-align: center;
+  color: #f3f3f3;
 }
 
-#buttons, #search {
+#buttons,
+#search {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -122,7 +130,9 @@ button {
   font-size: 0.5em;
 }
 
-#playPauseBTN, #stopBtn, #showBtn {
+#playPauseBTN,
+#stopBtn,
+#showBtn {
   padding: 10px 25px;
   font-size: 22px;
   line-height: 40px;
@@ -149,20 +159,25 @@ button {
   body {
     padding: 20px;
   }
+
   buuton {
     padding: 10px;
     font-size: 18px;
     line-height: 30px;
   }
+
   #searchSong {
     width: 80%;
   }
+
   #search h3 {
     font-size: 1.25em;
   }
+
   ul {
     margin-left: 0;
   }
+
   #progressBar {
     margin-left: 80px;
     width: 50%;
