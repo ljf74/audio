@@ -1,51 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Audio Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音频库</title>
   <link href="./css/style.css" rel="stylesheet" type="text/css" />
-  <link rel='shortcut icon' href='https://andy.largent.org/tg.png'>
-  <script src='https://www.w3schools.com/lib/w3.js'></script>
-   <script src="./js/song.js"></script>
+  <script src="./js/song.js"></script>
 </head>
 
 <body>
-    <button id="play-btn" class='randomSong' onclick="randomSound(currentSong);">Random Song</button>
+  <!-- 随机播放按钮 -->
+  <button id="play-btn" class='randomSong' onclick="randomSound(currentSong);">随便听听</button>
+  <br><br>
+  
+  <!-- 歌曲列表区域 -->
+  <div id="song_list">
+    <h2 id='currentSong'>当前未播放歌曲</h2>
+    <!-- 进度条 -->
+    <input type="range" min="0" max="100" value="0" id="progressBar">
     <br><br>
-    <button id='play-btn' class='choiceSong' onclick='alertSound(idolSong)'>Choice Song</button>
-    <br><br>
-    <div id="song_list">
-      <br><br>
-      <h2 id='currentSong'></h2>
-      <input type="range" min="0" max="100" value="0" id="progressBar">
-       <br><br>
-        <div id='buttons'>
-          <button id='playPauseBTN' onclick="playPause()">Play &#9658;</button>
-          <button id='stopBtn' onclick="stop()">Stop &#9611;</button>
-          <button id='showBtn' onclick="toggleSong('#id01')">Songs</button><br><br>
-        </div>
-      <div id='search'>
-      <h3>Search song name: </h3>
-      <input id="searchSong" oninput="w3.filterHTML('#id01', 'li', this.value)">
-        <ul id='id01' style='list-style: none;'>
-          <script>
-            let sounds_key1 = Object.keys(sounds);
 
-            // Write song list
-            for (let i of sounds_key1)
-            {
-             document.write("<li><input type='radio' name='sound' value='" + i + "'>" + i + "</li>");
-            }
-          </script>
-        </ul>
-      </div>
-      </br></br>
-      </div>
-    <br></br>
-     <button id='play-btn' onclick='handlePlaySound()' class='handlePlaySound'>Play Sound</button><br><br>
+    <!-- 控制按钮 -->
+    <div id='buttons'>
+      <button id='playPauseBTN' onclick="playPause()">播放 &#9658;</button>
+      <button id='stopBtn' onclick="stop()">停止 &#9611;</button>
+      <button id='modeBTN' onclick="changePlayMode()">模式: 顺序播放</button>
+    </div>
+    <br><br>
+
+    <!-- 搜索歌曲 -->
+    <div id='search'>
+      <h3>搜索歌曲名称：</h3>
+      <input id="searchSong" oninput="searchSong(this.value)" placeholder="输入歌曲名称...">
+      <ul id='id01'>
+        <!-- 歌曲列表由JS动态填充 -->
+      </ul>
+    </div>
+  </div>
+  
   <script src='./js/utils.js'></script>
+  <script>
+
+    // 动态填充歌曲列表
+    const ul = document.getElementById('id01');
+    Object.keys(sounds).forEach(song => {
+      const li = document.createElement('li');
+      li.textContent = song;
+      li.onclick = () => selectSong(song);
+      ul.appendChild(li);
+    });
+
+    function searchSong(value) {
+      const filter = value.toLowerCase();
+      const items = ul.getElementsByTagName('li');
+      for (let item of items) {
+        item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      }
+    }
+
+    function selectSong(song) {
+      document.getElementById('currentSong').innerText = "当前播放：" + song;
+      alert("播放 " + song);
+      // 可添加实际播放逻辑
+    }
+  </script>
 </body>
 
 </html>

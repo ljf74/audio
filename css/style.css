@@ -1,191 +1,126 @@
+/* 导入字体 */
 @import url('https://fonts.googleapis.com/css?family=Space%20Grotesk:700|Space%20Grotesk:400');
 
+:root {
+  --m: 4rem; /* 全局尺寸变量 */
+  --red: #FF6565;
+  --blue: #4D8AFF;
+}
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Space Grotesk';
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 body {
-  background-color: #141516;
-  min-height: 100vh;
-  padding: 120px;
-}
-
-ul {
-  width: 300px;
-  height: 200px;
-  overflow-x: auto;
-  overflow-y: scroll;
-  margin-left: 200px;
-}
-
-ul li {
+  background-color: #1e1f26;
   color: #f3f3f3;
-  font-family: 'Space Grotesk';
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* 按钮样式 */
+button {
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  background: linear-gradient(to right, var(--red), var(--blue));
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, var(--blue), var(--red));
+}
+
+/* 歌曲列表 */
 #song_list {
   background: #2d2d39;
   border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-:root {
-  --m: 4rem;
-
-  --red: #FF6565;
-  --pink: #FF64F9;
-  --purple: #6B5FFF;
-  --blue: #4D8AFF;
-  --green: #5BFF89;
-  --yellow: #FFEE55;
-  --orange: #FF6D1B;
-}
-
-#play-btn {
-  border: calc(0.08 * var(--m)) solid transparent;
-  position: relative;
-  color: #F3F3F3;
-  font-family: 'Space Grotesk';
-  font-size: var(--m);
-  border-radius: calc(0.7 * var(--m));
-  padding: calc(0.5 * var(--m)) calc(1 * var(--m));
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  background: linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)), linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
-  background-origin: border-box;
-  background-clip: padding-box, border-box, border-box;
-  background-size: 200%;
-  animation: animate 2s infinite linear;
-}
-
-#play-btn::before {
-  content: '';
-  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
-  height: 30%;
-  width: 60%;
-  position: absolute;
-  bottom: -20%;
-  z-index: -5;
-  background-size: 200%;
-  animation: animate 2s infinite linear;
-  filter: blur(calc(0.8 * var(--m)));
-}
-
-#play-btn:hover,
-#play-btn:hover::before {
-  animation: animate 0.5s infinite linear;
-}
-
-@keyframes animate {
-  0% {
-    background-position: 0
-  }
-
-  100% {
-    background-position: 200%
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  :root {
-    --m: 2rem;
-  }
-}
-
-button {
-  cursor: pointer;
-  user-select: none;
-}
-
-#currentSong {
-  letter-spacing: 2px;
-  justify-content: center;
-  text-align: center;
-  color: #f3f3f3;
-}
-
-#buttons,
-#search {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#search input {
+ul {
+  max-height: 200px;
+  overflow-y: auto;
   padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ddd;
+}
+
+ul li {
+  list-style: none;
+  padding: 10px;
+  margin: 5px 0;
   border-radius: 5px;
-  margin: 5px;
+  transition: background 0.3s;
+}
+
+ul li:hover {
+  background-color: #3c3f51;
+  cursor: pointer;
+}
+
+/* 搜索框 */
+#search input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #444;
+  border-radius: 5px;
+  background-color: #2d2d39;
+  color: #f3f3f3;
+  margin-bottom: 10px;
+}
+
+#search input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 5px var(--blue);
 }
 
 #search h3 {
-  letter-spacing: 2px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #4D8AFF;
   text-align: center;
-  font-family: 'Space Grotesk';
-  color: #f4f4f4;
-  font-size: 0.5em;
 }
 
-#playPauseBTN,
-#stopBtn,
-#showBtn {
-  padding: 10px 25px;
-  font-size: 22px;
-  line-height: 40px;
-  min-width: 150px;
-  text-align: center;
-  justify-content: center;
-  cursor: pointer;
-  background: linear-gradient(to right bottom, #273c75, #079992);
-  color: #fff;
-  border-radius: 5px;
-  border: 0px;
-  height: 60px;
-}
-
+/* 音乐进度条 */
 #progressBar {
-  justify-content: center;
-  align-items: center;
-  margin-left: 150px;
-  margin-top: 20px;
-  width: 60%;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #3c3f51;
 }
 
-@media (max-width: 900px) {
-  body {
-    padding: 20px;
+/* 小屏幕优化 */
+@media (max-width: 480px) {
+  button {
+    font-size: 1rem;
+    padding: 8px 20px;
   }
 
-  buuton {
-    padding: 10px;
-    font-size: 18px;
-    line-height: 30px;
+  #song_list {
+    padding: 15px;
+    width: 100%;
   }
 
-  #searchSong {
-    width: 80%;
+  #search input {
+    font-size: 0.9rem;
   }
 
-  #search h3 {
-    font-size: 1.25em;
-  }
-
-  ul {
-    margin-left: 0;
-  }
-
-  #progressBar {
-    margin-left: 80px;
-    width: 50%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #buttons button {
-    margin-right: 10px;
+  h2, h3 {
+    font-size: 1rem;
   }
 }
