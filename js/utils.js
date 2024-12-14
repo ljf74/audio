@@ -1,63 +1,47 @@
-// 缓存音频播放器和歌曲列表
 const player = new Audio();
-const sounds_key = Object.keys(sounds);
-const progressBar = document.getElementById('progressBar');
-const currentSongDisplay = document.getElementById("currentSong");
-const playPauseBTN = document.getElementById("playPauseBTN");
-const modeBTN = document.getElementById("modeBTN");
-
-// 状态管理
+const ul = document.getElementById("id01");
 let isPlaying = false;
-let currentSongIndex = 0; // 当前歌曲索引
-let playMode = "list"; // 播放模式: "list", "random", "loop"
+let currentSong = null;
+
+// 动态填充歌曲列表
+function initializeSongList() {
+  ul.innerHTML = ""; // 清空列表，避免重复渲染
+  Object.keys(sounds).forEach((song) => {
+    const li = document.createElement("li");
+    li.textContent = song;
+    li.onclick = () => selectSong(song); // 绑定点击事件
+    ul.appendChild(li);
+  });
+}
+
+// 初始化歌曲列表
+initializeSongList();
+
+// 搜索歌曲功能
+function searchSong(value) {
+  const filter = value.toLowerCase();
+  const items = ul.getElementsByTagName("li");
+  for (let item of items) {
+    item.style.display = item.textContent.toLowerCase().includes(filter)
+      ? ""
+      : "none";
+  }
+}
+
+// 选择并播放歌曲
+function selectSong(song) {
+  currentSong = song;
+  playSound(song);
+  document.getElementById("currentSong").innerText = "当前播放：" + song;
+}
 
 // 播放歌曲
-function playSound(name) {
-  player.src = sounds[name];
+function playSound(song) {
+  player.src = sounds[song];
   player.play();
-  currentSongDisplay.innerText = name;
-  document.title = name;
   isPlaying = true;
-  playPauseBTN.innerHTML = "暂停 &#9208;";
-  currentSongIndex = sounds_key.indexOf(name);
-}
-
-// 切换播放模式
-function changePlayMode() {
-  if (playMode === "list") {
-    playMode = "random";
-    modeBTN.innerText = "模式: 随机播放";
-  } else if (playMode === "random") {
-    playMode = "loop";
-    modeBTN.innerText = "模式: 单曲循环";
-    player.loop = true; // 开启单曲循环
-  } else {
-    playMode = "list";
-    modeBTN.innerText = "模式: 顺序播放";
-    player.loop = false; // 关闭单曲循环
-  }
-}
-
-// 随机播放歌曲
-function randomSound() {
-  const randomSong = sounds_key[Math.floor(Math.random() * sounds_key.length)];
-  playSound(randomSong);
-}
-
-// 顺序播放下一首
-function playNext() {
-  currentSongIndex = (currentSongIndex + 1) % sounds_key.length;
-  playSound(sounds_key[currentSongIndex]);
-}
-
-// 手动播放选中歌曲
-function handlePlaySound() {
-  const selectedSong = document.querySelector('input[name="sound"]:checked');
-  if (!selectedSong) {
-    alert("请从歌曲列表中选择一首歌曲！");
-    return;
-  }
-  playSound(selectedSong.value);
+  document.getElementById("playPauseBTN").innerHTML = "暂停 &#9208;";
+  document.title = song;
 }
 
 // 播放或暂停
@@ -65,11 +49,15 @@ function playPause() {
   if (isPlaying) {
     player.pause();
     isPlaying = false;
-    playPauseBTN.innerHTML = "播放 &#9658;";
+    document.getElementById("playPauseBTN").innerHTML = "播放 &#9658;";
   } else {
-    player.play();
-    isPlaying = true;
-    playPauseBTN.innerHTML = "暂停 &#9208;";
+    if (currentSong) {
+      player.play();
+      isPlaying = true;
+      document.getElementById("playPauseBTN").innerHTML = "暂停 &#9208;";
+    } else {
+      alert("请先选择一首歌曲！");
+    }
   }
 }
 
@@ -78,39 +66,55 @@ function stop() {
   player.pause();
   player.currentTime = 0;
   isPlaying = false;
-  playPauseBTN.innerHTML = "播放 &#9658;";
+  document.getElementById("playPauseBTN").innerHTML = "播放 &#9658;";
 }
 
-// 监听歌曲播放结束，根据播放模式切换下一首
+// 随机播放
+function randomSound() {
+  const songs = Object.keys(sounds);
+  const randomSong = songs[Math.floor(Math.random() * songs.length)];
+  selectSong(randomSong);
+}
+
+// 播放模式切换
+let playMode = "list"; // "list", "random", "loop"
+
+function changePlayMode() {
+  const modeBTN = document.getElementById("modeBTN");
+  if (playMode === "list") {
+    playMode = "random";
+    modeBTN.innerText = "模式: 随机播放";
+  } else if (playMode === "random") {
+    playMode = "loop";
+    modeBTN.innerText = "模式: 单曲循环";
+    player.loop = true;
+  } else {
+    playMode = "list";
+    modeBTN.innerText = "模式: 顺序播放";
+    player.loop = false;
+  }
+}
+
+// 监听播放结束，切换歌曲
 player.addEventListener("ended", () => {
   if (playMode === "list") {
-    playNext();
+    const songs = Object.keys(sounds);
+    const currentIndex = songs.indexOf(currentSong);
+    const nextIndex = (currentIndex + 1) % songs.length;
+    selectSong(songs[nextIndex]);
   } else if (playMode === "random") {
     randomSound();
-  } // 如果是 loop 模式，播放器的 loop 已经自动处理
+  }
+  // 单曲循环模式无需操作，播放器会自动循环
 });
 
-// 更新进度条
+// 进度条控制
+const progressBar = document.getElementById("progressBar");
 player.addEventListener("timeupdate", () => {
   const progress = (player.currentTime / player.duration) * 100;
   progressBar.value = Math.round(progress);
 });
 
-// 监听滑动条手动调整进度
 progressBar.addEventListener("input", () => {
   player.currentTime = (progressBar.value / 100) * player.duration;
 });
-
-// 显示歌曲列表并绑定点击播放功能
-function displaySongList() {
-  const listContainer = document.getElementById("id01");
-  sounds_key.forEach(songName => {
-    const li = document.createElement("li");
-    li.innerText = songName;
-    li.onclick = () => playSound(songName);
-    listContainer.appendChild(li);
-  });
-}
-
-// 初始化
-displaySongList();

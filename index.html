@@ -11,60 +11,35 @@
 
 <body>
   <!-- 随机播放按钮 -->
-  <button id="play-btn" class='randomSong' onclick="randomSound(currentSong);">随便听听</button>
+  <button id="play-btn" class='randomSong' onclick="randomSound();">随便听听</button>
   <br><br>
-  
+
   <!-- 歌曲列表区域 -->
   <div id="song_list">
-    <h2 id='currentSong'>当前未播放歌曲</h2>
+    <h2 id="currentSong">当前未播放歌曲</h2>
     <!-- 进度条 -->
     <input type="range" min="0" max="100" value="0" id="progressBar">
     <br><br>
 
     <!-- 控制按钮 -->
-    <div id='buttons'>
-      <button id='playPauseBTN' onclick="playPause()">播放 &#9658;</button>
-      <button id='stopBtn' onclick="stop()">停止 &#9611;</button>
-      <button id='modeBTN' onclick="changePlayMode()">模式: 顺序播放</button>
+    <div id="buttons">
+      <button id="playPauseBTN" onclick="playPause()">播放 &#9658;</button>
+      <button id="stopBtn" onclick="stop()">停止 &#9611;</button>
+      <button id="modeBTN" onclick="changePlayMode()">模式: 顺序播放</button>
     </div>
     <br><br>
 
     <!-- 搜索歌曲 -->
-    <div id='search'>
+    <div id="search">
       <h3>搜索歌曲名称：</h3>
       <input id="searchSong" oninput="searchSong(this.value)" placeholder="输入歌曲名称...">
-      <ul id='id01'>
+      <ul id="id01">
         <!-- 歌曲列表由JS动态填充 -->
       </ul>
     </div>
   </div>
-  
-  <script src='./js/utils.js'></script>
-  <script>
 
-    // 动态填充歌曲列表
-    const ul = document.getElementById('id01');
-    Object.keys(sounds).forEach(song => {
-      const li = document.createElement('li');
-      li.textContent = song;
-      li.onclick = () => selectSong(song);
-      ul.appendChild(li);
-    });
-
-    function searchSong(value) {
-      const filter = value.toLowerCase();
-      const items = ul.getElementsByTagName('li');
-      for (let item of items) {
-        item.style.display = item.textContent.toLowerCase().includes(filter) ? '' : 'none';
-      }
-    }
-
-    function selectSong(song) {
-      document.getElementById('currentSong').innerText = "当前播放：" + song;
-      alert("播放 " + song);
-      // 可添加实际播放逻辑
-    }
-  </script>
+  <script src="./js/utils.js"></script>
 </body>
 
 </html>
